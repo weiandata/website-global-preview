@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects. English is now the default language at the root;
+# legacy /en/* URLs redirect permanently to their root equivalents.
+/en/* /:splat 301
+/en / 301

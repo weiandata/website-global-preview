@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 五页双语官网；URL 与规范化后的仓库路径和页面 canonical 地址一致。 -->
+<!-- 五页双语官网；英文为默认语言位于根路径，中文位于 /zh/。URL 与页面 canonical 地址一致。 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 中文页 -->
+  <!-- English (default) -->
   <url>
     <loc>https://global.weiandata.com/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://global.weiandata.com/tools</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://global.weiandata.com/methods</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://global.weiandata.com/learn</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://global.weiandata.com/article</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- 英文页 -->
+  <!-- 中文 -->
   <url>
-    <loc>https://global.weiandata.com/en/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://global.weiandata.com/zh/</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://global.weiandata.com/en/tools</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://global.weiandata.com/zh/tools</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://global.weiandata.com/en/methods</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://global.weiandata.com/zh/methods</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://global.weiandata.com/en/learn</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://global.weiandata.com/zh/learn</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://global.weiandata.com/en/article</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://global.weiandata.com/zh/article</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

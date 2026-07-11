@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/css/mobile.css">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<title>学习中心｜惟安数据科技 WEIAN DATA</title>
+<meta name="description" content="50 篇零基础《IRT 人人都懂说明书》加 30 篇进阶专栏长文，把大型测评与调查数据处理背后的方法一次讲透，无需统计或代码基础。">
+<link rel="canonical" href="https://global.weiandata.com/zh/learn">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/learn">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/learn">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/learn">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(250,248,242,.75);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(250,248,242,0);transform:scale(1)}}
+input[data-searchbox]::placeholder{color:#A9A48F}
+input[data-searchbox]:focus{outline:none;border-color:#2440C8;box-shadow:4px 4px 0 rgba(36,64,200,.18)}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="学习中心">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="惟安 logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoL)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">惟安数据科技</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">WEIAN&nbsp;DATA</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:20px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">首页</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">工具案例</a>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">方法百科</a>
+        <span style="color:#FAF8F2;background:#1A1914;padding:6px 13px;border:1px solid #1A1914">学习中心</span>
+        <a href="../learn.html" title="Switch to English" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">EN</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">联系合作</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页首 + 搜索 -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">首页</a> / 学习中心</div>
+      <h1 data-rv style="margin:0 0 20px;font-size:clamp(36px,4.8vw,64px);line-height:1.1;font-weight:900;letter-spacing:-.02em;max-width:980px">从零开始，<br>读懂<span style="color:#2440C8">测量与调查</span></h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:620px">不需要懂统计、不需要会代码。50 篇零基础《IRT 人人都懂说明书》+ 30 篇进阶专栏长文，把大型测评背后的方法一次讲透。</p>
+      <div data-rv style="margin-top:36px;max-width:720px">
+        <input data-searchbox type="text" aria-label="搜索学习中心文章" placeholder="搜索 80 篇：试试「区分度」「加权」「缺失」「题库」…" style="width:100%;box-sizing:border-box;background:#FAF8F2;border:1px solid #1A1914;padding:16px 20px;font-size:15px;font-family:inherit;color:#1A1914;border-radius:0;transition:border-color .25s,box-shadow .25s">
+        <div style="display:flex;justify-content:space-between;gap:16px;margin-top:10px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+          <span data-result-note style="color:#2440C8;font-weight:700;visibility:hidden">找到 0 篇</span>
+          <span>2 个专栏 · 80 篇 · 持续更新</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 推荐路径 -->
+  <section data-paths style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)">
+      <a data-rv href="#manual" style="display:block;padding:32px 40px;border-right:1px solid #DDD8CA;text-decoration:none;color:#1A1914;transition:background .3s" style-hover="background:#F3F0E6">
+        <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:10px">路径 A · 完全零基础</div>
+        <div style="font-size:16px;font-weight:900;margin-bottom:8px">从《说明书》第 1 篇开始 ↓</div>
+        <div style="font-size:13px;line-height:1.8;color:#4B4840">按编号顺序读，八个模块由浅入深，全程打比方、不上公式。</div>
+      </a>
+      <a data-rv href="#columns" style="display:block;padding:32px 40px;border-right:1px solid #DDD8CA;text-decoration:none;color:#1A1914;transition:background .3s" style-hover="background:#F3F0E6">
+        <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:10px">路径 B · 有统计基础</div>
+        <div style="font-size:16px;font-weight:900;margin-bottom:8px">直接读专栏长文 ↓</div>
+        <div style="font-size:13px;line-height:1.8;color:#4B4840">先读 A01 与 A05 建立框架，再按主题标签挑与你项目相关的。</div>
+      </a>
+      <a data-rv href="methods.html" style="display:block;padding:32px 40px;text-decoration:none;color:#1A1914;transition:background .3s" style-hover="background:#F3F0E6">
+        <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:10px">路径 C · 带着问题来</div>
+        <div style="font-size:16px;font-weight:900;margin-bottom:8px">用上方搜索，或查方法百科 →</div>
+        <div style="font-size:13px;line-height:1.8;color:#4B4840">概念速查看方法百科六个词条；找具体话题直接搜关键词。</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 说明书 -->
+  <section id="manual" data-sec-manual style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px">
+      <div style="display:grid;grid-template-columns:1fr 2.2fr;gap:40px;margin-bottom:50px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">01 — 零基础专题 · 50 篇</div>
+        <div>
+          <h2 data-rv style="margin:0 0 16px;font-size:clamp(28px,3.2vw,44px);font-weight:900;letter-spacing:-.01em;line-height:1.2">《IRT 人人都懂说明书》</h2>
+          <p data-rv style="margin:0;font-size:15px;line-height:1.9;color:#4B4840;max-width:640px">写给「完全不懂行」的人：不需要统计背景，涉及公式的地方全部用打比方代替。八个模块建议按顺序读，也可以当词典随时翻。</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start">
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块一 · 认识篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">IRT 到底是个啥</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">01–07</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="01 IRT到底是个啥 考试 体重秤 入门 认识" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">01</span><span>IRT 到底是个啥？——用「考试」和「体重秤」讲清楚</span></div>
+            <div data-item="m" data-search="02 总分法的坑 数对几题 看清能力" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">02</span><span>从「数对几题」到「看清能力」：总分法的坑</span></div>
+            <div data-item="m" data-search="03 难度 区分度 题目的脾气" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">03</span><span>题目也有「脾气」：难度和区分度到底在说什么</span></div>
+            <div data-item="m" data-search="04 能力 theta θ 潜在能力 怎么量出来" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">04</span><span>能力（θ）这个看不见的东西，是怎么「量」出来的</span></div>
+            <div data-item="m" data-search="05 打分 计分 IRT和打分哪里不一样" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">05</span><span>IRT 和我们平时说的「打分」到底哪里不一样</span></div>
+            <div data-item="m" data-search="06 1PL 2PL 3PL GRM 模型家族" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">06</span><span>IRT 家族全家福：1PL、2PL、3PL、GRM 都是谁</span></div>
+            <div data-item="m" data-search="07 公司为什么用IRT 业务视角" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">07</span><span>我们为什么用 IRT？——一个业务视角的回答</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块二 · 识图篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">曲线和图怎么读</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">08–15</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="08 ICC 项目特征曲线 招牌曲线" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">08</span><span>认识 IRT 的招牌曲线——项目特征曲线（ICC）</span></div>
+            <div data-item="m" data-search="09 曲线左移 右移 难度变化" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">09</span><span>曲线往左移、往右移，分别说明这道题怎么了</span></div>
+            <div data-item="m" data-search="10 曲线陡缓 区分度 图上长什么样" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">10</span><span>曲线的「陡」与「缓」：区分度在图上长什么样</span></div>
+            <div data-item="m" data-search="11 猜测参数 c 抬不起头的曲线" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">11</span><span>那条「抬不起头」的曲线——猜测参数 c 是怎么回事</span></div>
+            <div data-item="m" data-search="12 信息函数 IIF 哪段人群最好用" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">12</span><span>信息函数曲线：这道题在哪一段人群最好用</span></div>
+            <div data-item="m" data-search="13 测验信息曲线 TIF 问卷擅长测谁" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">13</span><span>测验信息曲线：整份问卷到底「擅长」测什么样的人</span></div>
+            <div data-item="m" data-search="14 能力量尺 -3到+3 量尺" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">14</span><span>能力量尺上的 −3 到 +3 是什么意思</span></div>
+            <div data-item="m" data-search="15 Wright Map 怀特图 人和题同一把尺子" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">15</span><span>Wright Map（怀特图）：把「人」和「题」放到同一把尺子上看</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块三 · 术语篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">一次把黑话扫干净</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">16–25</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="16 潜变量 看不见却测得到" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">16</span><span>「潜变量」是什么？为什么它看不见却测得到</span></div>
+            <div data-item="m" data-search="17 单维 多维 测几样东西" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">17</span><span>「单维」和「多维」：一份问卷到底在测几样东西</span></div>
+            <div data-item="m" data-search="18 局部独立 串通作弊" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">18</span><span>「局部独立」：为什么题目之间不能「串通作弊」</span></div>
+            <div data-item="m" data-search="19 参数估计 机器怎么猜出这些数" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">19</span><span>「参数估计」：机器到底是怎么「猜」出这些数的</span></div>
+            <div data-item="m" data-search="20 似然 最大似然 侦探破案" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">20</span><span>「似然」和「最大似然」：一个像侦探破案的概念</span></div>
+            <div data-item="m" data-search="21 标准误 误差范围" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">21</span><span>「标准误」：每个估计值背后都跟着一个「误差范围」</span></div>
+            <div data-item="m" data-search="22 拟合优度 模型和数据合不合得来" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">22</span><span>「拟合优度」：模型和数据到底「合不合得来」</span></div>
+            <div data-item="m" data-search="23 DIF 项目功能差异 公平" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">23</span><span>「DIF」（项目功能差异）：同一道题，对不同人公平吗</span></div>
+            <div data-item="m" data-search="24 信度 IRT里的新面孔" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">24</span><span>「信度」在 IRT 里的新面孔——它会随着人而变</span></div>
+            <div data-item="m" data-search="25 缩写速查卡 theta a b c ICC TIF IIF" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">25</span><span>缩写速查卡：θ、a、b、c、ICC、TIF、IIF 一次记牢</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块四 · 清醒篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">优点、局限与边界</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">26–31</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="26 三大过人之处 优点" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">26</span><span>IRT 的三大过人之处，一句话各讲一个</span></div>
+            <div data-item="m" data-search="27 题目和人可以分家 参数不变性" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">27</span><span>IRT 最被低估的优点：题目和人可以「分家」</span></div>
+            <div data-item="m" data-search="28 CAT 自适应测验 越考越懂你" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">28</span><span>计算机自适应测验（CAT）：IRT 怎么让考试「越考越懂你」</span></div>
+            <div data-item="m" data-search="29 前提假设 单维性 局部独立" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">29</span><span>IRT 不是万能的：它背后有哪些前提假设</span></div>
+            <div data-item="m" data-search="30 样本量 饭量 样本不够" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">30</span><span>样本量不够会怎样？——IRT 的「饭量」问题</span></div>
+            <div data-item="m" data-search="31 什么时候别用IRT 边界清单" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">31</span><span>什么时候干脆别用 IRT？——一份诚实的边界清单</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块五 · 落地篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">设备、软件与流程</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">32–38</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="32 电脑配置 跑IRT需要多好的电脑" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">32</span><span>跑一次 IRT，到底需要多好的电脑</span></div>
+            <div data-item="m" data-search="33 R是什么 为什么用R" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">33</span><span>R 是什么？为什么做 IRT 的人几乎都在用它</span></div>
+            <div data-item="m" data-search="34 不写代码 图形界面" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">34</span><span>不写代码行不行？——IRT 的图形界面选择</span></div>
+            <div data-item="m" data-search="35 R包 mirt ltm TAM" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">35</span><span>常用 R 包点名:mirt、ltm、TAM 各自负责什么</span></div>
+            <div data-item="m" data-search="36 标准流程 不含代码" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">36</span><span>一次完整 IRT 分析的标准流程长什么样（不含代码版）</span></div>
+            <div data-item="m" data-search="37 数据格式 数据长什么样" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">37</span><span>数据要长成什么样，才能「喂」给 IRT</span></div>
+            <div data-item="m" data-search="38 缺失值 废卷 乱答 脏数据" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">38</span><span>缺失值、废卷、乱答：脏数据到底怎么办</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块六 · 应用篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">结果怎么读、怎么用</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">39–45</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="39 参数表 先看哪几列" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">39</span><span>拿到一张参数表，先看哪几列</span></div>
+            <div data-item="m" data-search="40 难度b 区分度a 判断题目好不好" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">40</span><span>难度 b 和区分度 a：怎么判断一道题「好不好」</span></div>
+            <div data-item="m" data-search="41 挑出坏题 删题" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">41</span><span>怎么从结果里挑出该删掉的「坏题」</span></div>
+            <div data-item="m" data-search="42 分数报告 theta翻译成人话 量尺转换" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">42</span><span>分数报告：把 θ 翻译成客户看得懂的人话</span></div>
+            <div data-item="m" data-search="43 缩短问卷 不掉精度" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">43</span><span>IRT 怎么帮我们把问卷「缩短」却不掉精度</span></div>
+            <div data-item="m" data-search="44 题库 不同批次可比" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">44</span><span>建立题库：IRT 怎么让不同批次的题变得「可比」</span></div>
+            <div data-item="m" data-search="45 讲给老板客户听 汇报" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">45</span><span>把 IRT 结果讲给不懂技术的老板 / 客户听</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块七 · 急诊篇</div><div style="font-size:17px;font-weight:900;margin-top:6px">结果异常怎么办</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">46–49</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="46 区分度为负 负区分度" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">46</span><span>区分度居然是负的？——多半是这几个原因</span></div>
+            <div data-item="m" data-search="47 模型不拟合 排查清单" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">47</span><span>模型不拟合怎么办：先别慌，照这张清单查</span></div>
+            <div data-item="m" data-search="48 结果和常识打架 信谁" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">48</span><span>结果和「常识 / 经验」打架，到底该信谁</span></div>
+            <div data-item="m" data-search="49 参数飞了 极端值" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">49</span><span>参数估计「飞了」（跑出极端值）说明什么</span></div>
+          </div>
+        </div>
+        <div data-mcard data-rv style="border:1px solid #1A1914;background:#F3F0E6">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid #DDD8CA;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">模块八 · 收尾</div><div style="font-size:17px;font-weight:900;margin-top:6px">读完之后</div></div>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">50</span>
+          </div>
+          <div style="padding:10px 0 14px">
+            <div data-item="m" data-search="50 结语 读完这50篇能做什么" style="display:flex;gap:14px;padding:7px 24px;font-size:13.5px;line-height:1.7;color:#4B4840" style-hover="background:#E8E4D4"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;flex:none;padding-top:2px">50</span><span>结语：读完这 50 篇，普通人现在能做什么</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专栏长文 -->
+  <section id="columns" data-sec-columns style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px">
+      <div style="display:grid;grid-template-columns:1fr 2.2fr;gap:40px;margin-bottom:44px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">02 — 进阶专栏 · 30 篇</div>
+        <div>
+          <h2 data-rv style="margin:0 0 16px;font-size:clamp(28px,3.2vw,44px);font-weight:900;letter-spacing:-.01em;line-height:1.2">专栏长文</h2>
+          <p data-rv style="margin:0;font-size:15px;line-height:1.9;color:#4B4840;max-width:640px">面向有一定统计基础的读者：每篇讲透一个专题，从原理到实操。用主题标签筛选与你项目相关的部分。</p>
+        </div>
+      </div>
+      <div data-rv style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px">
+        <button data-chip="all" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:#1A1914;color:#FAF8F2;padding:7px 15px;cursor:pointer">全部 30</button>
+        <button data-chip="IRT基础" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">IRT基础</button>
+        <button data-chip="问卷量表" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">问卷量表</button>
+        <button data-chip="测验实务" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">测验实务</button>
+        <button data-chip="数据处理" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">数据处理</button>
+        <button data-chip="调查统计" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">调查统计</button>
+        <button data-chip="工程与工具" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">工程与工具</button>
+        <button data-chip="合作指南" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;background:transparent;color:#1A1914;padding:7px 15px;cursor:pointer">合作指南</button>
+      </div>
+      <div data-rv style="border-top:1px solid #1A1914">
+        <div data-item="c" data-theme="IRT基础" data-search="A01 什么是IRT 从总分到潜变量 入门" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A01</span><span style="font-size:15px;font-weight:700">什么是 IRT：从总分到潜变量</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="数据处理" data-search="A02 数据清洗 全流程 常见的坑" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A02</span><span style="font-size:15px;font-weight:700">大规模问卷数据清洗全流程与常见的坑</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">数据处理</span></div>
+        <div data-item="c" data-theme="合作指南" data-search="A03 敏感数据不出门 保密 交付模式" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A03</span><span style="font-size:15px;font-weight:700">敏感数据「不出门」的专业分析交付模式</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">合作指南</span></div>
+        <div data-item="c" data-theme="工程与工具" data-search="A04 用R做IRT IRTC包 上手指南" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A04</span><span style="font-size:15px;font-weight:700">用 R 做 IRT：IRTC 包上手指南</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">工程与工具</span></div>
+        <div data-item="c" data-theme="IRT基础" data-search="A05 CTT与IRT全面对比 什么时候必须用IRT" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A05</span><span style="font-size:15px;font-weight:700">CTT 与 IRT 全面对比：什么时候必须用 IRT</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="调查统计" data-search="A06 抽样权重 完全指南 设计权重 无回答调整 校准" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A06</span><span style="font-size:15px;font-weight:700">抽样权重完全指南：设计权重、无回答调整与校准</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">调查统计</span></div>
+        <div data-item="c" data-theme="问卷量表" data-search="A07 信度 效度 证据体系" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A07</span><span style="font-size:15px;font-weight:700">信度与效度：一套完整的证据体系</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">问卷量表</span></div>
+        <div data-item="c" data-theme="问卷量表" data-search="A08 量表开发 全流程 构念定义 施测" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A08</span><span style="font-size:15px;font-weight:700">量表开发全流程：从构念定义到正式施测</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">问卷量表</span></div>
+        <div data-item="c" data-theme="IRT基础" data-search="A09 Rasch模型 专题 测量哲学" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A09</span><span style="font-size:15px;font-weight:700">Rasch 模型专题：测量哲学与实操</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="IRT基础" data-search="A10 多级计分 PCM RSM GPCM 怎么选" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A10</span><span style="font-size:15px;font-weight:700">多级计分模型：PCM、RSM 与 GPCM 怎么选</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="IRT基础" data-search="A11 潜在回归 背景变量 IRT模型" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A11</span><span style="font-size:15px;font-weight:700">潜在回归：背景变量如何进入 IRT 模型</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="IRT基础" data-search="A12 EAP MLE WLE 能力估计方法" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A12</span><span style="font-size:15px;font-weight:700">EAP、MLE、WLE：三种能力估计方法的差别</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="测验实务" data-search="A13 测验等值 链接 分数可比 锚题" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A13</span><span style="font-size:15px;font-weight:700">测验等值与链接：让不同卷子的分数可比</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">测验实务</span></div>
+        <div data-item="c" data-theme="测验实务" data-search="A14 DIF检测 公平 群体" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A14</span><span style="font-size:15px;font-weight:700">DIF 检测：保证测验对不同群体公平</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">测验实务</span></div>
+        <div data-item="c" data-theme="数据处理" data-search="A15 缺失数据 删除法 多重插补" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A15</span><span style="font-size:15px;font-weight:700">缺失数据处理：从删除法到多重插补</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">数据处理</span></div>
+        <div data-item="c" data-theme="数据处理" data-search="A16 不认真作答 检测 乱答" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A16</span><span style="font-size:15px;font-weight:700">不认真作答检测：方法清单与实操建议</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">数据处理</span></div>
+        <div data-item="c" data-theme="调查统计" data-search="A17 样本量规划 统计检验力" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A17</span><span style="font-size:15px;font-weight:700">样本量规划与统计检验力</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">调查统计</span></div>
+        <div data-item="c" data-theme="工程与工具" data-search="A18 百万级样本 IRT估计 内存 速度 工程化" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A18</span><span style="font-size:15px;font-weight:700">百万级样本的 IRT 估计：内存与速度的工程化解法</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">工程与工具</span></div>
+        <div data-item="c" data-theme="IRT基础" data-search="A19 多维IRT 何时需要 怎么建模" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A19</span><span style="font-size:15px;font-weight:700">多维 IRT：何时需要、怎么建模</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">IRT基础</span></div>
+        <div data-item="c" data-theme="测验实务" data-search="A20 标准设定 Angoff Bookmark 划线方法 合格线" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A20</span><span style="font-size:15px;font-weight:700">标准设定：Angoff、Bookmark 等划线方法</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">测验实务</span></div>
+        <div data-item="c" data-theme="数据处理" data-search="A21 调查数据质量控制 体系 设计到发布" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A21</span><span style="font-size:15px;font-weight:700">调查数据质量控制体系：从设计到发布</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">数据处理</span></div>
+        <div data-item="c" data-theme="工程与工具" data-search="A22 R包开发 从零到发布 统计工具" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A22</span><span style="font-size:15px;font-weight:700">R 包开发从零到发布：一个统计工具的诞生</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">工程与工具</span></div>
+        <div data-item="c" data-theme="工程与工具" data-search="A23 可复现研究 工作流 R Git 自动化测试" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A23</span><span style="font-size:15px;font-weight:700">可复现研究工作流：R + Git + 自动化测试</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">工程与工具</span></div>
+        <div data-item="c" data-theme="调查统计" data-search="A24 校准加权 样本结构匹配总体 数学方法" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A24</span><span style="font-size:15px;font-weight:700">校准加权：让样本结构匹配总体的数学方法</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">调查统计</span></div>
+        <div data-item="c" data-theme="调查统计" data-search="A25 小样本单元合并 分级比例 稳健处理" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A25</span><span style="font-size:15px;font-weight:700">小样本单元合并：分级比例统计的稳健处理</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">调查统计</span></div>
+        <div data-item="c" data-theme="测验实务" data-search="A26 素养类测评 方法学要点" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A26</span><span style="font-size:15px;font-weight:700">素养类测评的方法学要点：能力不是问对几道题</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">测验实务</span></div>
+        <div data-item="c" data-theme="合作指南" data-search="A27 甲方指南 外部数据分析团队 高效合作" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A27</span><span style="font-size:15px;font-weight:700">甲方指南：如何与外部数据分析团队高效合作</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">合作指南</span></div>
+        <div data-item="c" data-theme="工程与工具" data-search="A28 统计软件凭什么可信 自动化测试 诚实的失败" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A28</span><span style="font-size:15px;font-weight:700">统计软件凭什么可信：自动化测试与诚实的失败</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">工程与工具</span></div>
+        <div data-item="c" data-theme="测验实务" data-search="A29 CAT 自适应测验 原理 题库 实施条件" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #DDD8CA;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A29</span><span style="font-size:15px;font-weight:700">CAT 自适应测验：原理、题库与实施条件</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">测验实务</span></div>
+        <div data-item="c" data-theme="合作指南" data-search="A30 从问卷到报告 大型调查 完整旅程" style="display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:15px 8px;border-bottom:1px solid #1A1914;transition:background .25s" style-hover="background:#F3F0E6"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;color:#2440C8">A30</span><span style="font-size:15px;font-weight:700">从问卷到报告：一次大型调查数据分析的完整旅程</span><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 9px">合作指南</span></div>
+      </div>
+      <div data-empty-note style="display:none;padding:44px 0;text-align:center;font-size:14px;color:#8A857A">没有找到相关篇目——换个关键词试试，或查 <a href="methods.html" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8">方法百科</a> 的概念词条。</div>
+      <div style="margin-top:26px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* 全部 80 篇均可在本站阅读——点击任意条目打开全文。</div>
+      <div style="margin-top:34px;border:1px solid #1A1914;padding:22px 26px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start">
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8;border:1px solid #2440C8;padding:5px 10px;white-space:nowrap">版权声明</span>
+        <p style="margin:0;font-size:12.5px;line-height:2;color:#4B4840">本站全部文章（含《IRT 人人都懂说明书》与专栏长文）系惟安数据科技（北京）有限公司原创内容，作者马崑翔，受《中华人民共和国著作权法》保护。未经书面授权，任何单位或个人不得以转载、摘编、镜像、翻译或建立数据库等方式使用，不得用于任何商业用途。个人学习分享请注明作者与出处，并附本站链接。授权与合作：<a href="mailto:contact@weiandata.com" target="_top" style="color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">contact@weiandata.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" style="background:#2440C8;color:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:end">
+      <div>
+        <h2 data-rv style="margin:0 0 28px;font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:-.01em;line-height:1.25">读完还有问题？<br>项目上需要有人把关？</h2>
+        <a data-rv href="mailto:contact@weiandata.com" target="_top" style="display:inline-block;background:#FAF8F2;color:#2440C8;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,0,0,.4)">发送邮件洽谈 →</a>
+      </div>
+      <div data-rv style="font-size:13.5px;line-height:2.2;color:#C6D0F5;border-left:1px solid rgba(250,248,242,.3);padding-left:28px">
+        前期可行性评估<b style="color:#FAF8F2">免费</b>。<br>
+        这些方法落地成的软件见<a href="tools.html" style="color:#FAF8F2;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(250,248,242,.5)" style-hover="border-color:#FAF8F2">工具案例</a>。<br><br>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>惟安数据科技（北京）有限公司 · WEIAN DATA · 本站文章均为原创，未经授权禁止转载</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">首页</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">工具案例</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">方法百科</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">联系合作</a></span>
+      <span>© 2026 · All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;高&quot;, &quot;克制&quot;], &quot;default&quot;: &quot;高&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;动效&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === '克制');
+    this.q = '';
+    this.theme = 'all';
+    this.setupSearch();
+    this.setupChips();
+    this.setupCtaFeedback();
+    this.setupReveals();
+    this.setupItemLinks();
+  }
+  setupItemLinks() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-item]'), function (el) {
+      var numEl = el.querySelector('span');
+      if (!numEl) return;
+      var raw = numEl.textContent.trim();
+      var id = el.getAttribute('data-item') === 'm' ? ('M' + raw) : raw;
+      if (!/^[MA]\d{2}$/.test(id)) return;
+      el.style.cursor = 'pointer';
+      el.setAttribute('title', '点击阅读全文');
+      el.addEventListener('click', function () { window.location.href = 'article.html?id=' + id; });
+    });
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+    if (this.box && this.onInput) this.box.removeEventListener('input', this.onInput);
+  }
+
+  setupSearch() {
+    var self = this;
+    this.box = document.querySelector('[data-searchbox]');
+    if (!this.box) return;
+    this.onInput = function () {
+      self.q = self.box.value || '';
+      self.applyFilters();
+    };
+    this.box.addEventListener('input', this.onInput);
+  }
+
+  setupChips() {
+    var self = this;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function (btn) {
+      btn.addEventListener('click', function () {
+        self.theme = btn.getAttribute('data-chip');
+        Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function (b) {
+          var active = b.getAttribute('data-chip') === self.theme;
+          b.style.background = active ? '#1A1914' : 'transparent';
+          b.style.color = active ? '#FAF8F2' : '#1A1914';
+        });
+        self.applyFilters();
+      });
+    });
+  }
+
+  applyFilters() {
+    var q = this.q.trim().toLowerCase();
+    var theme = this.theme;
+    var mShown = 0, cShown = 0;
+    /* 说明书条目 */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-item="m"]'), function (el) {
+      var ok = !q || (el.getAttribute('data-search') + el.textContent).toLowerCase().indexOf(q) >= 0;
+      el.style.display = ok ? 'flex' : 'none';
+      if (ok) mShown++;
+    });
+    /* 模块卡：无匹配则整卡隐藏 */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-mcard]'), function (card) {
+      var any = false;
+      Array.prototype.forEach.call(card.querySelectorAll('[data-item="m"]'), function (el) {
+        if (el.style.display !== 'none') any = true;
+      });
+      card.style.display = any ? '' : 'none';
+    });
+    /* 长文条目 */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-item="c"]'), function (el) {
+      var tOk = theme === 'all' || el.getAttribute('data-theme') === theme;
+      var qOk = !q || (el.getAttribute('data-search') + el.textContent).toLowerCase().indexOf(q) >= 0;
+      var ok = tOk && qOk;
+      el.style.display = ok ? 'grid' : 'none';
+      if (ok) cShown++;
+    });
+    /* 区块显隐与提示 */
+    var secM = document.querySelector('[data-sec-manual]');
+    var secC = document.querySelector('[data-sec-columns]');
+    var paths = document.querySelector('[data-paths]');
+    if (secM) secM.style.display = (q && mShown === 0) ? 'none' : '';
+    if (secC) secC.style.display = (q && cShown === 0 && mShown > 0) ? 'none' : '';
+    if (paths) paths.style.display = q ? 'none' : '';
+    var note = document.querySelector('[data-result-note]');
+    if (note) {
+      note.style.visibility = q ? 'visible' : 'hidden';
+      note.textContent = '找到 ' + (mShown + cShown) + ' 篇';
+    }
+    var empty = document.querySelector('[data-empty-note]');
+    if (empty) empty.style.display = ((q && mShown + cShown === 0) || (!q && cShown === 0)) ? 'block' : 'none';
+  }
+
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+
+  setupReveals() {
+    if (this.low || !('IntersectionObserver' in window)) return;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.08 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

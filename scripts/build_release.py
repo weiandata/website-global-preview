@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = (
     "_headers",
+    "_redirects",
     "404.html",
     "article.html",
     "index.html",
@@ -55,7 +56,7 @@ def public_files() -> list[Path]:
     files = [ROOT / relative for relative in ROOT_FILES]
     files.extend((ROOT / "articles").glob("*.md"))
     files.extend((ROOT / "articles-en").glob("*.md"))
-    files.extend((ROOT / "en").glob("*.html"))
+    files.extend((ROOT / "zh").glob("*.html"))
     files.extend(
         path
         for path in (ROOT / "assets").rglob("*")

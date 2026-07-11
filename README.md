@@ -21,9 +21,9 @@ manager, or repository-level runtime dependency.
 ├── articles-en/    # English Markdown articles: A01-A30 and M01-M50
 ├── assets/         # Reserved for locally hosted fonts, images, and vendors
 ├── docs/           # Architecture, dependency, migration, and deployment docs
-├── en/             # English HTML pages
+├── zh/             # Chinese HTML pages
 ├── scripts/        # Repository validation utilities
-├── index.html      # Chinese homepage
+├── index.html      # English homepage (site default)
 ├── tools.html
 ├── methods.html
 ├── learn.html
@@ -36,13 +36,13 @@ manager, or repository-level runtime dependency.
 
 ## Pages
 
-| Chinese | English |
+| English (default) | Chinese |
 | --- | --- |
-| [Home](index.html) | [Home](en/index.html) |
-| [Tools and cases](tools.html) | [Tools and cases](en/tools.html) |
-| [Methods](methods.html) | [Methods](en/methods.html) |
-| [Learning hub](learn.html) | [Learning hub](en/learn.html) |
-| [Article reader](article.html) | [Article reader](en/article.html) |
+| [Home](index.html) | [Home](zh/index.html) |
+| [Tools and cases](tools.html) | [Tools and cases](zh/tools.html) |
+| [Methods](methods.html) | [Methods](zh/methods.html) |
+| [Learning hub](learn.html) | [Learning hub](zh/learn.html) |
+| [Article reader](article.html) | [Article reader](zh/article.html) |
 
 ## Local Preview
 
@@ -65,7 +65,7 @@ Both libraries use matching identifiers:
 - `M01.md` through `M50.md` for methods notes.
 
 The article readers select content with an `id` query parameter, for example
-`/article?id=A01` and `/en/article?id=A01`. Keep identifiers aligned
+`/article?id=A01` (English) and `/zh/article?id=A01` (Chinese). Keep identifiers aligned
 between languages when adding or renaming content.
 
 ## Validation
@@ -87,14 +87,14 @@ Source is hosted in GitHub and production is published outside mainland China
 through Cloudflare Pages' native Git integration. Pages runs
 `python3 scripts/build_release.py --output dist` and publishes `dist`. The
 release builder copies only public website files, including the Pages
-`_headers` policy; repository documentation and development files are excluded.
+`_headers` and `_redirects` policies; repository documentation and development files are excluded.
 See [deployment guidance](docs/deployment.md) for the exact dashboard, domain,
 branch, verification, and rollback settings.
 
 ## SEO and Discovery
 
 - `robots.txt` publishes the production sitemap location.
-- `sitemap.xml` lists the five normalized routes in both languages.
+- `sitemap.xml` lists the five normalized routes in both languages (English at the root, Chinese under `/zh/`).
 - `llms.txt` describes the company and public website sections.
 - Every HTML page declares a canonical URL on `global.weiandata.com`.
 

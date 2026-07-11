@@ -1,0 +1,50 @@
+/* mobile.css — phone-only overrides (incl. WeChat in-app browser X5/WKWebView).
+   Every rule lives inside @media (max-width:768px); desktop rendering is untouched. */
+@media (max-width: 768px) {
+  body { overflow-x: hidden; }
+  body { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  img, svg { max-width: 100%; }
+
+  /* content containers: 40px gutters -> 20px */
+  [style*="max-width:1280px"], [style*="max-width: 1280px"] { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* multi-column grids collapse to a single column */
+  [style*="grid-template-columns:1fr 2fr"], [style*="grid-template-columns: 1fr 2fr"], [style*="grid-template-columns:1fr 2.2fr"], [style*="grid-template-columns: 1fr 2.2fr"], [style*="grid-template-columns:1.5fr 1fr"], [style*="grid-template-columns: 1.5fr 1fr"], [style*="grid-template-columns:repeat(4,1fr)"], [style*="grid-template-columns: repeat(4, 1fr)"], [style*="grid-template-columns:repeat(3,1fr)"], [style*="grid-template-columns: repeat(3, 1fr)"], [style*="grid-template-columns:repeat(5,1fr)"], [style*="grid-template-columns: repeat(5, 1fr)"], [style*="grid-template-columns:repeat(2,1fr)"], [style*="grid-template-columns: repeat(2, 1fr)"], [style*="grid-template-columns:1fr auto 1fr"], [style*="grid-template-columns: 1fr auto 1fr"], [style*="grid-template-columns:1fr auto 1.2fr"], [style*="grid-template-columns: 1fr auto 1.2fr"], [style*="grid-template-columns:90px 1fr 1.4fr auto"], [style*="grid-template-columns: 90px 1fr 1.4fr auto"] { grid-template-columns: 1fr !important; }
+
+  /* compact sticky header: hide same-page anchors (except contact CTA) and divider */
+  header nav a[href^="#"]:not([href="#contact"]) { display: none !important; }
+  header nav span[style*="width:1px"], header nav span[style*="width: 1px"] { display: none !important; }
+  header nav { gap: 8px 10px !important; font-size: 12.5px !important; }
+  header nav a[style*="border"] { padding: 5px 10px !important; }
+  header [style*="max-width:1280px"], header [style*="max-width: 1280px"] { padding-left: 14px !important; padding-right: 14px !important; }
+
+  /* soften very tall section paddings */
+  [style*="padding:96px 40px 100px"], [style*="padding: 96px 40px 100px"] { padding: 56px 20px 60px !important; }
+  [style*="padding:84px 40px 90px"], [style*="padding: 84px 40px 90px"] { padding: 52px 20px 56px !important; }
+  [style*="padding:80px 40px 86px"], [style*="padding: 80px 40px 86px"] { padding: 50px 20px 54px !important; }
+  [style*="padding:72px 40px 80px"], [style*="padding: 72px 40px 80px"] { padding: 46px 20px 50px !important; }
+  [style*="padding:72px 40px 0"], [style*="padding: 72px 40px 0"] { padding: 44px 20px 0 !important; }
+  [style*="padding:64px 40px 70px"], [style*="padding: 64px 40px 70px"] { padding: 42px 20px 46px !important; }
+  [style*="padding:64px 40px 56px"], [style*="padding: 64px 40px 56px"] { padding: 42px 20px 40px !important; }
+
+  /* hero flow diagram: absolute labels stack below the canvas instead of overlapping */
+  canvas[data-flow] { height: 170px !important; }
+  canvas[data-flow] ~ div { position: static !important; transform: none !important; padding: 3px 20px; text-align: left !important; }
+  canvas[data-flow] ~ div:last-of-type { padding-bottom: 12px; }
+
+  /* sticky case-header side columns become normal flow in single-column layout */
+  [style*="position:sticky;top:96px"], [style*="position: sticky; top: 96px"] { position: static !important; }
+
+  /* article/method list rows: tag chip wraps below the title */
+  [style*="grid-template-columns:64px 1fr auto"], [style*="grid-template-columns: 64px 1fr auto"] { grid-template-columns: 44px 1fr !important; }
+  [style*="grid-template-columns:64px 1fr auto"] > :nth-child(3), [style*="grid-template-columns: 64px 1fr auto"] > :nth-child(3) { grid-column: 2; justify-self: start; }
+
+  /* vertical side-labels read horizontally on phones */
+  [style*="writing-mode:vertical"], [style*="writing-mode: vertical"] { writing-mode: horizontal-tb !important; transform: none !important; }
+
+  /* long content: tables, code, and KaTeX scroll inside the page instead of stretching it */
+  table { display: block; max-width: 100%; overflow-x: auto; }
+  pre { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .katex-display { overflow-x: auto; overflow-y: hidden; }
+  .katex { font-size: 1em !important; }
+}

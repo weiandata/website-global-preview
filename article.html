@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/mobile.css">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-<title>文章 — 惟安学习中心｜惟安数据科技 WEIAN DATA</title>
-<meta name="description" content="惟安学习中心文章：IRT 与大规模调查数据处理的系统性讲解，含《IRT 人人都懂说明书》与进阶专栏长文。">
+<title>Article — WEIAN Learning Hub | WEIAN DATA</title>
+<meta name="description" content="WEIAN Learning Hub articles: a systematic, plain-language guide to IRT and large-scale survey data processing.">
 <link rel="canonical" href="https://global.weiandata.com/article">
-<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/article">
-<link rel="alternate" hreflang="en" href="https://global.weiandata.com/en/article">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/article">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/article">
 <link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/article">
 <script src="./support.js"></script>
 </head>
@@ -21,11 +22,11 @@
 <script src="/assets/vendor/katex/katex.min.js"></script>
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
 ::selection{background:#2440C8;color:#fff}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
 @keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(36,64,200,.5);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(36,64,200,0);transform:scale(1)}}
-.art{font-size:15.5px;line-height:2.05;color:#2E2C24}
+.art{font-size:15.5px;line-height:1.95;color:#2E2C24}
 .art h2{font-size:25px;font-weight:900;margin:46px 0 16px;letter-spacing:-.01em;color:#1A1914;line-height:1.4}
 .art h3{font-size:19px;font-weight:700;margin:34px 0 12px;color:#1A1914;line-height:1.5}
 .art h4{font-size:16px;font-weight:700;margin:28px 0 10px;color:#1A1914}
@@ -44,78 +45,78 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
 .art th{background:#F3F0E6;font-weight:700}
 .art a{color:#2440C8}
 .art strong{color:#1A1914}
-.art em{font-style:normal;border-bottom:2px solid rgba(36,64,200,.25)}
+.art em{font-style:italic}
 .art hr{border:none;border-top:1px solid #DDD8CA;margin:36px 0}
 </style>
 </helmet>
 
-<div style="min-height:100vh" data-screen-label="文章阅读">
+<div style="min-height:100vh" data-screen-label="Article EN">
 
   <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
     <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
       <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
-        <svg viewBox="0 0 742 868" role="img" aria-label="惟安 logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoR)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
-        <span style="font-weight:900;font-size:17px;letter-spacing:1px">惟安数据科技</span>
-        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">WEIAN&nbsp;DATA</span>
+        <svg viewBox="0 0 742 868" role="img" aria-label="WEIAN logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoAE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoAE)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">WEIAN DATA</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">惟安数据科技</span>
       </a>
-      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:20px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
-        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">首页</a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:18px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">Home</a>
         <span style="width:1px;height:16px;background:#DDD8CA"></span>
-        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">工具案例</a>
-        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">方法百科</a>
-        <a href="learn.html" style="color:#FAF8F2;background:#1A1914;text-decoration:none;padding:6px 13px;border:1px solid #1A1914" style-hover="background:#2440C8;border-color:#2440C8">学习中心</a>
-        <a data-en-link href="en/article.html" title="Read in English" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">EN</a>
-        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">联系合作</a>
+        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Tools &amp; Cases</a>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Methods</a>
+        <a href="learn.html" style="color:#FAF8F2;background:#1A1914;text-decoration:none;padding:6px 13px;border:1px solid #1A1914" style-hover="background:#2440C8;border-color:#2440C8">Learn</a>
+        <a data-cn-link href="zh/article.html" title="阅读中文版" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">中文</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- 文章头 -->
+  <!-- Article head -->
   <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
     <div style="max-width:920px;margin:0 auto;padding:52px 40px 44px">
-      <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:22px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">首页</a> / <a href="learn.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">学习中心</a> / 正文</div>
-      <div data-art-badge style="display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8;border:1px solid #2440C8;padding:5px 12px;margin-bottom:20px">加载中</div>
-      <h1 data-art-title style="margin:0 0 18px;font-size:clamp(26px,3.4vw,42px);line-height:1.35;font-weight:900;letter-spacing:-.01em">正在加载文章…</h1>
+      <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:22px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">HOME</a> / <a href="learn.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">LEARNING HUB</a> / ARTICLE</div>
+      <div data-art-badge style="display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8;border:1px solid #2440C8;padding:5px 12px;margin-bottom:20px">Loading</div>
+      <h1 data-art-title style="margin:0 0 18px;font-size:clamp(26px,3.4vw,42px);line-height:1.3;font-weight:900;letter-spacing:-.01em">Loading article…</h1>
       <div data-art-meta style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#8A857A"></div>
     </div>
   </section>
 
-  <!-- 正文 -->
+  <!-- Body -->
   <section>
     <div style="max-width:920px;margin:0 auto;padding:48px 40px 64px">
       <div data-art class="art">
-        <p style="color:#8A857A">正在加载文章内容…</p>
+        <p style="color:#8A857A">Loading article content…</p>
       </div>
       <div style="margin-top:40px;background:#F3F0E6;border-left:3px solid #2440C8;padding:16px 22px">
-        <p style="margin:0;font-size:12px;line-height:2;color:#4B4840"><b style="color:#1A1914">版权声明</b>　本文系惟安数据科技（北京）有限公司原创内容，作者马崑翔，受《中华人民共和国著作权法》保护。未经书面授权禁止转载、摘编、镜像或用于商业用途；个人学习分享请注明作者与出处，并附本站链接。授权与合作：<a href="mailto:contact@weiandata.com" target="_top" style="color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">contact@weiandata.com</a></p>
+        <p style="margin:0;font-size:12px;line-height:2;color:#4B4840"><b style="color:#1A1914">Copyright</b>　This article is an original work of WEIAN Data Technology (Beijing) Co., Ltd., authored by Ma Kunxiang, protected under the Copyright Law of the People's Republic of China. Reproduction, adaptation, mirroring, or commercial use without written permission is prohibited; for personal sharing, please credit the author and link back to this site. Licensing: <a href="mailto:contact@weiandata.com" target="_top" style="color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">contact@weiandata.com</a></p>
       </div>
       <div style="margin-top:32px;border-top:1px solid #1A1914;padding-top:24px;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center">
         <a data-prev href="#" style="display:block;text-decoration:none;color:#1A1914;border:1px solid #DDD8CA;padding:16px 20px;transition:border-color .25s,background .25s" style-hover="border-color:#2440C8;background:#F3F0E6">
-          <span style="display:block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#8A857A;margin-bottom:6px">← 上一篇</span>
+          <span style="display:block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#8A857A;margin-bottom:6px">← PREVIOUS</span>
           <span data-prev-label style="font-size:13.5px;font-weight:700;line-height:1.5"></span>
         </a>
-        <a href="learn.html" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px;white-space:nowrap" style-hover="color:#1A1914;border-color:#1A1914">返回学习中心</a>
+        <a href="learn.html" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px;white-space:nowrap" style-hover="color:#1A1914;border-color:#1A1914">Back to Learning Hub</a>
         <a data-next href="#" style="display:block;text-decoration:none;color:#1A1914;border:1px solid #DDD8CA;padding:16px 20px;text-align:right;transition:border-color .25s,background .25s" style-hover="border-color:#2440C8;background:#F3F0E6">
-          <span style="display:block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#8A857A;margin-bottom:6px">下一篇 →</span>
+          <span style="display:block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#8A857A;margin-bottom:6px">NEXT →</span>
           <span data-next-label style="font-size:13.5px;font-weight:700;line-height:1.5"></span>
         </a>
       </div>
-      <div style="margin-top:18px;text-align:center;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#A9A48F">提示：键盘 ← / → 可切换上下篇</div>
+      <div style="margin-top:18px;text-align:center;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#A9A48F">Tip: use ← / → keys to move between articles</div>
     </div>
   </section>
 
-  <!-- 轻 CTA -->
+  <!-- Light CTA -->
   <section id="contact" style="background:#F3F0E6;border-top:1px solid #1A1914">
     <div style="max-width:920px;margin:0 auto;padding:34px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
-      <span style="font-size:14px;color:#4B4840">读完还有问题，或项目上需要有人把关？<b style="color:#1A1914">前期评估免费。</b></span>
-      <a href="mailto:contact@weiandata.com" target="_top" style="background:#2440C8;color:#FAF8F2;text-decoration:none;font-size:14px;font-weight:700;padding:11px 24px;transition:background .25s" style-hover="background:#1A1914">发送邮件洽谈 →</a>
+      <span style="font-size:14px;color:#4B4840">Questions after reading, or need an expert on your project? <b style="color:#1A1914">Initial assessment is free.</b></span>
+      <a href="mailto:contact@weiandata.com" target="_top" style="background:#2440C8;color:#FAF8F2;text-decoration:none;font-size:14px;font-weight:700;padding:11px 24px;transition:background .25s" style-hover="background:#1A1914">Email us →</a>
     </div>
   </section>
 
   <footer style="background:#FAF8F2;border-top:1px solid #1A1914">
     <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
-      <span>惟安数据科技（北京）有限公司 · WEIAN DATA · 本站文章均为原创，未经授权禁止转载</span>
-      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">首页</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">工具案例</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">方法百科</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">学习中心</a></span>
+      <span>WEIAN Data Technology (Beijing) Co., Ltd. · All articles original; reproduction prohibited without permission</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Home</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Tools &amp; Cases</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Methods</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Learning Hub</a></span>
       <span>© 2026 · All rights reserved</span>
     </div>
   </footer>
@@ -125,9 +126,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount() {
-    this.MT = ['IRT 到底是个啥？——用「考试」和「体重秤」讲清楚', '从「数对几题」到「看清能力」：总分法的坑', '题目也有「脾气」：难度和区分度到底在说什么', '能力（θ）这个看不见的东西，是怎么「量」出来的', 'IRT 和我们平时说的「打分」到底哪里不一样', 'IRT 家族全家福：1PL、2PL、3PL、GRM 都是谁', '我们为什么用 IRT？——一个业务视角的回答', '认识 IRT 的招牌曲线——项目特征曲线（ICC）', '曲线往左移、往右移，分别说明这道题怎么了', '曲线的「陡」与「缓」：区分度在图上长什么样', '那条「抬不起头」的曲线——猜测参数 c', '信息函数曲线：这道题在哪一段人群最好用', '测验信息曲线：整份问卷到底「擅长」测什么样的人', '能力量尺上的 −3 到 +3 是什么意思', 'Wright Map（怀特图）：把「人」和「题」放到同一把尺子上看', '「潜变量」是什么？为什么它看不见却测得到', '「单维」和「多维」：一份问卷到底在测几样东西', '「局部独立」：为什么题目之间不能「串通作弊」', '「参数估计」：机器到底是怎么「猜」出这些数的', '「似然」和「最大似然」：一个像侦探破案的概念', '「标准误」：每个估计值背后都跟着一个「误差范围」', '「拟合优度」：模型和数据到底「合不合得来」', '「DIF」（项目功能差异）：同一道题，对不同人公平吗', '「信度」在 IRT 里的新面孔——它会随着人而变', '缩写速查卡：θ、a、b、c、ICC、TIF、IIF 一次记牢', 'IRT 的三大过人之处，一句话各讲一个', 'IRT 最被低估的优点：题目和人可以「分家」', '计算机自适应测验（CAT）：IRT 怎么让考试「越考越懂你」', 'IRT 不是万能的：它背后有哪些前提假设', '样本量不够会怎样？——IRT 的「饭量」问题', '什么时候干脆别用 IRT？——一份诚实的边界清单', '跑一次 IRT，到底需要多好的电脑', 'R 是什么？为什么做 IRT 的人几乎都在用它', '不写代码行不行？——IRT 的图形界面选择', '常用 R 包点名：mirt、ltm、TAM 各自负责什么', '一次完整 IRT 分析的标准流程长什么样（不含代码版）', '数据要长成什么样，才能「喂」给 IRT', '缺失值、废卷、乱答：脏数据到底怎么办', '拿到一张参数表，先看哪几列', '难度 b 和区分度 a：怎么判断一道题「好不好」', '怎么从结果里挑出该删掉的「坏题」', '分数报告：把 θ 翻译成客户看得懂的人话', 'IRT 怎么帮我们把问卷「缩短」却不掉精度', '建立题库：IRT 怎么让不同批次的题变得「可比」', '把 IRT 结果讲给不懂技术的老板 / 客户听', '区分度居然是负的？——多半是这几个原因', '模型不拟合怎么办：先别慌，照这张清单查', '结果和「常识 / 经验」打架，到底该信谁', '参数估计「飞了」（跑出极端值）说明什么', '结语：读完这 50 篇，普通人现在能做什么'];
-    this.AT = ['什么是 IRT：从总分到潜变量', '大规模问卷数据清洗全流程与常见的坑', '敏感数据「不出门」的专业分析交付模式', '用 R 做 IRT：IRTC 包上手指南', 'CTT 与 IRT 全面对比：什么时候必须用 IRT', '抽样权重完全指南：设计权重、无回答调整与校准', '信度与效度：一套完整的证据体系', '量表开发全流程：从构念定义到正式施测', 'Rasch 模型专题：测量哲学与实操', '多级计分模型：PCM、RSM 与 GPCM 怎么选', '潜在回归：背景变量如何进入 IRT 模型', 'EAP、MLE、WLE：三种能力估计方法的差别', '测验等值与链接：让不同卷子的分数可比', 'DIF 检测：保证测验对不同群体公平', '缺失数据处理：从删除法到多重插补', '不认真作答检测：方法清单与实操建议', '样本量规划与统计检验力', '百万级样本的 IRT 估计：内存与速度的工程化解法', '多维 IRT：何时需要、怎么建模', '标准设定：Angoff、Bookmark 等划线方法', '调查数据质量控制体系：从设计到发布', 'R 包开发从零到发布：一个统计工具的诞生', '可复现研究工作流：R + Git + 自动化测试', '校准加权：让样本结构匹配总体的数学方法', '小样本单元合并：分级比例统计的稳健处理', '素养类测评的方法学要点：能力不是问对几道题', '甲方指南：如何与外部数据分析团队高效合作', '统计软件凭什么可信：自动化测试与诚实的失败', 'CAT 自适应测验：原理、题库与实施条件', '从问卷到报告：一次大型调查数据分析的完整旅程'];
-    this.ATH = ['IRT基础', '数据处理', '合作指南', '工程与工具', 'IRT基础', '调查统计', '问卷量表', '问卷量表', 'IRT基础', 'IRT基础', 'IRT基础', 'IRT基础', '测验实务', '测验实务', '数据处理', '数据处理', '调查统计', '工程与工具', 'IRT基础', '测验实务', '数据处理', '工程与工具', '工程与工具', '调查统计', '调查统计', '测验实务', '合作指南', '工程与工具', '测验实务', '合作指南'];
+    this.MT = ['What IRT even is — explained with exams and bathroom scales', 'The pitfalls of total scores', 'Items have personalities: difficulty and discrimination', 'Measuring the invisible: how ability (θ) is estimated', 'How IRT differs from ordinary scoring', 'The IRT family portrait: 1PL, 2PL, 3PL, GRM', 'Why we use IRT: a business answer', 'The signature curve: the ICC', 'What curve shifts left and right mean', 'Steep vs. flat: discrimination on the chart', 'The curve that can\u2019t get up: guessing parameter c', 'Item information: where an item works best', 'Test information: who your test measures well', 'What \u22123 to +3 means on the ability scale', 'The Wright map: people and items on one ruler', 'What a latent variable is', 'Unidimensional vs. multidimensional', 'Local independence: why items can\u2019t collude', 'Parameter estimation: how the machine \u201cguesses\u201d', 'Likelihood and maximum likelihood', 'Standard errors: the margin behind every estimate', 'Goodness of fit: do model and data get along', 'DIF: is an item fair to different groups', 'Reliability\u2019s new face in IRT', 'Cheat sheet: θ, a, b, c, ICC, TIF, IIF', 'IRT\u2019s three superpowers, one line each', 'The underrated strength: items and people can separate', 'CAT: tests that adapt to you', 'The assumptions behind IRT', 'Sample size: IRT\u2019s appetite', 'When not to use IRT: an honest checklist', 'What computer you need to run IRT', 'What is R, and why IRT people use it', 'Can you avoid coding? GUI options for IRT', 'Common R packages: mirt, ltm, TAM', 'A standard IRT analysis workflow (no code)', 'What your data must look like', 'Missing, junk, careless: handling dirty data', 'Reading a parameter table: which columns first', 'Judging an item by difficulty b and discrimination a', 'Picking out the bad items', 'Score reports: translating θ into plain language', 'Shortening questionnaires without losing precision', 'Item banks: making batches comparable', 'Explaining IRT results to non-technical bosses and clients', 'Negative discrimination? The likely causes', 'Model misfit: a calm checklist', 'Results vs. common sense: which to trust', 'Runaway parameter estimates: what they mean', 'Epilogue: what you can do after 50 articles'];
+    this.AT = ['What is IRT: from total scores to latent variables', 'Cleaning large-scale questionnaire data: the full pipeline and common traps', 'Professional analysis delivery where sensitive data never leaves', 'IRT in R: getting started with the IRTC package', 'CTT vs. IRT, compared thoroughly: when IRT becomes necessary', 'A complete guide to sampling weights: design weights, nonresponse adjustment, calibration', 'Reliability and validity: a complete evidence framework', 'Scale development end to end: from construct definition to formal administration', 'The Rasch model: measurement philosophy and practice', 'Polytomous models: choosing among PCM, RSM, and GPCM', 'Latent regression: how background variables enter IRT models', 'EAP, MLE, WLE: three ability estimators and how they differ', 'Equating and linking: making scores from different forms comparable', 'DIF detection: quality inspection for test fairness', 'Missing data: from deletion methods to multiple imputation', 'Detecting careless responding: a method inventory with practical advice', 'Sample size planning and statistical power', 'Million-scale IRT estimation: engineering answers to memory and speed', 'Multidimensional IRT: when you need it and how to model it', 'Standard setting: Angoff, Bookmark, and other cut-score methods', 'A quality-control system for survey data: from design to release', 'R package development from zero to release: the birth of a statistical tool', 'A reproducible research workflow: R + Git + automated tests', 'Calibration weighting: the mathematics of matching sample to population', 'Merging sparse cells: robust tabulation of graded proportions', 'Methodology for literacy-style assessments', 'A client\u2019s guide to working with an external data-analysis team', 'Why trust statistical software: automated tests and honest failure', 'Computerized adaptive testing: principles, item banks, and prerequisites', 'From questionnaire to report: the full journey of a large survey analysis'];
+    this.ATH = ['IRT basics', 'Data processing', 'Working with us', 'Engineering', 'IRT basics', 'Survey statistics', 'Scales', 'Scales', 'IRT basics', 'IRT basics', 'IRT basics', 'IRT basics', 'Testing practice', 'Testing practice', 'Data processing', 'Data processing', 'Survey statistics', 'Engineering', 'IRT basics', 'Testing practice', 'Data processing', 'Engineering', 'Engineering', 'Survey statistics', 'Survey statistics', 'Testing practice', 'Working with us', 'Engineering', 'Testing practice', 'Working with us'];
     var m = /[?&]id=([MA]\d{2})/.exec(window.location.search || '');
     this.id = m ? m[1] : 'M01';
     this.loadArticle();
@@ -155,23 +156,23 @@ class Component extends DCLogic {
   }
 
   moduleName(n) {
-    if (n <= 7) return '模块一 · 认识篇';
-    if (n <= 15) return '模块二 · 识图篇';
-    if (n <= 25) return '模块三 · 术语篇';
-    if (n <= 31) return '模块四 · 清醒篇';
-    if (n <= 38) return '模块五 · 落地篇';
-    if (n <= 45) return '模块六 · 应用篇';
-    if (n <= 49) return '模块七 · 急诊篇';
-    return '模块八 · 收尾';
+    if (n <= 7) return 'Module 1 · Basics';
+    if (n <= 15) return 'Module 2 · Reading charts';
+    if (n <= 25) return 'Module 3 · Terminology';
+    if (n <= 31) return 'Module 4 · Strengths & limits';
+    if (n <= 38) return 'Module 5 · In practice';
+    if (n <= 45) return 'Module 6 · Using results';
+    if (n <= 49) return 'Module 7 · Troubleshooting';
+    return 'Module 8 · Epilogue';
   }
 
   info(id) {
     var kind = id.charAt(0);
     var n = parseInt(id.slice(1), 10);
     if (kind === 'M') {
-      return { title: this.MT[n - 1] || id, badge: '零基础说明书 · ' + this.moduleName(n) + ' · 第 ' + (n < 10 ? '0' + n : n) + ' 篇', total: 50 };
+      return { title: this.MT[n - 1] || id, badge: 'BEGINNER GUIDE · ' + this.moduleName(n) + ' · No. ' + (n < 10 ? '0' + n : n) + ' of 50' };
     }
-    return { title: this.AT[n - 1] || id, badge: '专栏长文 · ' + id + ' · ' + (this.ATH[n - 1] || ''), total: 30 };
+    return { title: this.AT[n - 1] || id, badge: 'IN-DEPTH SERIES · ' + id + ' · ' + (this.ATH[n - 1] || '') };
   }
 
   neighbor(id, d) {
@@ -190,16 +191,15 @@ class Component extends DCLogic {
     var titleEl = document.querySelector('[data-art-title]');
     if (badge) badge.textContent = meta.badge;
     if (titleEl) titleEl.textContent = meta.title;
-    document.title = meta.title + ' — 惟安学习中心';
-    var en = document.querySelector('[data-en-link]');
-    if (en) en.href = 'en/article.html?id=' + id;
+    document.title = meta.title + ' — WEIAN Learning Hub';
+    var cn = document.querySelector('[data-cn-link]');
+    if (cn) cn.href = '../article.html?id=' + id;
     var _base = 'https://global.weiandata.com/';
     var _setHref = function (sel, url) { var el = document.querySelector(sel); if (el) el.setAttribute('href', url); };
-    _setHref('link[rel="canonical"]', _base + 'article?id=' + id);
+    _setHref('link[rel="canonical"]', _base + 'en/article?id=' + id);
     _setHref('link[hreflang="zh-CN"]', _base + 'article?id=' + id);
     _setHref('link[hreflang="en"]', _base + 'en/article?id=' + id);
     _setHref('link[hreflang="x-default"]', _base + 'article?id=' + id);
-    /* 上一篇 / 下一篇 */
     var pid = this.neighbor(id, -1), nid = this.neighbor(id, 1);
     var prevA = document.querySelector('[data-prev]'), nextA = document.querySelector('[data-next]');
     if (prevA) {
@@ -210,30 +210,31 @@ class Component extends DCLogic {
       if (nid) { nextA.href = 'article.html?id=' + nid; document.querySelector('[data-next-label]').textContent = nid + ' · ' + this.info(nid).title; }
       else nextA.style.visibility = 'hidden';
     }
-    fetch('articles/' + id + '.md').then(function (r) {
+    fetch('articles-en/' + id + '.md').then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.text();
     }).then(function (src) {
       self.render(src, meta);
     }).catch(function () {
       var host = document.querySelector('[data-art]');
-      if (host) host.innerHTML = '<p>文章加载失败。请<a href="learn.html">返回学习中心</a>重试。</p>';
+      if (host) host.innerHTML = '<p>Failed to load the article. Please <a href="learn.html">return to the Learning Hub</a> and try again.</p>';
     });
   }
 
   render(src, meta) {
     src = src.replace(/\r\n?/g, '\n');
-    /* 取正文标题（md 首个 H1），并从正文移除 */
     var h1m = /^#\s+(.+)$/m.exec(src);
     if (h1m) {
       var t = h1m[1].replace(/^[AM]?\d{1,2}\s*[·:：.、_-]\s*/, '').trim();
       var titleEl = document.querySelector('[data-art-title]');
       if (titleEl && t) titleEl.textContent = t;
-      document.title = (t || meta.title) + ' — 惟安学习中心';
+      document.title = (t || meta.title) + ' — WEIAN Learning Hub';
       src = src.replace(h1m[0], '');
     }
-    /* 内部编辑备注仅出现在 A 系列文章 H1 之后的首个引用块——按文章编号确定性移除；
-       M 系列文章的首个引用块是面向读者的导语，予以保留。中英文渲染逻辑保持一致。 */
+    /* Internal editorial notes appear only in the leading blockquote of A-series
+       articles (after the H1) — remove them deterministically by article id.
+       M-series articles open with a reader-facing intro blockquote, which is
+       preserved. Behavior matches the Chinese renderer. */
     var lines = src.split('\n');
     var i = 0;
     while (i < lines.length && lines[i].trim() === '') i++;
@@ -243,10 +244,9 @@ class Component extends DCLogic {
       lines.splice(i, j - i);
       src = lines.join('\n');
     }
-    /* 阅读时长 */
-    var chars = src.replace(/[#>*`\-\s]/g, '').length;
+    var words = (src.replace(/[#>*`\-]/g, '').match(/[A-Za-z']+/g) || []).length;
     var metaEl = document.querySelector('[data-art-meta]');
-    if (metaEl) metaEl.textContent = '全文约 ' + (Math.round(chars / 100) * 100) + ' 字 · 阅读约 ' + Math.max(2, Math.round(chars / 450)) + ' 分钟';
+    if (metaEl) metaEl.textContent = '~' + (Math.round(words / 100) * 100) + ' words · about ' + Math.max(2, Math.round(words / 220)) + ' min read';
     var host = document.querySelector('[data-art]');
     if (host) host.innerHTML = this.mdToHtml(src);
     this.renderMath(0);
@@ -279,7 +279,6 @@ class Component extends DCLogic {
       var mM = /^\u0000M(\d+)\u0000\s*$/.exec(ln);
       if (mC) { flushAll(); out.push('<pre><code>' + esc(codes[+mC[1]]) + '</code></pre>'); continue; }
       if (mM) { flushAll(); out.push('<div class="math" data-tex="' + escAttr(maths[+mM[1]]) + '"></div>'); continue; }
-      /* 表格 */
       if (/^\s*\|/.test(ln) && i + 1 < lines.length && /^\s*\|?[\s:\-|]+\|?\s*$/.test(lines[i + 1]) && lines[i + 1].indexOf('-') >= 0) {
         flushAll();
         var header = ln, rows = [];

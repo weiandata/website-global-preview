@@ -67,7 +67,8 @@ its distributed cache, and custom cache rules can serve stale deployments.
    loading through an HTTP server.
 3. Merge the reviewed commit into `main`.
 4. Confirm that the Pages production deployment built the expected commit.
-5. Verify `/`, `/en/`, the eight clean page routes, article loading, SEO files,
+5. Verify `/` (English), `/zh/`, the eight clean page routes, the legacy
+   `/en/*` 301 redirects, article loading, SEO files,
    the custom 404 status, response headers, custom-domain DNS, and the
    `pages.dev` redirect.
 

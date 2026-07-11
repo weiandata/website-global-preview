@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/css/mobile.css">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<title>方法百科｜惟安数据科技 WEIAN DATA</title>
+<meta name="description" content="用大白话讲清大型测评背后的方法：CTT 与 IRT、模型选择、等值链接、校准加权、小样本单元合并、DIF 检验——每个方法解决什么问题、做得不严谨时会错在哪。">
+<link rel="canonical" href="https://global.weiandata.com/zh/methods">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/methods">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/methods">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/methods">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(250,248,242,.75);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(250,248,242,0);transform:scale(1)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="方法百科">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="惟安 logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoM)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">惟安数据科技</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">WEIAN&nbsp;DATA</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:20px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">首页</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">工具案例</a>
+        <span style="color:#FAF8F2;background:#1A1914;padding:6px 13px;border:1px solid #1A1914">方法百科</span>
+        <a href="learn.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">学习中心</a>
+        <a href="../methods.html" title="Switch to English" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">EN</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">联系合作</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页首 -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">首页</a> / 方法百科</div>
+      <h1 data-rv style="margin:0 0 24px;font-size:clamp(36px,4.8vw,64px);line-height:1.1;font-weight:900;letter-spacing:-.02em;max-width:980px">大型测评背后的方法，<br>用<span style="color:#2440C8">大白话</span>讲清</h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:600px">让您清楚自己买的是什么：每个方法解决什么问题、为什么重要、做得不严谨时会错在哪。</p>
+      <div data-rv style="display:flex;flex-wrap:wrap;gap:10px;margin-top:36px">
+        <a href="#ctt-irt" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§1 CTT 与 IRT</a>
+        <a href="#models" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§2 模型选择</a>
+        <a href="#equating" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§3 等值链接</a>
+        <a href="#weighting" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§4 校准加权</a>
+        <a href="#merging" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§5 单元合并</a>
+        <a href="#dif" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§6 DIF 检验</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- §1 -->
+  <article id="ctt-irt" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 1 — 基础</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">CTT 与 IRT 有什么区别？</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">传统测验理论（CTT）把总分当作能力。它简单直接，但结果绑定在具体卷本上：换一套题，分数就不再可比。</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">IRT（项目反应理论）对每道题的难度、区分度单独建模，把作答转化为不依赖具体题目组合的能力估计。跨卷比较、题库建设、自适应测验因此成为可能——这也是 PISA 与国家级素养调查以 IRT 为技术底座的原因。</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>自研 <a href="tools.html#irtc" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">IRTC 引擎</a> 覆盖 Rasch/1PL、2PL、PCM、RSM、GPCM 与多维模型，已在百万级样本上验证。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §2 -->
+  <article id="models" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 2 — 建模</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">IRT 模型家族：该用哪一个？</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">对/错计分常用 Rasch（1PL）或 2PL；多级计分（李克特量表、部分给分题）用 PCM、RSM 或 GPCM。复杂测评还会用到题间多维模型、潜在回归与多组分析。</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">选型取决于题型、样本量与研究目的。选错模型不会报错——它只会悄悄地、系统性地扭曲后续所有能力估计。</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>模型选择附书面依据与拟合诊断，而不是无脑用默认设置。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §3 -->
+  <article id="equating" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 3 — 可比性</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">什么是等值链接？</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">不同年份、不同卷本的分数不能直接比较——卷子难度不同。等值链接通过锚题设计与参数链接，把不同测验放到同一把尺子上。任何「趋势变化」的结论都以它为前提。</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">做错了，「提升」可能只是卷子变简单了。对支撑决策的调查而言，这不是技术细节——它直接改变结论。</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>锚题设计审查、链接常数诊断、全程可复现的等值管线与完整文档。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §4 -->
+  <article id="weighting" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 4 — 代表性</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">什么是校准加权？</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">当样本结构与总体不一致时，需要调整权重，使加权后的估计匹配总体边际或达标口径，同时尽量少扭曲原有抽样权重。</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">手工调权既不严谨也不可复现。严谨的做法是把它形式化为最优化问题——遵循 Deville &amp; Särndal（1992）的校准理论——并配有效样本量与设计效应诊断。</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>自研 <a href="tools.html#ratecalib" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">ratecalib 包</a>（已发布于 CRAN）将其求解为有界凸二次规划，提供 soft/exact 两种模式与内置诊断。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §5 -->
+  <article id="merging" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 5 — 后处理</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">小样本人口单元怎么处理？</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">按省份×性别×城乡×年龄×教育交叉统计时，常有单元样本过小甚至为零，比例估计不稳。必须合并单元——但合并后每个单元样本要为正，子群分级比例还要落在目标区间。</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">这是一个约束复杂的组合优化问题，拍脑袋合并会悄悄破坏估计。它值得一个确定性的最优解，而不是逐格的主观判断。</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>自研 <a href="tools.html#mergecalib" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">mergecalib 包</a> 用集合划分整数规划求解，不可行时诚实报告，而非悄悄妥协。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §6 -->
+  <article id="dif" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 6 — 公平性</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">什么是 DIF（题目功能差异）？</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">能力相同但来自不同群体（城乡、性别）的作答者，若在某道题上表现系统性不同，该题可能存在偏差——它测的是「属于哪个群体」，而不是能力。</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">DIF 检验就是找出这类题目，是保证测评公平性的关键步骤——对覆盖多样人群的全国性调查尤其重要。</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>DIF 筛查内置于标准建模流程，被标记的题目与客户的内容专家共同复核。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section id="contact" style="background:#2440C8;color:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:end">
+      <div>
+        <h2 data-rv style="margin:0 0 28px;font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:-.01em;line-height:1.25">您的项目<br>有方法学问题？</h2>
+        <a data-rv href="mailto:contact@weiandata.com" target="_top" style="display:inline-block;background:#FAF8F2;color:#2440C8;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,0,0,.4)">发送邮件洽谈 →</a>
+      </div>
+      <div data-rv style="font-size:13.5px;line-height:2.2;color:#C6D0F5;border-left:1px solid rgba(250,248,242,.3);padding-left:28px">
+        前期可行性评估<b style="color:#FAF8F2">免费</b>——描述您的项目，我们会给出技术方案。<br>
+        这些方法落地成的工具见<a href="tools.html" style="color:#FAF8F2;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(250,248,242,.5)" style-hover="border-color:#FAF8F2">工具案例</a>。<br><br>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>惟安数据科技（北京）有限公司 · WEIAN DATA</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">首页</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">工具案例</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">学习中心</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">联系合作</a></span>
+      <span>© 2026 · All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;高&quot;, &quot;克制&quot;], &quot;default&quot;: &quot;高&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;动效&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.setupCtaFeedback();
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === '克制');
+    if (this.low || !('IntersectionObserver' in window)) return;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.12 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -12,8 +12,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGES = ["index.html", "tools.html", "methods.html", "learn.html", "article.html"]
-EN_PAGES = [f"en/{name}" for name in ROOT_PAGES]
-HTML_PAGES = ROOT_PAGES + EN_PAGES
+ZH_PAGES = [f"zh/{name}" for name in ROOT_PAGES]
+HTML_PAGES = ROOT_PAGES + ZH_PAGES
 EXPECTED_ARTICLES = {
     *(f"A{number:02}.md" for number in range(1, 31)),
     *(f"M{number:02}.md" for number in range(1, 51)),
@@ -24,11 +24,11 @@ EXPECTED_CANONICALS = {
     "methods.html": "https://global.weiandata.com/methods",
     "learn.html": "https://global.weiandata.com/learn",
     "article.html": "https://global.weiandata.com/article",
-    "en/index.html": "https://global.weiandata.com/en/",
-    "en/tools.html": "https://global.weiandata.com/en/tools",
-    "en/methods.html": "https://global.weiandata.com/en/methods",
-    "en/learn.html": "https://global.weiandata.com/en/learn",
-    "en/article.html": "https://global.weiandata.com/en/article",
+    "zh/index.html": "https://global.weiandata.com/zh/",
+    "zh/tools.html": "https://global.weiandata.com/zh/tools",
+    "zh/methods.html": "https://global.weiandata.com/zh/methods",
+    "zh/learn.html": "https://global.weiandata.com/zh/learn",
+    "zh/article.html": "https://global.weiandata.com/zh/article",
 }
 OBSOLETE_NAMES = (
     "首页3a-样本流蓝-v2.dc" + ".html",
@@ -124,10 +124,10 @@ def validate_production_text(errors: list[str]) -> None:
             if value in text:
                 errors.append(f"{relative} contains forbidden production reference {value}")
 
-    if "fetch('articles/' + id + '.md')" not in (ROOT / "article.html").read_text(encoding="utf-8"):
-        errors.append("Chinese article reader does not fetch from articles/")
-    if "fetch('../articles-en/' + id + '.md')" not in (ROOT / "en/article.html").read_text(encoding="utf-8"):
-        errors.append("English article reader does not fetch from ../articles-en/")
+    if "fetch('articles-en/' + id + '.md')" not in (ROOT / "article.html").read_text(encoding="utf-8"):
+        errors.append("English article reader does not fetch from articles-en/")
+    if "fetch('../articles/' + id + '.md')" not in (ROOT / "zh/article.html").read_text(encoding="utf-8"):
+        errors.append("Chinese article reader does not fetch from ../articles/")
 
 
 def local_target(page: Path, reference: str) -> Path | None:

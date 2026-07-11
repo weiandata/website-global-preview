@@ -1,33 +1,33 @@
-# 惟安数据科技 WEIAN DATA
+# WEIAN DATA 惟安数据科技
 
-> 惟安数据科技（北京）有限公司（WEIAN DATA）是一家聚焦大型调查与学术研究的数据科技公司，专注 IRT（项目反应理论）分析与大规模调查的数据处理、建模与软件交付。核心能力是心理与教育测量专业性 + 大规模数据工程 + AI 高效交付的稀缺组合。
+> WEIAN DATA (Weian Data Technology, Beijing) is a data science company focused on large-scale surveys and academic research, specializing in IRT (Item Response Theory) analysis, survey data processing, statistical modeling, and software delivery. Its core strength is the rare combination of psychometric/educational-measurement expertise, large-scale data engineering, and AI-accelerated delivery.
 
-## 核心服务
+## Core services
 
-- 定制数据处理与 IRT 建模：百万级样本处理、IRT/CTT 建模、等值链接、评分引擎、自动化分析与报告，交付生产级 Python/R 代码
-- 长期方法学顾问：为大型调查项目提供方案设计、数据处理疑难解决与结果把关
-- 软件与 R 包开发：定制 R 包与可复现分析流程，部分成果已开源发布于 CRAN
+- Custom data processing and IRT modeling: million-scale sample processing, IRT/CTT modeling, equating and linking, scoring engines, automated analysis and reporting, delivered as production-grade Python/R code
+- Long-term methodology consulting: study design, data-processing troubleshooting, and results review for large survey programs
+- Software and R package development: custom R packages and reproducible analysis pipelines; selected work published on CRAN
 
-## 差异化
+## Differentiators
 
-- 测量专业性：超大型问卷测量经验与 IRT 分析技术积累，服务国家级调查（公民科学素质调查、中小学学生科学素养调查、公民数字素养调查同类项目）
-- 数据隔离保密模式：基于客户提供的数据框架与脱敏样例开发项目专属工具，真实数据的执行完全留在客户内网，惟安不接触原始敏感数据——"数据不出门，工具照样精准"
-- AI 高效交付：以 AI 为引擎为每个项目定制专属处理内核，快速、低成本、质量可控
+- Measurement expertise: experience with very large questionnaire programs and IRT analysis, serving national-level surveys (civic scientific literacy, student science literacy, and digital literacy survey programs)
+- Data-isolation confidential delivery: project-specific tools are built from client-provided data schemas and de-identified samples; execution on real data stays entirely inside the client network — "your data never leaves; the tools stay precise"
+- AI-accelerated delivery: a custom processing core per project, fast, low-cost, and quality-controlled
 
-## 目标客户
+## Target clients
 
-大型社会调查主办方（研究所/科协系统）、教育评价机构与质量监测中心、高校课题组（心理/教育/社科）、企业人才测评与内部调研部门。
+Sponsors of large social surveys (research institutes / science-association systems), educational assessment institutions and quality-monitoring centers, university research groups (psychology / education / social science), and corporate talent-assessment and internal-survey teams.
 
-## 页面（五页双语，中英文对照）
+## Pages (five bilingual pages; English is the default at the root, Chinese under /zh/)
 
-- [首页](https://global.weiandata.com/): 公司定位、服务、保密交付模式、合作流程与常见问答（[English](https://global.weiandata.com/en/)）
-- [自研工具与技术案例](https://global.weiandata.com/tools): IRTC、ratecalib（已发布 CRAN）、mergecalib 三个 R 包的完整技术案例，覆盖"建模→加权→合并"工具链（[English](https://global.weiandata.com/en/tools)）
-- [方法百科](https://global.weiandata.com/methods): CTT 与 IRT 的区别、IRT 模型选择、等值链接、校准加权、小样本单元合并、DIF 检验的通俗讲解（[English](https://global.weiandata.com/en/methods)）
-- [学习中心](https://global.weiandata.com/learn): IRT 与调查数据处理的系统性文章与方法笔记索引（[English](https://global.weiandata.com/en/learn)）
-- [文章](https://global.weiandata.com/article): 专栏长文与方法专题阅读页（[English](https://global.weiandata.com/en/article)）
+- [Home](https://global.weiandata.com/): positioning, services, confidential delivery model, engagement process, FAQ ([中文](https://global.weiandata.com/zh/))
+- [Tools and cases](https://global.weiandata.com/tools): full technical cases for the IRTC, ratecalib (on CRAN), and mergecalib R packages, covering the modeling-weighting-merging toolchain ([中文](https://global.weiandata.com/zh/tools))
+- [Methods](https://global.weiandata.com/methods): plain-language explanations of CTT vs IRT, IRT model selection, equating and linking, calibration weighting, small-cell merging, and DIF testing ([中文](https://global.weiandata.com/zh/methods))
+- [Learning hub](https://global.weiandata.com/learn): index of systematic articles and methods notes on IRT and survey data processing ([中文](https://global.weiandata.com/zh/learn))
+- [Articles](https://global.weiandata.com/article): long-form articles and methods reading page ([中文](https://global.weiandata.com/zh/article))
 
-## 联系
+## Contact
 
-- 官网: https://global.weiandata.com
-- 邮箱: contact@weiandata.com
-- 所在地: 中国北京
+- Website: https://global.weiandata.com
+- Email: contact@weiandata.com
+- Location: Beijing, China
