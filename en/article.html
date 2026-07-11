@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<title>Article — WEIAN Learning Hub | WEIAN DATA</title>
+<meta name="description" content="WEIAN Learning Hub articles: a systematic, plain-language guide to IRT and large-scale survey data processing.">
+<link rel="canonical" href="https://global.weiandata.com/en/article">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/article">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/en/article">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/article">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/vendor/katex/katex.min.css">
+<script src="/assets/vendor/katex/katex.min.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(36,64,200,.5);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(36,64,200,0);transform:scale(1)}}
+.art{font-size:15.5px;line-height:1.95;color:#2E2C24}
+.art h2{font-size:25px;font-weight:900;margin:46px 0 16px;letter-spacing:-.01em;color:#1A1914;line-height:1.4}
+.art h3{font-size:19px;font-weight:700;margin:34px 0 12px;color:#1A1914;line-height:1.5}
+.art h4{font-size:16px;font-weight:700;margin:28px 0 10px;color:#1A1914}
+.art p{margin:0 0 16px}
+.art ul,.art ol{margin:0 0 18px;padding-left:24px}
+.art li{margin-bottom:8px}
+.art blockquote{margin:0 0 18px;border-left:3px solid #2440C8;background:#F3F0E6;padding:14px 20px;color:#4B4840;font-size:14.5px}
+.art blockquote p{margin:0 0 6px}
+.art code{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;background:#F3F0E6;padding:2px 7px;font-size:.88em}
+.art pre{background:#1A1914;color:#F3F0E6;padding:18px 22px;overflow-x:auto;font-size:13px;line-height:1.85;margin:0 0 20px}
+.art pre code{background:none;padding:0;color:inherit}
+.art .math{margin:8px 0 22px;padding:18px 16px;background:#F3F0E6;text-align:center;overflow-x:auto;font-size:17px}
+.art .math:empty::after,.art .imath:empty::after{content:attr(data-tex) attr(data-itex);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;color:#4B4840}
+.art table{border-collapse:collapse;margin:0 0 20px;width:100%;font-size:14px;line-height:1.8}
+.art th,.art td{border:1px solid #DDD8CA;padding:8px 14px;text-align:left;vertical-align:top}
+.art th{background:#F3F0E6;font-weight:700}
+.art a{color:#2440C8}
+.art strong{color:#1A1914}
+.art em{font-style:italic}
+.art hr{border:none;border-top:1px solid #DDD8CA;margin:36px 0}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="Article EN">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="WEIAN logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoAE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoAE)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">WEIAN DATA</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">惟安数据科技</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:18px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">Home</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Tools &amp; Cases</a>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Methods</a>
+        <a href="learn.html" style="color:#FAF8F2;background:#1A1914;text-decoration:none;padding:6px 13px;border:1px solid #1A1914" style-hover="background:#2440C8;border-color:#2440C8">Learn</a>
+        <a data-cn-link href="../article.html" title="阅读中文版" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">中文</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Article head -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:920px;margin:0 auto;padding:52px 40px 44px">
+      <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:22px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">HOME</a> / <a href="learn.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">LEARNING HUB</a> / ARTICLE</div>
+      <div data-art-badge style="display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8;border:1px solid #2440C8;padding:5px 12px;margin-bottom:20px">Loading</div>
+      <h1 data-art-title style="margin:0 0 18px;font-size:clamp(26px,3.4vw,42px);line-height:1.3;font-weight:900;letter-spacing:-.01em">Loading article…</h1>
+      <div data-art-meta style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#8A857A"></div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section>
+    <div style="max-width:920px;margin:0 auto;padding:48px 40px 64px">
+      <div data-art class="art">
+        <p style="color:#8A857A">Loading article content…</p>
+      </div>
+      <div style="margin-top:40px;background:#F3F0E6;border-left:3px solid #2440C8;padding:16px 22px">
+        <p style="margin:0;font-size:12px;line-height:2;color:#4B4840"><b style="color:#1A1914">Copyright</b>　This article is an original work of WEIAN Data Technology (Beijing) Co., Ltd., authored by Ma Kunxiang, protected under the Copyright Law of the People's Republic of China. Reproduction, adaptation, mirroring, or commercial use without written permission is prohibited; for personal sharing, please credit the author and link back to this site. Licensing: <a href="mailto:contact@weiandata.com" target="_top" style="color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">contact@weiandata.com</a></p>
+      </div>
+      <div style="margin-top:32px;border-top:1px solid #1A1914;padding-top:24px;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center">
+        <a data-prev href="#" style="display:block;text-decoration:none;color:#1A1914;border:1px solid #DDD8CA;padding:16px 20px;transition:border-color .25s,background .25s" style-hover="border-color:#2440C8;background:#F3F0E6">
+          <span style="display:block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#8A857A;margin-bottom:6px">← PREVIOUS</span>
+          <span data-prev-label style="font-size:13.5px;font-weight:700;line-height:1.5"></span>
+        </a>
+        <a href="learn.html" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px;white-space:nowrap" style-hover="color:#1A1914;border-color:#1A1914">Back to Learning Hub</a>
+        <a data-next href="#" style="display:block;text-decoration:none;color:#1A1914;border:1px solid #DDD8CA;padding:16px 20px;text-align:right;transition:border-color .25s,background .25s" style-hover="border-color:#2440C8;background:#F3F0E6">
+          <span style="display:block;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#8A857A;margin-bottom:6px">NEXT →</span>
+          <span data-next-label style="font-size:13.5px;font-weight:700;line-height:1.5"></span>
+        </a>
+      </div>
+      <div style="margin-top:18px;text-align:center;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;color:#A9A48F">Tip: use ← / → keys to move between articles</div>
+    </div>
+  </section>
+
+  <!-- Light CTA -->
+  <section id="contact" style="background:#F3F0E6;border-top:1px solid #1A1914">
+    <div style="max-width:920px;margin:0 auto;padding:34px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+      <span style="font-size:14px;color:#4B4840">Questions after reading, or need an expert on your project? <b style="color:#1A1914">Initial assessment is free.</b></span>
+      <a href="mailto:contact@weiandata.com" target="_top" style="background:#2440C8;color:#FAF8F2;text-decoration:none;font-size:14px;font-weight:700;padding:11px 24px;transition:background .25s" style-hover="background:#1A1914">Email us →</a>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>WEIAN Data Technology (Beijing) Co., Ltd. · All articles original; reproduction prohibited without permission</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Home</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Tools &amp; Cases</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Methods</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Learning Hub</a></span>
+      <span>© 2026 · All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.MT = ['What IRT even is — explained with exams and bathroom scales', 'The pitfalls of total scores', 'Items have personalities: difficulty and discrimination', 'Measuring the invisible: how ability (θ) is estimated', 'How IRT differs from ordinary scoring', 'The IRT family portrait: 1PL, 2PL, 3PL, GRM', 'Why we use IRT: a business answer', 'The signature curve: the ICC', 'What curve shifts left and right mean', 'Steep vs. flat: discrimination on the chart', 'The curve that can\u2019t get up: guessing parameter c', 'Item information: where an item works best', 'Test information: who your test measures well', 'What \u22123 to +3 means on the ability scale', 'The Wright map: people and items on one ruler', 'What a latent variable is', 'Unidimensional vs. multidimensional', 'Local independence: why items can\u2019t collude', 'Parameter estimation: how the machine \u201cguesses\u201d', 'Likelihood and maximum likelihood', 'Standard errors: the margin behind every estimate', 'Goodness of fit: do model and data get along', 'DIF: is an item fair to different groups', 'Reliability\u2019s new face in IRT', 'Cheat sheet: θ, a, b, c, ICC, TIF, IIF', 'IRT\u2019s three superpowers, one line each', 'The underrated strength: items and people can separate', 'CAT: tests that adapt to you', 'The assumptions behind IRT', 'Sample size: IRT\u2019s appetite', 'When not to use IRT: an honest checklist', 'What computer you need to run IRT', 'What is R, and why IRT people use it', 'Can you avoid coding? GUI options for IRT', 'Common R packages: mirt, ltm, TAM', 'A standard IRT analysis workflow (no code)', 'What your data must look like', 'Missing, junk, careless: handling dirty data', 'Reading a parameter table: which columns first', 'Judging an item by difficulty b and discrimination a', 'Picking out the bad items', 'Score reports: translating θ into plain language', 'Shortening questionnaires without losing precision', 'Item banks: making batches comparable', 'Explaining IRT results to non-technical bosses and clients', 'Negative discrimination? The likely causes', 'Model misfit: a calm checklist', 'Results vs. common sense: which to trust', 'Runaway parameter estimates: what they mean', 'Epilogue: what you can do after 50 articles'];
+    this.AT = ['What is IRT: from total scores to latent variables', 'Cleaning large-scale questionnaire data: the full pipeline and common traps', 'Professional analysis delivery where sensitive data never leaves', 'IRT in R: getting started with the IRTC package', 'CTT vs. IRT, compared thoroughly: when IRT becomes necessary', 'A complete guide to sampling weights: design weights, nonresponse adjustment, calibration', 'Reliability and validity: a complete evidence framework', 'Scale development end to end: from construct definition to formal administration', 'The Rasch model: measurement philosophy and practice', 'Polytomous models: choosing among PCM, RSM, and GPCM', 'Latent regression: how background variables enter IRT models', 'EAP, MLE, WLE: three ability estimators and how they differ', 'Equating and linking: making scores from different forms comparable', 'DIF detection: quality inspection for test fairness', 'Missing data: from deletion methods to multiple imputation', 'Detecting careless responding: a method inventory with practical advice', 'Sample size planning and statistical power', 'Million-scale IRT estimation: engineering answers to memory and speed', 'Multidimensional IRT: when you need it and how to model it', 'Standard setting: Angoff, Bookmark, and other cut-score methods', 'A quality-control system for survey data: from design to release', 'R package development from zero to release: the birth of a statistical tool', 'A reproducible research workflow: R + Git + automated tests', 'Calibration weighting: the mathematics of matching sample to population', 'Merging sparse cells: robust tabulation of graded proportions', 'Methodology for literacy-style assessments', 'A client\u2019s guide to working with an external data-analysis team', 'Why trust statistical software: automated tests and honest failure', 'Computerized adaptive testing: principles, item banks, and prerequisites', 'From questionnaire to report: the full journey of a large survey analysis'];
+    this.ATH = ['IRT basics', 'Data processing', 'Working with us', 'Engineering', 'IRT basics', 'Survey statistics', 'Scales', 'Scales', 'IRT basics', 'IRT basics', 'IRT basics', 'IRT basics', 'Testing practice', 'Testing practice', 'Data processing', 'Data processing', 'Survey statistics', 'Engineering', 'IRT basics', 'Testing practice', 'Data processing', 'Engineering', 'Engineering', 'Survey statistics', 'Survey statistics', 'Testing practice', 'Working with us', 'Engineering', 'Testing practice', 'Working with us'];
+    var m = /[?&]id=([MA]\d{2})/.exec(window.location.search || '');
+    this.id = m ? m[1] : 'M01';
+    this.loadArticle();
+    this.setupKeys();
+    this.setupCtaFeedback();
+  }
+  componentWillUnmount() {
+    if (this.onKey) document.removeEventListener('keydown', this.onKey);
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+
+  moduleName(n) {
+    if (n <= 7) return 'Module 1 · Basics';
+    if (n <= 15) return 'Module 2 · Reading charts';
+    if (n <= 25) return 'Module 3 · Terminology';
+    if (n <= 31) return 'Module 4 · Strengths & limits';
+    if (n <= 38) return 'Module 5 · In practice';
+    if (n <= 45) return 'Module 6 · Using results';
+    if (n <= 49) return 'Module 7 · Troubleshooting';
+    return 'Module 8 · Epilogue';
+  }
+
+  info(id) {
+    var kind = id.charAt(0);
+    var n = parseInt(id.slice(1), 10);
+    if (kind === 'M') {
+      return { title: this.MT[n - 1] || id, badge: 'BEGINNER GUIDE · ' + this.moduleName(n) + ' · No. ' + (n < 10 ? '0' + n : n) + ' of 50' };
+    }
+    return { title: this.AT[n - 1] || id, badge: 'IN-DEPTH SERIES · ' + id + ' · ' + (this.ATH[n - 1] || '') };
+  }
+
+  neighbor(id, d) {
+    var kind = id.charAt(0);
+    var n = parseInt(id.slice(1), 10) + d;
+    var max = kind === 'M' ? 50 : 30;
+    if (n < 1 || n > max) return null;
+    return kind + (n < 10 ? '0' + n : String(n));
+  }
+
+  loadArticle() {
+    var self = this;
+    var id = this.id;
+    var meta = this.info(id);
+    var badge = document.querySelector('[data-art-badge]');
+    var titleEl = document.querySelector('[data-art-title]');
+    if (badge) badge.textContent = meta.badge;
+    if (titleEl) titleEl.textContent = meta.title;
+    document.title = meta.title + ' — WEIAN Learning Hub';
+    var cn = document.querySelector('[data-cn-link]');
+    if (cn) cn.href = '../article.html?id=' + id;
+    var _base = 'https://global.weiandata.com/';
+    var _setHref = function (sel, url) { var el = document.querySelector(sel); if (el) el.setAttribute('href', url); };
+    _setHref('link[rel="canonical"]', _base + 'en/article?id=' + id);
+    _setHref('link[hreflang="zh-CN"]', _base + 'article?id=' + id);
+    _setHref('link[hreflang="en"]', _base + 'en/article?id=' + id);
+    _setHref('link[hreflang="x-default"]', _base + 'article?id=' + id);
+    var pid = this.neighbor(id, -1), nid = this.neighbor(id, 1);
+    var prevA = document.querySelector('[data-prev]'), nextA = document.querySelector('[data-next]');
+    if (prevA) {
+      if (pid) { prevA.href = 'article.html?id=' + pid; document.querySelector('[data-prev-label]').textContent = pid + ' · ' + this.info(pid).title; }
+      else prevA.style.visibility = 'hidden';
+    }
+    if (nextA) {
+      if (nid) { nextA.href = 'article.html?id=' + nid; document.querySelector('[data-next-label]').textContent = nid + ' · ' + this.info(nid).title; }
+      else nextA.style.visibility = 'hidden';
+    }
+    fetch('../articles-en/' + id + '.md').then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    }).then(function (src) {
+      self.render(src, meta);
+    }).catch(function () {
+      var host = document.querySelector('[data-art]');
+      if (host) host.innerHTML = '<p>Failed to load the article. Please <a href="learn.html">return to the Learning Hub</a> and try again.</p>';
+    });
+  }
+
+  render(src, meta) {
+    src = src.replace(/\r\n?/g, '\n');
+    var h1m = /^#\s+(.+)$/m.exec(src);
+    if (h1m) {
+      var t = h1m[1].replace(/^[AM]?\d{1,2}\s*[·:：.、_-]\s*/, '').trim();
+      var titleEl = document.querySelector('[data-art-title]');
+      if (titleEl && t) titleEl.textContent = t;
+      document.title = (t || meta.title) + ' — WEIAN Learning Hub';
+      src = src.replace(h1m[0], '');
+    }
+    /* Internal editorial notes appear only in the leading blockquote of A-series
+       articles (after the H1) — remove them deterministically by article id.
+       M-series articles open with a reader-facing intro blockquote, which is
+       preserved. Behavior matches the Chinese renderer. */
+    var lines = src.split('\n');
+    var i = 0;
+    while (i < lines.length && lines[i].trim() === '') i++;
+    if (this.id.charAt(0) === 'A' && i < lines.length && lines[i].charAt(0) === '>') {
+      var j = i;
+      while (j < lines.length && (lines[j].charAt(0) === '>' || lines[j].trim() === '')) { j++; if (j < lines.length && lines[j].trim() === '' && (j + 1 >= lines.length || lines[j + 1].charAt(0) !== '>')) break; }
+      lines.splice(i, j - i);
+      src = lines.join('\n');
+    }
+    var words = (src.replace(/[#>*`\-]/g, '').match(/[A-Za-z']+/g) || []).length;
+    var metaEl = document.querySelector('[data-art-meta]');
+    if (metaEl) metaEl.textContent = '~' + (Math.round(words / 100) * 100) + ' words · about ' + Math.max(2, Math.round(words / 220)) + ' min read';
+    var host = document.querySelector('[data-art]');
+    if (host) host.innerHTML = this.mdToHtml(src);
+    this.renderMath(0);
+  }
+
+  mdToHtml(src) {
+    var codes = [], maths = [], imaths = [];
+    src = src.replace(/```[^\n]*\n([\s\S]*?)```/g, function (mm, body) { codes.push(body); return '\u0000C' + (codes.length - 1) + '\u0000'; });
+    src = src.replace(/\$\$([\s\S]*?)\$\$/g, function (mm, tex) { maths.push(tex.trim()); return '\n\u0000M' + (maths.length - 1) + '\u0000\n'; });
+    src = src.replace(/\$([^\$\n]+?)\$/g, function (mm, tex) { imaths.push(tex.trim()); return '\u0000I' + (imaths.length - 1) + '\u0000'; });
+    function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+    function escAttr(s) { return esc(s).replace(/"/g, '&quot;'); }
+    function inline(s) {
+      s = esc(s);
+      s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+      s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      s = s.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+      s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      return s;
+    }
+    var lines = src.split('\n');
+    var out = [], para = [], list = null, quote = [];
+    function flushPara() { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } }
+    function flushList() { if (list) { out.push('</' + list + '>'); list = null; } }
+    function flushQuote() { if (quote.length) { out.push('<blockquote>' + quote.map(function (q) { return '<p>' + inline(q) + '</p>'; }).join('') + '</blockquote>'); quote = []; } }
+    function flushAll() { flushPara(); flushList(); flushQuote(); }
+    for (var i = 0; i < lines.length; i++) {
+      var ln = lines[i];
+      var mC = /^\u0000C(\d+)\u0000\s*$/.exec(ln);
+      var mM = /^\u0000M(\d+)\u0000\s*$/.exec(ln);
+      if (mC) { flushAll(); out.push('<pre><code>' + esc(codes[+mC[1]]) + '</code></pre>'); continue; }
+      if (mM) { flushAll(); out.push('<div class="math" data-tex="' + escAttr(maths[+mM[1]]) + '"></div>'); continue; }
+      if (/^\s*\|/.test(ln) && i + 1 < lines.length && /^\s*\|?[\s:\-|]+\|?\s*$/.test(lines[i + 1]) && lines[i + 1].indexOf('-') >= 0) {
+        flushAll();
+        var header = ln, rows = [];
+        i += 2;
+        while (i < lines.length && /^\s*\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+        i--;
+        function cells(row) { return row.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map(function (c) { return inline(c.trim()); }); }
+        var html = '<table><thead><tr>' + cells(header).map(function (c) { return '<th>' + c + '</th>'; }).join('') + '</tr></thead><tbody>';
+        rows.forEach(function (r) { html += '<tr>' + cells(r).map(function (c) { return '<td>' + c + '</td>'; }).join('') + '</tr>'; });
+        out.push(html + '</tbody></table>');
+        continue;
+      }
+      var mH = /^(#{1,4})\s+(.*)$/.exec(ln);
+      if (mH) { flushAll(); var lv = Math.min(mH[1].length + 1, 4); out.push('<h' + lv + '>' + inline(mH[2]) + '</h' + lv + '>'); continue; }
+      if (/^\s*(-{3,}|\*{3,})\s*$/.test(ln)) { flushAll(); out.push('<hr>'); continue; }
+      var mQ = /^>\s?(.*)$/.exec(ln);
+      if (mQ) { flushPara(); flushList(); quote.push(mQ[1]); continue; }
+      var mUl = /^\s*[-*]\s+(.*)$/.exec(ln);
+      var mOl = /^\s*\d+[.、)]\s+(.*)$/.exec(ln);
+      if (mUl || mOl) {
+        flushPara(); flushQuote();
+        var want = mUl ? 'ul' : 'ol';
+        if (list !== want) { flushList(); out.push('<' + want + '>'); list = want; }
+        out.push('<li>' + inline((mUl || mOl)[1]) + '</li>');
+        continue;
+      }
+      if (ln.trim() === '') { flushAll(); continue; }
+      flushList(); flushQuote();
+      para.push(ln.trim());
+    }
+    flushAll();
+    var html = out.join('\n');
+    html = html.replace(/\u0000I(\d+)\u0000/g, function (mm, k) { return '<span class="imath" data-itex="' + escAttr(imaths[+k]) + '"></span>'; });
+    return html;
+  }
+
+  renderMath(attempt) {
+    var self = this;
+    var blocks = document.querySelectorAll('[data-tex]');
+    var inlines = document.querySelectorAll('[data-itex]');
+    if (!blocks.length && !inlines.length) return;
+    if (window.katex) {
+      Array.prototype.forEach.call(blocks, function (el) {
+        try { window.katex.render(el.getAttribute('data-tex'), el, { displayMode: true, throwOnError: false }); } catch (e) { el.textContent = el.getAttribute('data-tex'); }
+      });
+      Array.prototype.forEach.call(inlines, function (el) {
+        try { window.katex.render(el.getAttribute('data-itex'), el, { displayMode: false, throwOnError: false }); } catch (e) { el.textContent = el.getAttribute('data-itex'); }
+      });
+    } else if (attempt < 12) {
+      setTimeout(function () { self.renderMath(attempt + 1); }, 400);
+    } else {
+      Array.prototype.forEach.call(blocks, function (el) { el.textContent = el.getAttribute('data-tex'); });
+      Array.prototype.forEach.call(inlines, function (el) { el.textContent = el.getAttribute('data-itex'); el.style.fontFamily = 'ui-monospace,Menlo,monospace'; el.style.fontSize = '.9em'; });
+    }
+  }
+
+  setupKeys() {
+    var self = this;
+    this.onKey = function (e) {
+      if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+      var pid = self.neighbor(self.id, -1), nid = self.neighbor(self.id, 1);
+      if (e.key === 'ArrowLeft' && pid) window.location.href = 'article.html?id=' + pid;
+      if (e.key === 'ArrowRight' && nid) window.location.href = 'article.html?id=' + nid;
+    };
+    document.addEventListener('keydown', this.onKey);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

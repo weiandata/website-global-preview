@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<title>工具案例｜惟安数据科技 WEIAN DATA</title>
+<meta name="description" content="围绕大规模调查测评的完整数据流，惟安自主构建三个相互衔接的专业 R 包——IRTC、ratecalib、mergecalib，贯通「建模 → 加权 → 合并」。全部自主开发、拥有完整知识产权。">
+<link rel="canonical" href="https://global.weiandata.com/tools">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/tools">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/en/tools">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/tools">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(250,248,242,.75);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(250,248,242,0);transform:scale(1)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="工具案例">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="惟安 logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoT)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">惟安数据科技</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">WEIAN&nbsp;DATA</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:20px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">首页</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <span style="color:#FAF8F2;background:#1A1914;padding:6px 13px;border:1px solid #1A1914">工具案例</span>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">方法百科</a>
+        <a href="learn.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">学习中心</a>
+        <a href="en/tools.html" title="Switch to English" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">EN</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">联系合作</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页首 -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">首页</a> / 自研工具与技术案例</div>
+      <h1 data-rv style="margin:0 0 24px;font-size:clamp(36px,4.8vw,64px);line-height:1.1;font-weight:900;letter-spacing:-.02em;max-width:980px">一条自研工具链，贯通<br>「<span style="color:#2440C8">建模 → 加权 → 合并</span>」</h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:600px">不是零散脚本：围绕大规模调查测评的完整数据流，自主构建三个相互衔接的专业 R 包。全部自主开发、拥有完整知识产权，不含任何客户数据。</p>
+      <div data-rv style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px">
+        <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">原始作答数据</div>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#irtc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">IRTC</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">建模估计</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#ratecalib" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">ratecalib</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">校准加权</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#mergecalib" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">mergecalib</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">单元合并</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">可信结论</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 案例 01 · IRTC -->
+  <article id="irtc" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">案例 01</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">IRTC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">高性能项目反应理论（IRT）估计引擎</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">项目反应理论</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">C++ / Rcpp</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">流式低内存</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">26 组测试</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #1A1914;padding:4px 10px;color:#1A1914;font-weight:700">CRAN 即将发布</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 问题背景</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">大型能力与素养测评动辄数十万、上百万被试，题目多、维度多。传统 IRT 软件在这种规模下常因内存爆炸或速度过慢而无法完成估计，商业软件又难以定制。研究团队需要一个既专业、又能在普通工作站上跑通大数据的估计引擎。</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 解决方案</div>
+          <p style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">IRTC 是自包含的边际极大似然（MML）估计引擎，底层以 C++（Rcpp / RcppArmadillo）实现，并针对大规模数据做了系统性性能设计：</p>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">模型覆盖</b>：Rasch/1PL、PCM、RSM、2PL、GPCM；单维与题间多维；支持潜在回归、多组分析、个案权重与 EAP 能力估计。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">性能设计</b>：多线程并行 E 步、按被试分块的流式后验计算（不保存完整「被试 × 节点」后验矩阵）、维度分解、解析梯度与混合 Newton M 步、引擎自动路由。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">可信赖机制</b>：可选的积分节点剪枝配有分层实测误差核查与书面报告——默认走精确路径，绝不悄悄改变统计目标。</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 成果与亮点</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">流式引擎已在原型基准中完成百万样本、多维 GPCM 估计，把传统方法所需的超大内存压缩到普通工作站可承受的范围。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">提供 auto / grid / streaming 三种引擎与自动路由，并记录选择理由——默认易用，需要时可控。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">26 组自动化测试与中文零基础使用手册，工程质量对标正规开源项目。</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">对您的项目意味着什么：</b>这是惟安「IRT 技术积累 + 大规模数据工程」的旗舰证明，可作为定制测评建模项目的核心引擎，按您的需求裁剪与扩展。想先弄懂 IRT 本身？见 <a href="methods.html#ctt-irt" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">方法百科 · CTT 与 IRT</a>。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 案例 02 · ratecalib -->
+  <article id="ratecalib" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">案例 02</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">ratecalib</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">多子群通过率达标校准加权</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">校准加权</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">凸二次规划</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">13 组测试</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">MIT</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;background:#2440C8;color:#FAF8F2;padding:4px 10px;font-weight:700">已发布 CRAN</span>
+        </div>
+        <a data-rv href="https://CRAN.R-project.org/package=ratecalib" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">在 CRAN 上查看 →</a>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 问题背景</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">调查与测评常需要让总体及多个重叠子群的通过率/达标率（按地区、性别、城乡等口径）逼近或精确匹配给定目标，同时不能破坏原有抽样权重结构与人口边际。手工调权既不严谨也不可复现。</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 解决方案</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">把业务需求形式化为<b style="color:#1A1914">有界凸二次规划（QP）</b>，在「人口单元 × 结果」聚合层面求解——严谨，且在大样本上高效。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">soft（逼近目标）与 exact（精确匹配）</b>两种模式，均保持初始权重结构与总体边际；方法学基础为 Deville &amp; Särndal（1992）校准加权理论。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">实用配套：一步式接口、求解前数据检查、目标表构建、有效样本量（ESS）与设计效应诊断、示例数据；采用 osqp 高性能求解器。</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 成果与亮点</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">已发布于 CRAN（MIT 许可），含 13 组自动化测试。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">把实际的达标校准难题变成可复现、可诊断的标准流程。</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">对您的项目意味着什么：</b>它证明了惟安把「业务口径」翻译成「数学最优化问题」并落地为工具的能力——这类达标校准需求在各类调查项目中反复出现。原理讲解见 <a href="methods.html#weighting" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">方法百科 · 什么是校准加权</a>。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 案例 03 · mergecalib -->
+  <article id="mergecalib" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">案例 03</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">mergecalib</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">区间校准目标下的确定性单元合并</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">混合整数规划</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">调查后处理</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">16 组测试</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">MIT</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #1A1914;padding:4px 10px;color:#1A1914;font-weight:700">CRAN 即将发布</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 问题背景</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">按人口单元（省份×性别×城乡×年龄×教育）统计分级结果时，常有单元样本过小甚至为零，比例估计不稳。既要合并小单元，又要让省级与全国子群的分级（如 A/B/C/D）比例落在目标区间、每个最终单元样本为正——这是约束复杂、手工处理极易出错的组合优化问题。</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 解决方案</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">用<b style="color:#1A1914">集合划分混合整数线性规划（MILP）</b>求解省内单元合并方案。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">字典序目标</b>：依次最小化合并样本量、人口距离、结果异质性、权重扭曲与合并次数。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">诚实设计</b>：约束不可行时明确报告，而不是悄悄放松目标。</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ 成果与亮点</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">确定性、可复现的合并方案，取代逐格的主观判断。</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">MIT 开源，16 组自动化测试；即将提交 CRAN。</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">对您的项目意味着什么：</b>它与 ratecalib 一起覆盖调查数据的后处理环节——这个不起眼的环节，正是许多公开估计悄悄出错的地方。原理讲解见 <a href="methods.html#merging" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">方法百科 · 小样本单元合并</a>。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div style="max-width:1280px;margin:0 auto;padding:26px 40px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* 三个包均为惟安自主开发、拥有完整知识产权。案例不含任何客户项目名称与敏感数据。</div>
+
+  <!-- CTA -->
+  <section id="contact" style="background:#2440C8;color:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:end">
+      <div>
+        <h2 data-rv style="margin:0 0 28px;font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:-.01em;line-height:1.25">想为您的项目<br>定制这样的工具？</h2>
+        <a data-rv href="mailto:contact@weiandata.com" target="_top" style="display:inline-block;background:#FAF8F2;color:#2440C8;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,0,0,.4)">发送邮件洽谈 →</a>
+      </div>
+      <div data-rv style="font-size:13.5px;line-height:2.2;color:#C6D0F5;border-left:1px solid rgba(250,248,242,.3);padding-left:28px">
+        工具链的定制开发、裁剪与扩展均可洽谈，<b style="color:#FAF8F2">前期评估免费</b>。<br>
+        合作流程见<a href="index.html#process" style="color:#FAF8F2;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(250,248,242,.5)" style-hover="border-color:#FAF8F2">首页 · 合作流程</a>。<br><br>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>惟安数据科技（北京）有限公司 · WEIAN DATA</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">首页</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">方法百科</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">学习中心</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">联系合作</a></span>
+      <span>© 2026 · All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;高&quot;, &quot;克制&quot;], &quot;default&quot;: &quot;高&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;动效&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.setupCtaFeedback();
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === '克制');
+    if (this.low || !('IntersectionObserver' in window)) return;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.12 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

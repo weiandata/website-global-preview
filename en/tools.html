@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<title>Tools &amp; Cases | WEIAN DATA</title>
+<meta name="description" content="Three interlocking in-house R packages — IRTC, ratecalib, mergecalib — covering the full modeling → weighting → merging chain for large-scale survey data.">
+<link rel="canonical" href="https://global.weiandata.com/en/tools">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/tools">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/en/tools">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/tools">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(250,248,242,.75);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(250,248,242,0);transform:scale(1)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="Tools EN">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="WEIAN logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoTE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoTE)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">WEIAN DATA</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">惟安数据科技</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:18px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">Home</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <span style="color:#FAF8F2;background:#1A1914;padding:6px 13px;border:1px solid #1A1914">Tools &amp; Cases</span>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Methods</a>
+        <a href="learn.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Learn</a>
+        <a href="../tools.html" title="切换到中文" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">中文</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">HOME</a> / IN-HOUSE TOOLS &amp; CASE STUDIES</div>
+      <h1 data-rv style="margin:0 0 24px;font-size:clamp(34px,4.4vw,58px);line-height:1.12;font-weight:900;letter-spacing:-.02em;max-width:1020px">One toolchain across<br>"<span style="color:#2440C8">modeling → weighting → merging</span>"</h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:620px">Not scattered scripts: three interlocking R packages built around the full data flow of large-scale assessment surveys. All developed in-house with full IP ownership; no client data involved.</p>
+      <div data-rv style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px">
+        <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">Raw response data</div>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#irtc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">IRTC</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">IRT modeling</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#ratecalib" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">ratecalib</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">Calibration weighting</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#mergecalib" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">mergecalib</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">Unit merging</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">Trustworthy conclusions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case 01 · IRTC -->
+  <article id="irtc" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">CASE 01</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">IRTC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">High-performance IRT estimation engine</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Item Response Theory</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">C++ / Rcpp</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Streaming low-memory</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">26 test suites</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #1A1914;padding:4px 10px;color:#1A1914;font-weight:700">CRAN upcoming</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE PROBLEM</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Large assessments involve hundreds of thousands to millions of test-takers, many items, and multiple dimensions. Traditional IRT software fails at this scale — memory explodes or estimation never finishes — and commercial packages are hard to customize. Research teams need an engine that is both rigorous and able to run big data on an ordinary workstation.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE SOLUTION</div>
+          <p style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">IRTC is a self-contained marginal maximum likelihood (MML) estimation engine with C++ (Rcpp / RcppArmadillo) internals, systematically engineered for scale:</p>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Model coverage</b>: Rasch/1PL, PCM, RSM, 2PL, GPCM; unidimensional and between-item multidimensional; latent regression, multi-group analysis, case weights, and EAP ability estimation.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Performance</b>: multithreaded parallel E-step, block-wise streaming posterior computation (no full person × node posterior matrix), dimensional decomposition, analytic gradients with hybrid Newton M-step, automatic engine routing.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Trustworthiness</b>: optional node pruning is accompanied by stratified empirical error checks with a written report — the exact path is the default, and statistical targets are never silently changed.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">The streaming engine has completed million-sample, multidimensional GPCM estimation in prototype benchmarks, compressing memory needs to ordinary-workstation levels.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Three engines (auto / grid / streaming) with automatic routing that records its reasoning — usable by default, controllable when needed.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">26 automated test suites and a beginner-friendly manual; engineering quality on par with established open-source projects.</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> the flagship proof of WEIAN's "IRT expertise + large-scale engineering" claim. It serves as the core engine for custom assessment modeling projects and can be tailored and extended to your requirements. New to IRT itself? See <a href="methods.html#ctt-irt" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">Methods · CTT vs. IRT</a>.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 02 · ratecalib -->
+  <article id="ratecalib" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">CASE 02</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">ratecalib</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Multi-subgroup target-rate calibration weighting</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Calibration weighting</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Convex QP</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">13 test suites</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">MIT</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;background:#2440C8;color:#FAF8F2;padding:4px 10px;font-weight:700">Published on CRAN</span>
+        </div>
+        <a data-rv href="https://CRAN.R-project.org/package=ratecalib" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">View on CRAN →</a>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE PROBLEM</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Surveys often need overall and multiple overlapping subgroup pass rates (by region, gender, urban/rural) to approach or exactly match given targets — without breaking the original sampling weight structure or population margins. Manual reweighting is neither rigorous nor reproducible.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE SOLUTION</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Formalizes the requirement as <b style="color:#1A1914">bounded convex quadratic programming (QP)</b>, solved at the population-unit × outcome aggregation level — rigorous and efficient on large samples.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Two modes — soft (approach targets) and exact (match exactly)</b> — both preserving the initial weight structure and overall margins. Methodologically grounded in Deville &amp; Särndal (1992) calibration theory.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Practical tooling: one-step interface, pre-solve data checks, target-table builders, effective sample size (ESS) and design-effect diagnostics, example data; powered by the high-performance osqp solver.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Published on CRAN under the MIT license, with 13 automated test suites.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Turns a real-world rate-calibration challenge into a reproducible, diagnosable standard workflow.</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> it demonstrates WEIAN's ability to translate a business requirement into a mathematical optimization problem and ship it as a tool — a need that recurs across survey projects of every kind. For the underlying theory, see <a href="methods.html#weighting" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">Methods · Calibration weighting</a>.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 03 · mergecalib -->
+  <article id="mergecalib" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">CASE 03</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">mergecalib</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Deterministic unit merging under interval calibration targets</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Integer programming (MILP)</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Survey post-processing</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">16 test suites</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">MIT</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #1A1914;padding:4px 10px;color:#1A1914;font-weight:700">CRAN upcoming</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE PROBLEM</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Tabulating graded results by population units (province × gender × urban/rural × age × education) often leaves cells with tiny or zero samples, destabilizing proportion estimates. Units must be merged so that provincial and national subgroup grade shares (e.g., A/B/C/D) stay within target intervals and every final unit has positive samples — a constraint-heavy combinatorial problem that is extremely error-prone by hand.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE SOLUTION</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Solves within-province merging as <b style="color:#1A1914">set-partitioning mixed-integer linear programming (MILP)</b>.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Lexicographic objectives</b>: minimize merged sample size, then population distance, outcome heterogeneity, weight distortion, and merge count — in that order.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Honest by design</b>: when constraints are infeasible, it reports so explicitly instead of silently compromising the targets.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Deterministic, reproducible merging plans replace cell-by-cell judgment calls.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Open-sourced under MIT with 16 automated test suites; CRAN submission upcoming.</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> together with ratecalib it covers the post-processing stage of survey data — the unglamorous step where many published estimates quietly go wrong. For the underlying idea, see <a href="methods.html#merging" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">Methods · Sparse unit merging</a>.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div style="max-width:1280px;margin:0 auto;padding:26px 40px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* All three packages are developed in-house by WEIAN with full IP ownership. Case studies contain no client project names or sensitive data.</div>
+
+  <!-- CTA -->
+  <section id="contact" style="background:#2440C8;color:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:end">
+      <div>
+        <h2 data-rv style="margin:0 0 28px;font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:-.01em;line-height:1.25">Want tools like these,<br>built for your project?</h2>
+        <a data-rv href="mailto:contact@weiandata.com" target="_top" style="display:inline-block;background:#FAF8F2;color:#2440C8;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,0,0,.4)">Email us →</a>
+      </div>
+      <div data-rv style="font-size:13.5px;line-height:2.2;color:#C6D0F5;border-left:1px solid rgba(250,248,242,.3);padding-left:28px">
+        Custom development, tailoring, and extension of the toolchain are all available — <b style="color:#FAF8F2">initial assessment is free</b>.<br>
+        See <a href="index.html#process" style="color:#FAF8F2;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(250,248,242,.5)" style-hover="border-color:#FAF8F2">how we work</a>.<br><br>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>WEIAN Data Technology (Beijing) Co., Ltd.</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Home</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Methods</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Learning Hub</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Contact</a></span>
+      <span>© 2026 · All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;High&quot;, &quot;Subtle&quot;], &quot;default&quot;: &quot;High&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Motion&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.setupCtaFeedback();
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === 'Subtle');
+    if (this.low || !('IntersectionObserver' in window)) return;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.12 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

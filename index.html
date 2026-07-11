@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<title>惟安数据科技 WEIAN DATA｜测量与大规模调查的数据科学</title>
+<meta name="description" content="惟安数据科技（北京）专注 IRT 与大规模调查的数据处理、建模与软件交付，为科研机构提供既懂方法、又能落地的数据伙伴。数据不出门，工具照样精准。">
+<link rel="canonical" href="https://global.weiandata.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+@keyframes marqueeA{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blinkA{0%,100%{opacity:1}50%{opacity:.15}}
+@keyframes toolInA{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(36,64,200,.5);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(36,64,200,0);transform:scale(1)}}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg viewBox="0 0 742 868" role="img" aria-label="惟安 logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogo)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">惟安数据科技</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">WEIAN&nbsp;DATA</span>
+      </div>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:20px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="#srv" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">服务</a>
+        <a href="#secure" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">保密交付</a>
+        <a href="#tools" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">自研工具</a>
+        <a href="#process" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">合作流程</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">工具案例</a>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">方法百科</a>
+        <a href="learn.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">学习中心</a>
+        <a href="en/index.html" title="Switch to English" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">EN</a>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">联系合作</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 0">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8;margin-bottom:28px">WEIAN DATA — 测量与大规模调查的数据科学</div>
+      <h1 style="margin:0 0 30px;font-size:clamp(44px,6.6vw,94px);line-height:1.06;font-weight:900;letter-spacing:-.02em;max-width:1000px">
+        <span data-rv style="display:block">把复杂的测量，</span>
+        <span data-rv style="display:block">做成<span style="color:#2440C8">可信的结论</span>。</span>
+      </h1>
+      <div data-rv style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:44px">
+        <p style="margin:0;font-size:17px;line-height:1.8;color:#4B4840;max-width:520px">专注 IRT 与大规模调查的数据处理、建模与软件交付。<br>为科研机构提供一位既懂方法、又能落地的数据伙伴。</p>
+        <a href="#contact" style="color:#1A1914;text-decoration:none;font-size:15px;font-weight:700;border-bottom:3px solid #2440C8;padding-bottom:6px;letter-spacing:.5px" style-hover="color:#2440C8">预约一次免费评估 →</a>
+      </div>
+    </div>
+    <!-- 粒子流：原始数据 → 模型 → 结论 -->
+    <div style="border-top:1px solid #1A1914;background:#FAF8F2;position:relative">
+      <div style="max-width:1280px;margin:0 auto;position:relative">
+        <canvas data-flow aria-hidden="true" style="display:block;width:100%;height:300px"></canvas>
+        <div style="position:absolute;left:40px;top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#8A857A">输入 · 原始作答数据</div>
+        <div style="position:absolute;left:50%;top:16px;transform:translateX(-50%);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#2440C8">IRT 建模 · 等值 · 加权</div>
+        <div style="position:absolute;right:40px;top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#8A857A">输出 · 可信结论</div>
+        <div style="position:absolute;left:40px;bottom:14px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:#1A1914">n = <span data-ncount style="font-weight:700">0</span></div>
+        <div style="position:absolute;right:40px;bottom:14px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;animation:blinkA 2.4s ease-in-out infinite">● LIVE PIPELINE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)">
+      <div data-rv style="padding:38px 40px;border-right:1px solid #DDD8CA">
+        <div style="font-size:46px;font-weight:900;letter-spacing:-1px">10<sup style="font-size:22px;color:#2440C8">6</sup></div>
+        <div style="font-size:12.5px;color:#8A857A;letter-spacing:2px;margin-top:6px">样本级 IRT 全流程</div>
+      </div>
+      <div data-rv style="padding:38px 40px;border-right:1px solid #DDD8CA">
+        <div style="font-size:46px;font-weight:900;letter-spacing:-1px"><span data-count="3">0</span><span style="color:#2440C8">&nbsp;个</span></div>
+        <div style="font-size:12.5px;color:#8A857A;letter-spacing:2px;margin-top:6px">自研 R 包 · 含 CRAN 发布</div>
+      </div>
+      <div data-rv style="padding:38px 40px;border-right:1px solid #DDD8CA">
+        <div style="font-size:46px;font-weight:900;letter-spacing:-1px"><span data-count="50">0</span><span style="color:#2440C8">+</span></div>
+        <div style="font-size:12.5px;color:#8A857A;letter-spacing:2px;margin-top:6px">组自动化测试保障交付</div>
+      </div>
+      <div data-rv style="padding:38px 40px">
+        <div style="font-size:46px;font-weight:900;letter-spacing:-1px"><span data-count="100">0</span><span style="color:#2440C8">%</span></div>
+        <div style="font-size:12.5px;color:#8A857A;letter-spacing:2px;margin-top:6px">敏感数据不出客户内网</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="srv" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:84px 40px 90px">
+      <div style="display:grid;grid-template-columns:1fr 2.2fr;gap:40px;margin-bottom:56px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">01 — 服务</div>
+        <div>
+          <h2 data-rv style="margin:0;font-size:clamp(30px,3.4vw,46px);font-weight:900;letter-spacing:-.01em;line-height:1.2">我们解决三类问题</h2>
+          <p data-rv style="margin:18px 0 0;font-size:14px;line-height:1.9;color:#4B4840">对 IRT、等值链接、校准加权这些名词不熟？<a href="methods.html" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:1px" style-hover="color:#1A1914;border-color:#1A1914">方法百科</a>&nbsp;用大白话讲清每个方法；更系统的零基础读物见&nbsp;<a href="learn.html" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:1px" style-hover="color:#1A1914;border-color:#1A1914">学习中心</a>。</p>
+        </div>
+      </div>
+      <div data-rv style="border-top:1px solid #1A1914;display:grid;grid-template-columns:90px 1fr 1.4fr auto;gap:28px;align-items:baseline;padding:34px 0;border-bottom:1px solid #DDD8CA;transition:padding-left .35s cubic-bezier(.2,.7,.2,1)" style-hover="padding-left:20px">
+        <span style="font-size:15px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;color:#2440C8;font-weight:700">/ 01</span>
+        <span style="font-size:22px;font-weight:700">定制数据处理与 IRT 建模</span>
+        <span style="font-size:14.5px;line-height:1.8;color:#4B4840">百万级样本处理、IRT/CTT 建模、等值链接、评分引擎与自动化分析报告。</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">能力测评 / 教育评价</span>
+      </div>
+      <div data-rv style="display:grid;grid-template-columns:90px 1fr 1.4fr auto;gap:28px;align-items:baseline;padding:34px 0;border-bottom:1px solid #DDD8CA;transition:padding-left .35s cubic-bezier(.2,.7,.2,1)" style-hover="padding-left:20px">
+        <span style="font-size:15px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;color:#2440C8;font-weight:700">/ 02</span>
+        <span style="font-size:22px;font-weight:700">长期方法学顾问</span>
+        <span style="font-size:14.5px;line-height:1.8;color:#4B4840">为调查项目提供方案设计、数据处理疑难解决与结果把关的持续技术支持。</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">课题组 / 调查主办方</span>
+      </div>
+      <div data-rv style="display:grid;grid-template-columns:90px 1fr 1.4fr auto;gap:28px;align-items:baseline;padding:34px 0;border-bottom:1px solid #1A1914;transition:padding-left .35s cubic-bezier(.2,.7,.2,1)" style-hover="padding-left:20px">
+        <span style="font-size:15px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;color:#2440C8;font-weight:700">/ 03</span>
+        <span style="font-size:22px;font-weight:700">软件与 R 包开发</span>
+        <span style="font-size:14.5px;line-height:1.8;color:#4B4840">把重复能力沉淀为可复用工具，部分已发布至 CRAN，可复现、可维护。</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">量表开发 / 企业测评</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURE (black band) -->
+  <section id="secure" style="background:#F3F0E6;color:#1A1914;border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:84px 40px 90px">
+      <div style="display:grid;grid-template-columns:1fr 2.2fr;gap:40px;margin-bottom:20px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">02 — 保密交付</div>
+        <div>
+          <h2 data-rv style="margin:0 0 18px;font-size:clamp(30px,3.4vw,46px);font-weight:900;letter-spacing:-.01em;line-height:1.2">数据不出门，<span style="color:#2440C8">工具照样精准</span></h2>
+          <p data-rv style="margin:0;font-size:15.5px;line-height:1.9;color:#4B4840;max-width:640px">"工具与数据隔离"模式解决敏感调查最大的交付障碍：惟安全程不接触原始敏感数据——我们基于脱敏样例开发工具，真实数据的执行完全留在您的内网。</p>
+        </div>
+      </div>
+      <!-- 隔离示意图 -->
+      <div data-rv style="margin:44px 0 50px;border:1px solid #C9C3B2;padding:30px;display:grid;grid-template-columns:1fr auto 1.2fr;gap:0;align-items:stretch">
+        <div style="padding:24px;border:1px dashed #A9A48F;position:relative">
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#8A857A;margin-bottom:16px">惟安 · 开发环境</div>
+          <div style="display:flex;gap:8px;align-items:center;animation:toolInA 3.6s ease-in-out infinite;transform-origin:left center">
+            <div style="width:44px;height:44px;background:#2440C8;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;color:#fff;font-weight:700">TOOL</div>
+            <div style="font-size:12.5px;color:#4B4840">项目专属分析内核<br><span style="font-size:11px;color:#8A857A">基于脱敏样例开发</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 28px;gap:6px">
+          <div style="font-size:20px;color:#2440C8">→</div>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;color:#8A857A;writing-mode:vertical-rl;letter-spacing:2px">仅工具交付</div>
+        </div>
+        <div style="padding:24px;border:2px solid #2440C8;position:relative">
+          <div style="position:absolute;top:-11px;left:18px;background:#F3F0E6;padding:0 10px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:2px;color:#2440C8">客户内网 · 数据永不外出</div>
+          <div style="display:flex;align-items:center;gap:18px;height:100%">
+            <div data-dots style="display:grid;grid-template-columns:repeat(8,10px);gap:6px"></div>
+            <div style="font-size:12.5px;color:#4B4840;line-height:1.7">真实数据在内网执行<br><span style="font-size:11px;color:#8A857A">结果可验证 · 可复现</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#C9C3B2;border:1px solid #C9C3B2">
+        <div data-rv style="background:#FAF8F2;padding:28px">
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;letter-spacing:2px;margin-bottom:12px">STEP 1</div>
+          <div style="font-size:17px;font-weight:700;margin-bottom:8px">客户提供框架</div>
+          <div style="font-size:13px;line-height:1.8;color:#4B4840">只需数据框架与脱敏样例，任何真实记录都无需离开您的环境。</div>
+        </div>
+        <div data-rv style="background:#FAF8F2;padding:28px">
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;letter-spacing:2px;margin-bottom:12px">STEP 2</div>
+          <div style="font-size:17px;font-weight:700;margin-bottom:8px">惟安定制工具</div>
+          <div style="font-size:13px;line-height:1.8;color:#4B4840">基于脱敏样例，用 AI 高效开发并优化项目专属的分析工具与处理内核。</div>
+        </div>
+        <div data-rv style="background:#FAF8F2;padding:28px">
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;letter-spacing:2px;margin-bottom:12px">STEP 3</div>
+          <div style="font-size:17px;font-weight:700;margin-bottom:8px">客户内网执行</div>
+          <div style="font-size:13px;line-height:1.8;color:#4B4840">工具交付保密端，真实数据的执行完全留在客户内网，结果可验证。</div>
+        </div>
+      </div>
+      <div data-rv style="margin-top:22px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* 合作前签订合同与保密协议（NDA），脱敏口径与客户书面确认。</div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:84px 40px 90px">
+      <div style="display:grid;grid-template-columns:1fr 2.2fr;gap:40px;margin-bottom:56px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">03 — 自研工具</div>
+        <div>
+          <h2 data-rv style="margin:0 0 18px;font-size:clamp(30px,3.4vw,46px);font-weight:900;letter-spacing:-.01em;line-height:1.2">把方法沉淀为可复用的软件</h2>
+          <p data-rv style="margin:0;font-size:15.5px;line-height:1.9;color:#4B4840;max-width:640px">不是零散脚本，而是三个相互衔接的专业 R 包，覆盖大规模调查数据「建模 → 加权 → 合并」的完整链条。自主开发、完整知识产权、50+ 组自动化测试。</p>
+          <a data-rv href="tools.html" style="display:inline-block;margin-top:20px;font-size:14.5px;font-weight:700;color:#1A1914;text-decoration:none;border-bottom:3px solid #2440C8;padding-bottom:5px" style-hover="color:#2440C8">查看完整技术案例 →</a>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">IRTC</span>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:1px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 8px">CRAN 即将发布</span>
+          </div>
+          <div style="font-size:14px;font-weight:700;color:#2440C8;margin-bottom:14px">高性能 IRT 估计引擎</div>
+          <canvas aria-hidden="true" data-spark="icc" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
+          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">支持 Rasch、2PL、GPCM 等主流模型，C++ 并行 + 流式低内存计算，普通工作站即可完成百万级样本估计。</p>
+          <a href="tools.html#irtc" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">完整技术案例 →</a>
+        </div>
+        <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">ratecalib</span>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:1px;color:#fff;background:#1A1914;padding:3px 8px">已发布 CRAN</span>
+          </div>
+          <div style="font-size:14px;font-weight:700;color:#2440C8;margin-bottom:14px">多子群达标校准加权</div>
+          <canvas aria-hidden="true" data-spark="calib" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
+          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">用凸优化让总体与多个子群的达标率精确匹配目标口径，同时保持权重结构与人口边际。MIT 许可。</p>
+          <a href="tools.html#ratecalib" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">完整技术案例 →</a>
+        </div>
+        <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">mergecalib</span>
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:1px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 8px">CRAN 即将发布</span>
+          </div>
+          <div style="font-size:14px;font-weight:700;color:#2440C8;margin-bottom:14px">区间达标的单元合并</div>
+          <canvas aria-hidden="true" data-spark="merge" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
+          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">用整数规划构建人口单元合并方案，保证子群比例落在目标区间，不可行时诚实报告。MIT 许可。</p>
+          <a href="tools.html#mergecalib" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">完整技术案例 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:84px 40px 90px">
+      <div style="display:grid;grid-template-columns:1fr 2.2fr;gap:40px;margin-bottom:56px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">04 — 合作流程</div>
+        <h2 data-rv style="margin:0;font-size:clamp(30px,3.4vw,46px);font-weight:900;letter-spacing:-.01em;line-height:1.2">从一封邮件，到里程碑交付</h2>
+      </div>
+      <div data-rv style="position:relative;margin-bottom:20px">
+        <div style="position:absolute;left:0;right:0;top:7px;height:1px;background:#DDD8CA"></div>
+        <div data-pline style="position:absolute;left:0;top:6px;height:3px;width:0;background:#2440C8;transition:width 1.6s cubic-bezier(.2,.7,.2,1)"></div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;position:relative">
+          <div style="padding-top:30px"><div style="position:absolute;top:0;width:15px;height:15px;background:#1A1914"></div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;margin-bottom:8px">01</div><div style="font-size:16px;font-weight:700;margin-bottom:6px">需求沟通</div><div style="font-size:12.5px;line-height:1.7;color:#4B4840">邮件说明项目背景，粗略描述即可开始。</div></div>
+          <div style="padding-top:30px"><div style="position:absolute;top:0;width:15px;height:15px;background:#1A1914"></div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;margin-bottom:8px">02</div><div style="font-size:16px;font-weight:700;margin-bottom:6px">免费评估</div><div style="font-size:12.5px;line-height:1.7;color:#4B4840">免费评估可行性，给出技术路线判断。</div></div>
+          <div style="padding-top:30px"><div style="position:absolute;top:0;width:15px;height:15px;background:#1A1914"></div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;margin-bottom:8px">03</div><div style="font-size:16px;font-weight:700;margin-bottom:6px">方案报价</div><div style="font-size:12.5px;line-height:1.7;color:#4B4840">按数据规模与方法复杂度分档，书面方案与报价。</div></div>
+          <div style="padding-top:30px"><div style="position:absolute;top:0;width:15px;height:15px;background:#1A1914"></div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;margin-bottom:8px">04</div><div style="font-size:16px;font-weight:700;margin-bottom:6px">合同保密</div><div style="font-size:12.5px;line-height:1.7;color:#4B4840">公司主体签合同、开发票，签订 NDA。</div></div>
+          <div style="padding-top:30px"><div style="position:absolute;top:0;width:15px;height:15px;background:#2440C8"></div><div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#2440C8;margin-bottom:8px">05</div><div style="font-size:16px;font-weight:700;margin-bottom:6px">里程碑交付</div><div style="font-size:12.5px;line-height:1.7;color:#4B4840">代码+结果+文档按里程碑交付，验收后结算。</div></div>
+        </div>
+      </div>
+      <div data-rv style="margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #1A1914">
+        <div style="padding:20px 24px;border-right:1px solid #DDD8CA"><div style="font-size:14px;font-weight:700;margin-bottom:4px">生产级代码</div><div style="font-size:12px;color:#4B4840;line-height:1.7">可运行、有注释的 Python/R 代码。</div></div>
+        <div style="padding:20px 24px;border-right:1px solid #DDD8CA"><div style="font-size:14px;font-weight:700;margin-bottom:4px">可复现流程</div><div style="font-size:12px;color:#4B4840;line-height:1.7">同样输入必得同样输出，每步可审计。</div></div>
+        <div style="padding:20px 24px;border-right:1px solid #DDD8CA"><div style="font-size:14px;font-weight:700;margin-bottom:4px">完整文档</div><div style="font-size:12px;color:#4B4840;line-height:1.7">手册与技术说明，团队可独立接手。</div></div>
+        <div style="padding:20px 24px"><div style="font-size:14px;font-weight:700;margin-bottom:4px">自动化测试</div><div style="font-size:12px;color:#4B4840;line-height:1.7">关键计算配套测试用例，质量可验证。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="border-bottom:1px solid #1A1914;overflow:hidden">
+    <div style="border-bottom:1px solid #1A1914;padding:14px 0;white-space:nowrap;overflow:hidden">
+      <div style="display:inline-flex;gap:0;animation:marqueeA 36s linear infinite;will-change:transform">
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:2px;color:#8A857A;padding-right:0">Rasch / 2PL / GPCM　·　题间多维 IRT　·　EAP 能力估计　·　等值链接　·　DIF 检验　·　校准加权 QP　·　单元合并 MILP　·　CTT 信效度　·　自动化报告　·　R 包开发　·　Rcpp / C++　·　Python 数据工程　·　</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:2px;color:#8A857A">Rasch / 2PL / GPCM　·　题间多维 IRT　·　EAP 能力估计　·　等值链接　·　DIF 检验　·　校准加权 QP　·　单元合并 MILP　·　CTT 信效度　·　自动化报告　·　R 包开发　·　Rcpp / C++　·　Python 数据工程　·　</span>
+      </div>
+    </div>
+    <div style="max-width:1280px;margin:0 auto;padding:96px 40px 100px">
+      <h2 data-rv style="margin:0 0 30px;font-size:clamp(38px,5.4vw,76px);font-weight:900;letter-spacing:-.02em;line-height:1.15;max-width:900px">有一个调查项目<br>需要<span style="color:#2440C8">专业处理</span>？</h2>
+      <p data-rv style="margin:0 0 40px;font-size:16px;line-height:1.9;color:#4B4840;max-width:560px">前期可行性评估免费。邮件说明项目背景，我们会给出技术方案与报价。</p>
+      <div data-rv style="display:flex;align-items:center;gap:26px;flex-wrap:wrap">
+        <a href="mailto:contact@weiandata.com" target="_top" style="background:#2440C8;color:#fff;text-decoration:none;font-size:16px;font-weight:700;padding:16px 34px;letter-spacing:1px;transition:background .25s,transform .25s" style-hover="background:#1A1914;transform:translateY(-2px)">发送邮件洽谈 →</a>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;color:#4B4840">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>惟安数据科技（北京）有限公司 · WEIAN DATA</span>
+      <span><a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">工具案例</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">方法百科</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">学习中心</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">联系合作</a></span>
+      <span>© 2026 · All rights reserved</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;高&quot;, &quot;克制&quot;], &quot;default&quot;: &quot;高&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;动效&quot;}, &quot;particleCount&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;min&quot;: 60, &quot;max&quot;: 500, &quot;step&quot;: 10, &quot;default&quot;: 230, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;动效&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.rafs = [];
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === '克制');
+    this.root = document;
+    this.setupReveals();
+    this.setupCounters();
+    this.setupFlow();
+    this.setupSparks();
+    this.setupDots();
+    this.setupProcessLine();
+    this.setupCtaFeedback();
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+  componentWillUnmount() {
+    (this.rafs || []).forEach(function (id) { cancelAnimationFrame(id); });
+    if (this.io) this.io.disconnect();
+    if (this.io2) this.io2.disconnect();
+    if (this.ro) this.ro.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+  }
+
+  setupReveals() {
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    if (this.low || !('IntersectionObserver' in window)) return;
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.12 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+
+  setupCounters() {
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+    var self = this;
+    function run(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      if (self.low) { el.textContent = target; return; }
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min(1, (ts - start) / 1200);
+        p = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * p);
+        if (p < 1) self.rafs.push(requestAnimationFrame(step));
+      }
+      self.rafs.push(requestAnimationFrame(step));
+    }
+    if (!('IntersectionObserver' in window) || this.low) { els.forEach(run); return; }
+    this.io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { run(e.target); self.io2.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    els.forEach(function (el) { this.io2.observe(el); }, this);
+  }
+
+  /* Hero：粒子从无序（左）穿过模型闸门（中）变为有序车道（右） */
+  setupFlow() {
+    var cv = document.querySelector('[data-flow]');
+    var nEl = document.querySelector('[data-ncount]');
+    if (!cv) return;
+    var ctx = cv.getContext('2d');
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0;
+    function resize() {
+      var r = cv.getBoundingClientRect();
+      W = r.width; H = r.height;
+      cv.width = W * DPR; cv.height = H * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    resize();
+    if ('ResizeObserver' in window) { this.ro = new ResizeObserver(resize); this.ro.observe(cv); }
+
+    var COUNT = Math.round(this.props.particleCount || 230);
+    if (this.low) COUNT = Math.min(COUNT, 120);
+    var P = [];
+    var LANES = 5;
+    function spawn(p, fresh) {
+      p.x = fresh ? Math.random() * W * 0.45 : -6;
+      p.y = Math.random() * (H - 70) + 45;
+      p.v = 0.55 + Math.random() * 0.75;
+      p.ph = Math.random() * 6.28;
+      p.lane = Math.floor(Math.random() * LANES);
+      p.red = Math.random() < 0.09;
+      p.sz = Math.random() < 0.2 ? 2.6 : 1.8;
+    }
+    for (var i = 0; i < COUNT; i++) { var p = {}; spawn(p, true); P.push(p); }
+
+    var gateX = function () { return W * 0.52; };
+    var laneY = function (k) { return H * 0.28 + k * (H * 0.44 / (LANES - 1)); };
+    var nStart = null, self = this;
+
+    function frame(ts) {
+      ctx.clearRect(0, 0, W, H);
+      var gx = gateX();
+      /* 闸门 */
+      ctx.strokeStyle = '#2440C8'; ctx.lineWidth = 1;
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath(); ctx.moveTo(gx, 34); ctx.lineTo(gx, H - 34); ctx.stroke();
+      ctx.setLineDash([]);
+      /* 车道基准线 */
+      ctx.strokeStyle = 'rgba(26,25,20,.07)';
+      for (var k = 0; k < LANES; k++) {
+        ctx.beginPath(); ctx.moveTo(gx + 24, laneY(k)); ctx.lineTo(W - 30, laneY(k)); ctx.stroke();
+      }
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i];
+        p.x += p.v * (self.low ? 0.6 : 1);
+        if (p.x < gx) {
+          p.y += Math.sin(ts / 600 + p.ph) * 0.55 + (Math.random() - 0.5) * 0.7;
+          if (p.y < 40) p.y = 40; if (p.y > H - 40) p.y = H - 40;
+        } else {
+          var ty = laneY(p.lane);
+          p.y += (ty - p.y) * 0.07;
+        }
+        if (p.x > W + 6) spawn(p, false);
+        ctx.fillStyle = p.red ? '#2440C8' : (p.x > gx ? 'rgba(26,25,20,.78)' : 'rgba(26,25,20,.34)');
+        ctx.fillRect(p.x - p.sz / 2, p.y - p.sz / 2, p.sz, p.sz);
+      }
+      /* 样本计数 */
+      if (nEl) {
+        if (nStart === null) nStart = ts;
+        var pr = Math.min(1, (ts - nStart) / 9000);
+        pr = 1 - Math.pow(1 - pr, 2);
+        var n = Math.round(1000000 * pr);
+        nEl.textContent = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      }
+      self.rafs.push(requestAnimationFrame(frame));
+    }
+    if (this.reduce) {
+      /* 静态一帧 */
+      frame(0);
+      this.rafs.forEach(function (id) { cancelAnimationFrame(id); });
+      this.rafs = [];
+      if (nEl) nEl.textContent = '1 000 000';
+    } else {
+      this.rafs.push(requestAnimationFrame(frame));
+    }
+  }
+
+  /* 工具卡迷你图 */
+  setupSparks() {
+    var self = this;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-spark]'), function (cv) {
+      var type = cv.getAttribute('data-spark');
+      var ctx = cv.getContext('2d');
+      var DPR = Math.min(window.devicePixelRatio || 1, 2);
+      var W = 280, H = 64;
+      cv.width = W * DPR; cv.height = H * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      function lg(t, b) { return 1 / (1 + Math.exp(-1.6 * (t - b))); }
+      function draw(prog) {
+        ctx.clearRect(0, 0, W, H);
+        if (type === 'icc') {
+          var bs = [-1.1, 0, 1.1], cols = ['#1A1914', '#2440C8', '#C9C3B2'];
+          bs.forEach(function (b, k) {
+            ctx.strokeStyle = cols[k]; ctx.lineWidth = 1.6; ctx.beginPath();
+            var steps = Math.floor(60 * Math.min(1, prog * 1.4 - k * 0.15));
+            for (var s = 0; s <= steps; s++) {
+              var t = -3 + s / 60 * 6;
+              var x = 10 + (t + 3) / 6 * (W - 20), y = H - 10 - lg(t, b) * (H - 20);
+              s === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+          });
+        } else if (type === 'calib') {
+          var n = 8, bw = 18, gap = (W - n * bw) / (n + 1), tY = 18;
+          ctx.strokeStyle = '#2440C8'; ctx.setLineDash([4, 3]); ctx.beginPath();
+          ctx.moveTo(6, tY); ctx.lineTo(W - 6, tY); ctx.stroke(); ctx.setLineDash([]);
+          var offs = [16, 30, -8, 24, -12, 18, 8, 26];
+          for (var i = 0; i < n; i++) {
+            var x = gap + i * (bw + gap);
+            var y0 = tY + offs[i], y1 = tY + (i % 3 - 1) * 2;
+            var y = y0 + (y1 - y0) * Math.min(1, Math.max(0, prog * 1.5 - i * 0.07));
+            ctx.fillStyle = i % 2 ? '#1A1914' : '#8A857A';
+            ctx.fillRect(x, y, bw, H - 8 - y);
+          }
+        } else {
+          var groups = [[10, 3], [80, 2], [140, 3], [210, 2]];
+          var cols2 = ['#1A1914', '#2440C8', '#8A857A', '#C9C3B2'];
+          groups.forEach(function (g, gi) {
+            var x0 = g[0], cnt = g[1];
+            for (var c = 0; c < cnt; c++) {
+              var startX = x0 + c * 26, endX = x0 + c * 15;
+              var x = startX + (endX - startX) * Math.min(1, prog * 1.3);
+              ctx.fillStyle = cols2[gi];
+              ctx.fillRect(x, 24, 13, 16);
+            }
+            if (prog > 0.8) {
+              ctx.strokeStyle = 'rgba(36,64,200,' + ((prog - 0.8) * 3) + ')';
+              ctx.strokeRect(x0 - 4, 18, cnt * 15 + 18, 28);
+            }
+          });
+        }
+      }
+      if (self.low) { draw(1); return; }
+      var played = false;
+      function play() {
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var p = Math.min(1, (ts - start) / 1300);
+          draw(1 - Math.pow(1 - p, 3));
+          if (p < 1) self.rafs.push(requestAnimationFrame(step));
+        }
+        self.rafs.push(requestAnimationFrame(step));
+      }
+      if ('IntersectionObserver' in window) {
+        var o = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting && !played) { played = true; play(); o.disconnect(); } });
+        }, { threshold: 0.5 });
+        o.observe(cv);
+      } else play();
+      cv.parentNode.addEventListener('mouseenter', play);
+    });
+  }
+
+  setupDots() {
+    var host = document.querySelector('[data-dots]');
+    if (!host) return;
+    for (var i = 0; i < 24; i++) {
+      var d = document.createElement('div');
+      d.style.cssText = 'width:10px;height:10px;background:' + (i % 7 === 0 ? '#2440C8' : '#4B4840') + ';opacity:.9';
+      if (!this.low) {
+        d.style.animation = 'blinkA ' + (2 + (i % 5) * 0.6) + 's ease-in-out ' + (i * 0.13) + 's infinite';
+      }
+      host.appendChild(d);
+    }
+  }
+
+  setupProcessLine() {
+    var line = document.querySelector('[data-pline]');
+    if (!line) return;
+    if (this.low || !('IntersectionObserver' in window)) { line.style.width = '100%'; return; }
+    var o = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { line.style.width = '100%'; o.disconnect(); } });
+    }, { threshold: 0.4 });
+    o.observe(line);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

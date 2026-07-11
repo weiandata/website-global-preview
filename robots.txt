@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI 爬虫（明确允许，便于被 AI 搜索收录与引用）
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://global.weiandata.com/sitemap.xml
