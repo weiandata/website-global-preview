@@ -26,6 +26,11 @@ Sponsors of large social surveys (research institutes / science-association syst
 - [Learning hub](https://global.weiandata.com/learn): index of systematic articles and methods notes on IRT and survey data processing ([中文](https://global.weiandata.com/zh/learn))
 - [Articles](https://global.weiandata.com/article): long-form articles and methods reading page ([中文](https://global.weiandata.com/zh/article))
 
+## Articles
+
+- 80 articles per language (A01-A30 long-form, M01-M50 methods notes) on IRT, survey data processing, equating, weighting, and DIF.
+- Full per-article index with reader and raw-Markdown links: https://global.weiandata.com/llms-full.txt
+
 ## Contact
 
 - Website: https://global.weiandata.com

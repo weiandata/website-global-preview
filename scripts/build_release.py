@@ -18,6 +18,7 @@ ROOT_FILES = (
     "index.html",
     "learn.html",
     "llms.txt",
+    "llms-full.txt",
     "methods.html",
     "robots.txt",
     "sitemap.xml",

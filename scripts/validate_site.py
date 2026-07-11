@@ -183,7 +183,10 @@ def validate_seo(errors: list[str]) -> None:
 
     namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     actual_urls = {node.text for node in document.findall("sm:url/sm:loc", namespace)}
+    article_ids = [f"A{n:02}" for n in range(1, 31)] + [f"M{n:02}" for n in range(1, 51)]
     expected_urls = set(EXPECTED_CANONICALS.values())
+    expected_urls.update(f"https://global.weiandata.com/article?id={i}" for i in article_ids)
+    expected_urls.update(f"https://global.weiandata.com/zh/article?id={i}" for i in article_ids)
     if actual_urls != expected_urls:
         errors.append(
             "sitemap.xml URLs differ from canonical URLs: "

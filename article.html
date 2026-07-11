@@ -11,6 +11,21 @@
 <link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/article">
 <link rel="alternate" hreflang="en" href="https://global.weiandata.com/article">
 <link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/article">
+<meta property="og:site_name" content="WEIAN DATA">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://global.weiandata.com/article">
+<meta property="og:title" content="Article — WEIAN Learning Hub | WEIAN DATA">
+<meta property="og:description" content="WEIAN Learning Hub articles: a systematic, plain-language guide to IRT and large-scale survey data processing.">
+<meta property="og:image" content="https://global.weiandata.com/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Article — WEIAN Learning Hub | WEIAN DATA">
+<meta name="twitter:description" content="WEIAN Learning Hub articles: a systematic, plain-language guide to IRT and large-scale survey data processing.">
+<meta name="twitter:image" content="https://global.weiandata.com/assets/images/og-cover.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://global.weiandata.com/article#webpage","url":"https://global.weiandata.com/article","name":"Article — WEIAN Learning Hub | WEIAN DATA","description":"WEIAN Learning Hub articles: a systematic, plain-language guide to IRT and large-scale survey data processing.","inLanguage":"en","isPartOf":{"@id":"https://global.weiandata.com/#website"},"about":{"@id":"https://global.weiandata.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://global.weiandata.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://global.weiandata.com/article"}]}]}</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -193,12 +208,12 @@ class Component extends DCLogic {
     if (titleEl) titleEl.textContent = meta.title;
     document.title = meta.title + ' — WEIAN Learning Hub';
     var cn = document.querySelector('[data-cn-link]');
-    if (cn) cn.href = '../article.html?id=' + id;
+    if (cn) cn.href = 'zh/article.html?id=' + id;
     var _base = 'https://global.weiandata.com/';
     var _setHref = function (sel, url) { var el = document.querySelector(sel); if (el) el.setAttribute('href', url); };
-    _setHref('link[rel="canonical"]', _base + 'en/article?id=' + id);
-    _setHref('link[hreflang="zh-CN"]', _base + 'article?id=' + id);
-    _setHref('link[hreflang="en"]', _base + 'en/article?id=' + id);
+    _setHref('link[rel="canonical"]', _base + 'article?id=' + id);
+    _setHref('link[hreflang="zh-CN"]', _base + 'zh/article?id=' + id);
+    _setHref('link[hreflang="en"]', _base + 'article?id=' + id);
     _setHref('link[hreflang="x-default"]', _base + 'article?id=' + id);
     var pid = this.neighbor(id, -1), nid = this.neighbor(id, 1);
     var prevA = document.querySelector('[data-prev]'), nextA = document.querySelector('[data-next]');
