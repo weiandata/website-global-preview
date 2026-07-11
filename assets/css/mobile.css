@@ -46,8 +46,25 @@
   [style*="width:15px;height:15px"], [style*="width: 15px; height: 15px"] { display: none !important; }
   [style*="padding-top:30px"], [style*="padding-top: 30px"] { padding-top: 0 !important; border-left: 3px solid #2440C8; padding-left: 14px; }
 
+  /* secure-delivery diagram: middle arrow cell gets breathing room above the
+     floating box label, and the arrow points down in the stacked layout */
+  [style*="padding:0 28px"], [style*="padding: 0px 28px"], [style*="padding: 0 28px"] { padding: 8px 0 22px !important; }
+  [style*="padding:0 28px"] > div:first-child, [style*="padding: 0px 28px"] > div:first-child, [style*="padding: 0 28px"] > div:first-child { transform: rotate(90deg); }
+
   /* vertical side-labels read horizontally on phones */
   [style*="writing-mode:vertical"], [style*="writing-mode: vertical"] { writing-mode: horizontal-tb !important; transform: none !important; }
+
+  /* tighter vertical rhythm on phones */
+  /* anchor jumps land below the sticky header instead of underneath it */
+  [id] { scroll-margin-top: 112px; }
+  /* section header blocks: label sits right above its heading */
+  [style*="margin-bottom:56px"][style*="grid-template-columns"], [style*="margin-bottom: 56px"][style*="grid-template-columns"] { gap: 10px !important; margin-bottom: 30px !important; }
+  /* collapsed multi-column grids: desktop gaps of 40-50px shrink to 24px */
+  [style*="grid-template-columns"][style*="gap:40px"], [style*="grid-template-columns"][style*="gap: 40px"],
+  [style*="grid-template-columns"][style*="gap:48px"], [style*="grid-template-columns"][style*="gap: 48px"],
+  [style*="grid-template-columns"][style*="gap:50px"], [style*="grid-template-columns"][style*="gap: 50px"] { gap: 24px !important; }
+  /* stat cells lose their oversized padding */
+  [style*="padding:38px 40px"], [style*="padding: 38px 40px"] { padding: 22px 20px !important; }
 
   /* long content: tables, code, and KaTeX scroll inside the page instead of stretching it */
   table { display: block; max-width: 100%; overflow-x: auto; }
