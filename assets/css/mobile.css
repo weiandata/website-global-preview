@@ -39,6 +39,13 @@
   [style*="grid-template-columns:64px 1fr auto"], [style*="grid-template-columns: 64px 1fr auto"] { grid-template-columns: 44px 1fr !important; }
   [style*="grid-template-columns:64px 1fr auto"] > :nth-child(3), [style*="grid-template-columns: 64px 1fr auto"] > :nth-child(3) { grid-column: 2; justify-self: start; }
 
+  /* process timeline: hide the horizontal track/progress line and step squares
+     (desktop-only decoration); steps read as a simple vertical list */
+  [data-pline] { display: none !important; }
+  [style*="top:7px"][style*="height:1px"], [style*="top: 7px"][style*="height: 1px"] { display: none !important; }
+  [style*="width:15px;height:15px"], [style*="width: 15px; height: 15px"] { display: none !important; }
+  [style*="padding-top:30px"], [style*="padding-top: 30px"] { padding-top: 0 !important; border-left: 3px solid #2440C8; padding-left: 14px; }
+
   /* vertical side-labels read horizontally on phones */
   [style*="writing-mode:vertical"], [style*="writing-mode: vertical"] { writing-mode: horizontal-tb !important; transform: none !important; }
 
