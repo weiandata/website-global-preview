@@ -36,12 +36,12 @@ manager, or repository-level runtime dependency.
 
 ## Pages
 
-| English (default) | Chinese |
-| --- | --- |
-| [Home](index.html) | [Home](zh/index.html) |
-| [Tools and cases](tools.html) | [Tools and cases](zh/tools.html) |
-| [Methods](methods.html) | [Methods](zh/methods.html) |
-| [Learning hub](learn.html) | [Learning hub](zh/learn.html) |
+| English (default)              | Chinese                           |
+| ------------------------------ | --------------------------------- |
+| [Home](index.html)             | [Home](zh/index.html)             |
+| [Tools and cases](tools.html)  | [Tools and cases](zh/tools.html)  |
+| [Methods](methods.html)        | [Methods](zh/methods.html)        |
+| [Learning hub](learn.html)     | [Learning hub](zh/learn.html)     |
 | [Article reader](article.html) | [Article reader](zh/article.html) |
 
 ## Local Preview
@@ -126,3 +126,7 @@ unless a separately reviewed redesign approves a different approach.
 
 Copyright © WeianData. All rights reserved. This repository is proprietary;
 see [PROPRIETARY.md](PROPRIETARY.md).
+
+## Official Website
+
+https://global.weiandata.com
