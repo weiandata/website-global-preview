@@ -219,9 +219,9 @@ Semantic Versioning.
 
 ## 10. License
 
-Leave the LICENSE placeholder.
-
-Individual repositories decide the final license.
+R-package repositories use GPL (>= 2) plus inst/COPYRIGHTS for dependency
+copyright boundaries. Websites, WAEF, and comparable non-R deliverables use
+the approved proprietary profile. The company handbook policy is normative.
 
 ---
 

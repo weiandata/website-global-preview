@@ -124,8 +124,10 @@ unless a separately reviewed redesign approves a different approach.
 
 ## License
 
-Copyright © WeianData. All rights reserved. This repository is proprietary;
-see [PROPRIETARY.md](PROPRIETARY.md).
+Copyright (c) 2026 WEIAN DATA TECH (Beijing) Co., Ltd.
+(惟安数据科技（北京）有限公司). All rights reserved. This repository is
+proprietary; see [PROPRIETARY.md](PROPRIETARY.md). Licensing and permission
+requests: contact@weiandata.com.
 
 ## Official Website
 

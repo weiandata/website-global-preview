@@ -795,7 +795,7 @@ PROPRIETARY.md
 Recommended notice:
 
 ```text
-Copyright © WeianData.
+Copyright (c) 2026 WEIAN DATA TECH (Beijing) Co., Ltd.
 
 All rights reserved.
 

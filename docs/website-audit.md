@@ -291,7 +291,7 @@ materially damaging; **Medium** = should fix before or shortly after launch;
 #### M6 — Footer copyright / ICP wording differs between Chinese and English
 
 - **Affected files:** CN footers (`惟安数据科技（北京）有限公司 · … 京ICP备 000000
-  号（待备案）`) vs `en/index.html` (`WEIAN Data Technology (Beijing) Co., Ltd. ·
+  号（待备案）`) vs `en/index.html` (`WEIAN DATA TECH (Beijing) Co., Ltd. ·
   … ICP filing pending`)
 - **Issue:** The two languages present the legal entity and filing status in
   different formats.

@@ -16,6 +16,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Standardize the legal owner identity and licensing contact, and apply the
+  company proprietary-license profile to the repository and website content.
 - Normalize Chinese HTML filenames.
 - Move English pages into the `en/` directory.
 - Update navigation, article-loading, canonical, and sitemap paths.
