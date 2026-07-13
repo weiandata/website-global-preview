@@ -10,7 +10,7 @@ contents are proprietary and confidential. They are provided only for
 authorized organizational use. Unauthorized copying, modification,
 distribution, publication, or use is prohibited.
 
-Contact contact@weiandata.com for licensing or permission requests.
+Contact <contact@weiandata.com> for licensing or permission requests.
 
 Company copyright and licensing rules are defined in the
 [Copyright and Licensing Policy](https://github.com/weiandata/.github/blob/main/handbook/chapters/36-copyright-and-licensing-policy.md).
