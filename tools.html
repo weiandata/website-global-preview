@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="assets/css/mobile.css">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <title>Tools &amp; Cases | WEIAN DATA</title>
-<meta name="description" content="Three interlocking in-house R packages — IRTC, ratecalib, mergecalib — covering the full modeling → weighting → merging chain for large-scale survey data.">
+<meta name="description" content="Three in-house R projects — DCC, IRTC, and WFC — covering the cleaning → modeling → weighting workflow for survey and assessment data.">
 <link rel="canonical" href="https://global.weiandata.com/tools">
 <link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/tools">
 <link rel="alternate" hreflang="en" href="https://global.weiandata.com/tools">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://global.weiandata.com/tools">
 <meta property="og:title" content="Tools &amp; Cases | WEIAN DATA">
-<meta property="og:description" content="Three interlocking in-house R packages — IRTC, ratecalib, mergecalib — covering the full modeling → weighting → merging chain for large-scale survey data.">
+<meta property="og:description" content="Three in-house R projects — DCC, IRTC, and WFC — covering the cleaning → modeling → weighting workflow for survey and assessment data.">
 <meta property="og:image" content="https://global.weiandata.com/assets/images/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,9 +23,9 @@
 <meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tools &amp; Cases | WEIAN DATA">
-<meta name="twitter:description" content="Three interlocking in-house R packages — IRTC, ratecalib, mergecalib — covering the full modeling → weighting → merging chain for large-scale survey data.">
+<meta name="twitter:description" content="Three in-house R projects — DCC, IRTC, and WFC — covering the cleaning → modeling → weighting workflow for survey and assessment data.">
 <meta name="twitter:image" content="https://global.weiandata.com/assets/images/og-cover.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://global.weiandata.com/tools#webpage","url":"https://global.weiandata.com/tools","name":"Tools & Cases | WEIAN DATA","description":"Three interlocking in-house R packages — IRTC, ratecalib, mergecalib — covering the full modeling → weighting → merging chain for large-scale survey data.","inLanguage":"en","isPartOf":{"@id":"https://global.weiandata.com/#website"},"about":{"@id":"https://global.weiandata.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://global.weiandata.com/"},{"@type":"ListItem","position":2,"name":"Tools & Cases","item":"https://global.weiandata.com/tools"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://global.weiandata.com/tools#webpage","url":"https://global.weiandata.com/tools","name":"Tools & Cases | WEIAN DATA","description":"Three in-house R projects — DCC, IRTC, and WFC — covering the cleaning → modeling → weighting workflow for survey and assessment data.","inLanguage":"en","isPartOf":{"@id":"https://global.weiandata.com/#website"},"about":{"@id":"https://global.weiandata.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://global.weiandata.com/"},{"@type":"ListItem","position":2,"name":"Tools & Cases","item":"https://global.weiandata.com/tools"}]}]}</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -67,152 +67,138 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
   <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
     <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
       <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">HOME</a> / IN-HOUSE TOOLS &amp; CASE STUDIES</div>
-      <h1 data-rv style="margin:0 0 24px;font-size:clamp(34px,4.4vw,58px);line-height:1.12;font-weight:900;letter-spacing:-.02em;max-width:1020px">One toolchain across<br>"<span style="color:#2440C8">modeling → weighting → merging</span>"</h1>
-      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:620px">Not scattered scripts: three interlocking R packages built around the full data flow of large-scale assessment surveys. All developed in-house with full IP ownership; no client data involved.</p>
+      <h1 data-rv style="margin:0 0 24px;font-size:clamp(36px,4.8vw,64px);line-height:1.1;font-weight:900;letter-spacing:-.02em;max-width:980px">One in-house workflow across<br>“<span style="color:#2440C8">cleaning → modeling → weighting</span>”</h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:600px">Three professional R projects for survey and assessment data, developed in-house with full IP ownership and no client data.</p>
       <div data-rv style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px">
         <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">Raw response data</div>
         <span style="font-size:17px;color:#2440C8">→</span>
-        <a href="#irtc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">IRTC</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">IRT modeling</span></a>
+        <a href="#dcc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>DCC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Data cleaning</span></a>
         <span style="font-size:17px;color:#2440C8">→</span>
-        <a href="#ratecalib" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">ratecalib</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">Calibration weighting</span></a>
+        <a href="#irtc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>IRTC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Measurement modeling</span></a>
         <span style="font-size:17px;color:#2440C8">→</span>
-        <a href="#mergecalib" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8"><span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700">mergecalib</span><span style="display:block;font-size:11px;color:inherit;opacity:.65;margin-top:2px">Unit merging</span></a>
+        <a href="#wfc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>WFC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Survey weighting</span></a>
         <span style="font-size:17px;color:#2440C8">→</span>
         <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">Trustworthy conclusions</div>
       </div>
     </div>
   </section>
 
-  <!-- Case 01 · IRTC -->
-  <article id="irtc" style="border-bottom:1px solid #DDD8CA">
+  <article id="dcc" style="border-bottom:1px solid #DDD8CA">
     <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
       <div style="position:sticky;top:96px">
         <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">CASE 01</div>
-        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">IRTC</div>
-        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">High-performance IRT estimation engine</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">DCC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Rule-driven, fully auditable data cleaning</div>
         <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Item Response Theory</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">C++ / Rcpp</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Streaming low-memory</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">26 test suites</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #1A1914;padding:4px 10px;color:#1A1914;font-weight:700">CRAN upcoming</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Data cleaning</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Rule-driven</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Cell-level audit</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Reproducible</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
         </div>
       </div>
       <div style="display:grid;gap:34px">
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE PROBLEM</div>
-          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Large assessments involve hundreds of thousands to millions of test-takers, many items, and multiple dimensions. Traditional IRT software fails at this scale — memory explodes or estimation never finishes — and commercial packages are hard to customize. Research teams need an engine that is both rigorous and able to run big data on an ordinary workstation.</p>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ PROBLEM</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Survey and assessment data often arrive in multiple formats and encodings, with out-of-range values, missing responses, straight-lining, timing anomalies, and form-specific item identifiers. Ad-hoc scripts bury correction logic in code, making it hard to review why a value changed or reproduce the full run.</p>
         </div>
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE SOLUTION</div>
-          <p style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">IRTC is a self-contained marginal maximum likelihood (MML) estimation engine with C++ (Rcpp / RcppArmadillo) internals, systematically engineered for scale:</p>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ SOLUTION</div>
           <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
-            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Model coverage</b>: Rasch/1PL, PCM, RSM, 2PL, GPCM; unidimensional and between-item multidimensional; latent regression, multi-group analysis, case weights, and EAP ability estimation.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Performance</b>: multithreaded parallel E-step, block-wise streaming posterior computation (no full person × node posterior matrix), dimensional decomposition, analytic gradients with hybrid Newton M-step, automatic engine routing.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Trustworthiness</b>: optional node pruning is accompanied by stratified empirical error checks with a written report — the exact path is the default, and statistical targets are never silently changed.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Versioned rules run range, set, and expression checks plus detectors for missingness, straight-lining, response time, trap items, and score anomalies.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Detection and execution are separate: exclude, set-NA, recode, and flag actions must map explicitly to rules, while unhandled findings remain visible.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Raw data stay immutable; every change records old and new values, rule, method, and finding_id, while manifests and hashes support verified reruns.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Common tabular and statistical formats, chunked processing, scoring, multi-form item-bank alignment, and self-contained HTML reports are supported.</li>
           </ul>
         </div>
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS</div>
-          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">The streaming engine has completed million-sample, multidimensional GPCM estimation in prototype benchmarks, compressing memory needs to ordinary-workstation levels.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Three engines (auto / grid / streaming) with automatic routing that records its reasoning — usable by default, controllable when needed.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">26 automated test suites and a beginner-friendly manual; engineering quality on par with established open-source projects.</li>
-          </ul>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS & VALUE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">DCC turns “cleaned data” into an explainable, traceable, rerunnable data product, giving project leads, analysts, and reviewers the same evidence chain.</p>
         </div>
         <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
-          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> the flagship proof of WEIAN's "IRT expertise + large-scale engineering" claim. It serves as the core engine for custom assessment modeling projects and can be tailored and extended to your requirements. New to IRT itself? See <a href="methods.html#ctt-irt" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">Methods · CTT vs. IRT</a>.</div>
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> A defensible cleaning pipeline can be tailored to your data rules without turning project-specific decisions into opaque code.</div>
         </div>
       </div>
     </div>
   </article>
 
-  <!-- Case 02 · ratecalib -->
-  <article id="ratecalib" style="border-bottom:1px solid #DDD8CA">
+  <article id="irtc" style="border-bottom:1px solid #DDD8CA">
     <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
       <div style="position:sticky;top:96px">
         <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">CASE 02</div>
-        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">ratecalib</div>
-        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Multi-subgroup target-rate calibration weighting</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">IRTC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">High-performance item response theory estimation</div>
         <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Calibration weighting</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Convex QP</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">13 test suites</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">MIT</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;background:#2440C8;color:#FAF8F2;padding:4px 10px;font-weight:700">Published on CRAN</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Item response theory</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">C++ / Rcpp</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Low-memory streaming</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
         </div>
-        <a data-rv href="https://CRAN.R-project.org/package=ratecalib" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">View on CRAN →</a>
       </div>
       <div style="display:grid;gap:34px">
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE PROBLEM</div>
-          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Surveys often need overall and multiple overlapping subgroup pass rates (by region, gender, urban/rural) to approach or exactly match given targets — without breaking the original sampling weight structure or population margins. Manual reweighting is neither rigorous nor reproducible.</p>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ PROBLEM</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Large-scale assessments may involve hundreds of thousands or millions of respondents, many items, and multiple dimensions. Traditional IRT software can become impractical because of memory use, runtime, or limited extensibility.</p>
         </div>
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE SOLUTION</div>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ SOLUTION</div>
           <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Formalizes the requirement as <b style="color:#1A1914">bounded convex quadratic programming (QP)</b>, solved at the population-unit × outcome aggregation level — rigorous and efficient on large samples.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Two modes — soft (approach targets) and exact (match exactly)</b> — both preserving the initial weight structure and overall margins. Methodologically grounded in Deville &amp; Särndal (1992) calibration theory.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Practical tooling: one-step interface, pre-solve data checks, target-table builders, effective sample size (ESS) and design-effect diagnostics, example data; powered by the high-performance osqp solver.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Supports Rasch/1PL, PCM, RSM, 2PL, and GPCM models; unidimensional and between-item multidimensional structures; latent regression, multiple groups, case weights, and EAP scoring.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Parallel E-steps, person-block streaming, dimension decomposition, analytical gradients, hybrid Newton updates, and automatic engine routing are designed for scale.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Optional quadrature pruning reports measured approximation error; exact computation remains the default and never changes silently.</li>
           </ul>
         </div>
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS</div>
-          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Published on CRAN under the MIT license, with 13 automated test suites.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Turns a real-world rate-calibration challenge into a reproducible, diagnosable standard workflow.</li>
-          </ul>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS & VALUE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Grid, streaming, and automatic engines make routine analyses simple while keeping large-data execution controllable. Chinese and English manuals support handover to applied teams.</p>
         </div>
         <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
-          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> it demonstrates WEIAN's ability to translate a business requirement into a mathematical optimization problem and ship it as a tool — a need that recurs across survey projects of every kind. For the underlying theory, see <a href="methods.html#weighting" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">Methods · Calibration weighting</a>.</div>
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> IRTC is the core proof of WEIAN's measurement expertise and large-scale engineering, and can serve as an extensible engine for custom assessment projects.</div>
         </div>
       </div>
     </div>
   </article>
 
-  <!-- Case 03 · mergecalib -->
-  <article id="mergecalib" style="border-bottom:1px solid #1A1914">
+  <article id="wfc" style="border-bottom:1px solid #1A1914">
     <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
       <div style="position:sticky;top:96px">
         <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">CASE 03</div>
-        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">mergecalib</div>
-        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Deterministic unit merging under interval calibration targets</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">WFC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Precheck-first survey weighting and calibration</div>
         <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Integer programming (MILP)</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Survey post-processing</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">16 test suites</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">MIT</span>
-          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #1A1914;padding:4px 10px;color:#1A1914;font-weight:700">CRAN upcoming</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Survey weighting</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Raking</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Post-stratification</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Diagnostics</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
         </div>
       </div>
       <div style="display:grid;gap:34px">
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE PROBLEM</div>
-          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Tabulating graded results by population units (province × gender × urban/rural × age × education) often leaves cells with tiny or zero samples, destabilizing proportion estimates. Units must be merged so that provincial and national subgroup grade shares (e.g., A/B/C/D) stay within target intervals and every final unit has positive samples — a constraint-heavy combinatorial problem that is extremely error-prone by hand.</p>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ PROBLEM</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Survey-weighting scripts often fail silently when sample and target categories differ, cells are too thin, group totals drift after trimming, or multiple target sources use inconsistent schemas. A final weight column alone cannot show what was checked or which decisions were made.</p>
         </div>
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ THE SOLUTION</div>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ SOLUTION</div>
           <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Solves within-province merging as <b style="color:#1A1914">set-partitioning mixed-integer linear programming (MILP)</b>.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Lexicographic objectives</b>: minimize merged sample size, then population distance, outcome heterogeneity, weight distortion, and merge count — in that order.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840"><b style="color:#1A1914">Honest by design</b>: when constraints are infeasible, it reports so explicitly instead of silently compromising the targets.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">One canonical target accepts population data, weighted reference samples, or manual margins and compares sample and target before computing weights.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">A declared collapse ladder exposes incompatibilities and thin cells first, then applies reviewed category merges consistently to sample and target.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Raking and post-stratification share one dispatcher and result contract; the guided path never bypasses a blocking precheck.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Diagnostics, a decision ledger, bilingual reports, and audit exports make each calibration run reviewable.</li>
           </ul>
         </div>
         <div data-rv>
-          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS</div>
-          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Deterministic, reproducible merging plans replace cell-by-cell judgment calls.</li>
-            <li style="font-size:14px;line-height:1.9;color:#4B4840">Open-sourced under MIT with 16 automated test suites; CRAN submission upcoming.</li>
-          </ul>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ RESULTS & VALUE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">WFC turns one-off weighting scripts into a standard precheck → execute → diagnose workflow, reducing the risk of weights that converge numerically while drifting from the intended population contract.</p>
         </div>
         <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
-          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> together with ratecalib it covers the post-processing stage of survey data — the unglamorous step where many published estimates quietly go wrong. For the underlying idea, see <a href="methods.html#merging" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">Methods · Sparse unit merging</a>.</div>
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">What it means for your project:</b> Your weighting workflow becomes reviewable from target construction through diagnostics, rather than ending with an unexplained column of numbers.</div>
         </div>
       </div>
     </div>
   </article>
 
-  <div style="max-width:1280px;margin:0 auto;padding:26px 40px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* All three packages are developed in-house by WEIAN with full IP ownership. Case studies contain no client project names or sensitive data.</div>
+  <div style="max-width:1280px;margin:0 auto;padding:26px 40px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* All three projects are developed in-house by WEIAN with full IP ownership. Case studies contain no client project names or sensitive data.</div>
 
   <!-- CTA -->
   <section id="contact" style="background:#2440C8;color:#FAF8F2;border-top:1px solid #1A1914">

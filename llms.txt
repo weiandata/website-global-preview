@@ -21,7 +21,7 @@ Sponsors of large social surveys (research institutes / science-association syst
 ## Pages (five bilingual pages; English is the default at the root, Chinese under /zh/)
 
 - [Home](https://global.weiandata.com/): positioning, services, confidential delivery model, engagement process, FAQ ([中文](https://global.weiandata.com/zh/))
-- [Tools and cases](https://global.weiandata.com/tools): full technical cases for the IRTC, ratecalib (on CRAN), and mergecalib R packages, covering the modeling-weighting-merging toolchain ([中文](https://global.weiandata.com/zh/tools))
+- [Tools and cases](https://global.weiandata.com/tools): full technical cases for DCC, IRTC, and WFC, covering the cleaning-modeling-weighting workflow for survey and assessment data ([中文](https://global.weiandata.com/zh/tools))
 - [Methods](https://global.weiandata.com/methods): plain-language explanations of CTT vs IRT, IRT model selection, equating and linking, calibration weighting, small-cell merging, and DIF testing ([中文](https://global.weiandata.com/zh/methods))
 - [Learning hub](https://global.weiandata.com/learn): index of systematic articles and methods notes on IRT and survey data processing ([中文](https://global.weiandata.com/zh/learn))
 - [Articles](https://global.weiandata.com/article): long-form articles and methods reading page ([中文](https://global.weiandata.com/zh/article))

@@ -206,40 +206,31 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
         <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A">03 — IN-HOUSE TOOLS</div>
         <div>
           <h2 data-rv style="margin:0 0 18px;font-size:clamp(30px,3.4vw,46px);font-weight:900;letter-spacing:-.01em;line-height:1.2">Methods, distilled into reusable software</h2>
-          <p data-rv style="margin:0;font-size:15.5px;line-height:1.9;color:#4B4840;max-width:640px">Not scattered scripts: three interlocking professional R packages covering the full "modeling → weighting → merging" chain for large-scale survey data. Fully in-house, full IP ownership, 50+ automated test suites.</p>
+          <p data-rv style="margin:0;font-size:15.5px;line-height:1.9;color:#4B4840;max-width:640px">Three in-house R projects covering the cleaning → modeling → weighting workflow for survey and assessment data. Fully developed by WEIAN with complete IP ownership.</p>
           <a data-rv href="tools.html" style="display:inline-block;margin-top:20px;font-size:14.5px;font-weight:700;color:#1A1914;text-decoration:none;border-bottom:3px solid #2440C8;padding-bottom:5px" style-hover="color:#2440C8">View full case studies →</a>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
         <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">IRTC</span>
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:1px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 8px">CRAN UPCOMING</span>
-          </div>
-          <div style="font-size:14px;font-weight:700;color:#2440C8;margin-bottom:14px">High-performance IRT estimation engine</div>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">DCC</span>
+          <div style="font-size:14px;font-weight:700;color:#2440C8;margin:10px 0 14px">Data cleaning</div>
+          <canvas aria-hidden="true" data-spark="merge" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
+          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">Rule-driven, fully auditable data-cleaning workflows.</p>
+          <a href="tools.html#dcc" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">Full case study →</a>
+        </div>
+        <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">IRTC</span>
+          <div style="font-size:14px;font-weight:700;color:#2440C8;margin:10px 0 14px">Measurement modeling</div>
           <canvas aria-hidden="true" data-spark="icc" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
-          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">Rasch, 2PL, GPCM and more. C++ parallelism + streaming low-memory computation — million-scale estimation on an ordinary workstation.</p>
+          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">A scalable IRT estimation engine for large assessments.</p>
           <a href="tools.html#irtc" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">Full case study →</a>
         </div>
         <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">ratecalib</span>
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:1px;color:#fff;background:#1A1914;padding:3px 8px">ON CRAN</span>
-          </div>
-          <div style="font-size:14px;font-weight:700;color:#2440C8;margin-bottom:14px">Multi-subgroup calibration weighting</div>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">WFC</span>
+          <div style="font-size:14px;font-weight:700;color:#2440C8;margin:10px 0 14px">Survey weighting</div>
           <canvas aria-hidden="true" data-spark="calib" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
-          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">Convex optimization matches overall and subgroup pass rates to targets while preserving weight structure and population margins. MIT license.</p>
-          <a href="tools.html#ratecalib" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">Full case study →</a>
-        </div>
-        <div data-rv style="border:1px solid #1A1914;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-6px);box-shadow:8px 8px 0 #2440C8">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:19px;font-weight:700">mergecalib</span>
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:1px;color:#8A857A;border:1px solid #DDD8CA;padding:3px 8px">CRAN UPCOMING</span>
-          </div>
-          <div style="font-size:14px;font-weight:700;color:#2440C8;margin-bottom:14px">Unit merging under interval targets</div>
-          <canvas aria-hidden="true" data-spark="merge" width="280" height="64" style="display:block;width:100%;height:64px;border:1px solid #DDD8CA;margin-bottom:14px"></canvas>
-          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">Integer programming builds merging plans that keep subgroup shares within target intervals — and reports honestly when infeasible. MIT license.</p>
-          <a href="tools.html#mergecalib" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">Full case study →</a>
+          <p style="margin:0;font-size:13px;line-height:1.8;color:#4B4840">Precheck-first survey weighting, calibration, and diagnostics.</p>
+          <a href="tools.html#wfc" style="display:inline-block;margin-top:16px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;color:#2440C8;text-decoration:none;border-bottom:1px solid #2440C8;padding-bottom:2px" style-hover="color:#1A1914;border-color:#1A1914">Full case study →</a>
         </div>
       </div>
     </div>

@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGES = ["index.html", "tools.html", "methods.html", "learn.html", "article.html"]
 ZH_PAGES = [f"zh/{name}" for name in ROOT_PAGES]
 HTML_PAGES = ROOT_PAGES + ZH_PAGES
+FEATURED_CASE_IDS = ("dcc", "irtc", "wfc")
+LEGACY_CASE_IDS = ("ratecalib", "mergecalib")
 EXPECTED_ARTICLES = {
     *(f"A{number:02}.md" for number in range(1, 31)),
     *(f"M{number:02}.md" for number in range(1, 51)),
@@ -173,6 +175,26 @@ def validate_html(errors: list[str]) -> None:
                 errors.append(f"{relative} has missing local reference: {reference}")
 
 
+def validate_featured_cases(errors: list[str]) -> None:
+    for relative in ("index.html", "zh/index.html"):
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        positions = [text.find(f'tools.html#{case_id}') for case_id in FEATURED_CASE_IDS]
+        if any(position < 0 for position in positions) or positions != sorted(positions):
+            errors.append(f"{relative} does not present DCC, IRTC, WFC in order")
+        for case_id in LEGACY_CASE_IDS:
+            if f"tools.html#{case_id}" in text:
+                errors.append(f"{relative} still links featured case {case_id}")
+
+    for relative in ("tools.html", "zh/tools.html"):
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        positions = [text.find(f'id="{case_id}"') for case_id in FEATURED_CASE_IDS]
+        if any(position < 0 for position in positions) or positions != sorted(positions):
+            errors.append(f"{relative} does not define DCC, IRTC, WFC in order")
+        for case_id in LEGACY_CASE_IDS:
+            if f'id="{case_id}"' in text or f'href="#{case_id}"' in text:
+                errors.append(f"{relative} still presents featured case {case_id}")
+
+
 def validate_seo(errors: list[str]) -> None:
     sitemap = ROOT / "sitemap.xml"
     try:
@@ -204,6 +226,7 @@ def main() -> int:
     validate_article_inventory(errors)
     validate_production_text(errors)
     validate_html(errors)
+    validate_featured_cases(errors)
     validate_seo(errors)
     if errors:
         print("Static website validation failed:", file=sys.stderr)
