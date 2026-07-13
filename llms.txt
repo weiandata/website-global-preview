@@ -6,7 +6,7 @@
 
 - Custom data processing and IRT modeling: million-scale sample processing, IRT/CTT modeling, equating and linking, scoring engines, automated analysis and reporting, delivered as production-grade Python/R code
 - Long-term methodology consulting: study design, data-processing troubleshooting, and results review for large survey programs
-- Software and R package development: custom R packages and reproducible analysis pipelines; selected work published on CRAN
+- Software and R package development: custom R packages and reproducible, auditable analysis pipelines
 
 ## Differentiators
 

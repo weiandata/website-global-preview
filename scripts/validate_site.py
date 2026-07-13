@@ -195,6 +195,19 @@ def validate_featured_cases(errors: list[str]) -> None:
                 errors.append(f"{relative} still presents featured case {case_id}")
 
 
+def validate_retired_project_references(errors: list[str]) -> None:
+    for path in production_text_files():
+        text = path.read_text(encoding="utf-8").lower()
+        relative = path.relative_to(ROOT)
+        for name in LEGACY_CASE_IDS:
+            if name in text:
+                errors.append(f"{relative} still references retired featured project {name}")
+
+    for relative in ("index.html", "zh/index.html", "llms.txt"):
+        if "cran" in (ROOT / relative).read_text(encoding="utf-8").lower():
+            errors.append(f"{relative} still contains legacy CRAN portfolio copy")
+
+
 def validate_seo(errors: list[str]) -> None:
     sitemap = ROOT / "sitemap.xml"
     try:
@@ -227,6 +240,7 @@ def main() -> int:
     validate_production_text(errors)
     validate_html(errors)
     validate_featured_cases(errors)
+    validate_retired_project_references(errors)
     validate_seo(errors)
     if errors:
         print("Static website validation failed:", file=sys.stderr)

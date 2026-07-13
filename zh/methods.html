@@ -127,7 +127,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
         <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">什么是校准加权？</h2>
         <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">当样本结构与总体不一致时，需要调整权重，使加权后的估计匹配总体边际或达标口径，同时尽量少扭曲原有抽样权重。</p>
         <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">手工调权既不严谨也不可复现。严谨的做法是把它形式化为最优化问题——遵循 Deville &amp; Särndal（1992）的校准理论——并配有效样本量与设计效应诊断。</p>
-        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>自研 <a href="tools.html#ratecalib" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">ratecalib 包</a>（已发布于 CRAN）将其求解为有界凸二次规划，提供 soft/exact 两种模式与内置诊断。</div>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>自研 <a href="tools.html#wfc" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">WFC 工作流</a>把目标构建、预检查、raking／事后分层与诊断串成一条可审计流程。</div>
       </div>
     </div>
   </article>
@@ -140,7 +140,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
         <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">小样本人口单元怎么处理？</h2>
         <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">按省份×性别×城乡×年龄×教育交叉统计时，常有单元样本过小甚至为零，比例估计不稳。必须合并单元——但合并后每个单元样本要为正，子群分级比例还要落在目标区间。</p>
         <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">这是一个约束复杂的组合优化问题，拍脑袋合并会悄悄破坏估计。它值得一个确定性的最优解，而不是逐格的主观判断。</p>
-        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b>自研 <a href="tools.html#mergecalib" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">mergecalib 包</a> 用集合划分整数规划求解，不可行时诚实报告，而非悄悄妥协。</div>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">惟安怎么做：</b><a href="tools.html#wfc" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">WFC</a> 用预先声明的类别合并阶梯识别稀疏或不兼容类别，将审核后的合并一致应用到样本与目标，并在加权前重新执行预检查。</div>
       </div>
     </div>
   </article>
