@@ -1,3 +1,5 @@
 .DS_Store
 dist/
 
+# WAEF local cache
+.waef/cache/
