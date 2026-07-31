@@ -1,0 +1,7 @@
+name: "website-global-preview"
+owner: "web-engineering"
+status: "active"
+purpose: "Operate the bilingual WeianData static global website"
+risk: "moderate"
+publication: "allowed"
+language: "Static HTML/JavaScript/Python"
