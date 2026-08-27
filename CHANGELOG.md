@@ -9,6 +9,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Add LISTC as the fourth in-house tool case on the bilingual Tools pages, and
+  extend the workflow chain to `cleaning -> modeling -> weighting -> reporting`.
+- Add CRAN release links for IRTC, WFC, and LISTC, and a source link for DCC,
+  on the bilingual Tools pages.
 - Import the existing bilingual WeianData website.
 - Add Chinese and English article libraries.
 - Add SEO and LLM discovery files.
