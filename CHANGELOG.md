@@ -24,6 +24,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Add a German Impressum (`de/impressum.html`, § 5 DDG) with the provider
   details from the business licence, linked from every page footer; the
   validator checks the link and the required details.
+- Add a German privacy notice (`de/datenschutz.html`, GDPR Art. 13): no
+  cookies or tracking, Cloudflare hosting and connection data, contact
+  requests, and visitor rights; linked from every page footer and checked by
+  the validator.
 - State each package's minimum R version (from its CRAN `Depends`) under its
   install snippet on the Tools pages, and validate it.
 - Add copyable `install.packages()` / `library()` R snippets for DCC, IRTC,
