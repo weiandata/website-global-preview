@@ -9,6 +9,18 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Polish the article translations for native readers. All 80 English articles
+  are re-translated from the Chinese source in natural British English, with
+  structure, formulas, tables, and code unchanged. The Chinese originals are
+  proofread (typos, stray English words, punctuation) and dangling
+  cross-references are corrected: careless-response detection is article 38
+  (not 46/49), the R package roll call is article 35, item banks are beginner
+  article 44, and there is no separate article on reverse-worded items.
+- Proofread all 80 German articles against the Chinese source: polytomous
+  scoring was twice rendered as "multidimensional" (A01), several sample sizes
+  and figures were off (2PL needs over a thousand cases, not several thousand;
+  A21, A30), digital literacy appeared as mathematical literacy (A13), and a
+  number of literal calques were replaced with idiomatic German.
 - Correct article errors in the Chinese and English sources. A04 now installs
   IRTC from CRAN and uses its real API (`irtc()`, `plain_summary()`,
   `irtc_param_table()`, `irtc.mml.2pl()`), replacing the outdated GitHub
