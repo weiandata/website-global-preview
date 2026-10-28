@@ -7,12 +7,6 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ## [Unreleased]
 
-### Changed
-
-- State on the Home pages and in `llms.txt` that all four in-house R packages
-  are published on CRAN, and replace the validator rule that banned CRAN copy
-  there with checks for CRAN links and install snippets on the Tools pages.
-
 ### Added
 
 - Add copyable `install.packages()` / `library()` R snippets for DCC, IRTC,
@@ -33,6 +27,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- State on the Home pages and in `llms.txt` that all four in-house R packages
+  are published on CRAN, and replace the validator rule that banned CRAN copy
+  there with checks for CRAN links and install snippets on the Tools pages.
 - Standardize the legal owner identity and licensing contact, and apply the
   company proprietary-license profile to the repository and website content.
 - Normalize Chinese HTML filenames.
