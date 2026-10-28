@@ -10,6 +10,7 @@
 <link rel="canonical" href="https://global.weiandata.com/zh/article">
 <link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/article">
 <link rel="alternate" hreflang="en" href="https://global.weiandata.com/article">
+<link rel="alternate" hreflang="de" href="https://global.weiandata.com/de/article">
 <link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/article">
 <meta property="og:site_name" content="WEIAN DATA">
 <meta property="og:type" content="website">
@@ -21,6 +22,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="文章 — 惟安学习中心｜惟安数据科技 WEIAN DATA">
 <meta name="twitter:description" content="惟安学习中心文章：IRT 与大规模调查数据处理的系统性讲解，含《IRT 人人都懂说明书》与进阶专栏长文。">
@@ -31,8 +33,7 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="../assets/fonts/noto-sans-sc.css" rel="stylesheet">
 <link rel="stylesheet" href="/assets/vendor/katex/katex.min.css">
 <script src="/assets/vendor/katex/katex.min.js"></script>
 <style>
@@ -80,7 +81,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
         <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">工具案例</a>
         <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">方法百科</a>
         <a href="learn.html" style="color:#FAF8F2;background:#1A1914;text-decoration:none;padding:6px 13px;border:1px solid #1A1914" style-hover="background:#2440C8;border-color:#2440C8">学习中心</a>
-        <a data-en-link href="../article.html" title="Read in English" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px;color:#2440C8;text-decoration:none;border:1px solid #2440C8;padding:6px 11px;transition:background .25s" style-hover="background:#E4E9FA">EN</a>
+        <span data-lang-switch style="display:inline-flex;border:1px solid #2440C8;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px"><a href="../article.html" hreflang="en" lang="en" title="English" style="padding:6px 10px;text-decoration:none;color:#2440C8;transition:background .25s" style-hover="background:#E4E9FA">EN</a><a href="../zh/article.html" hreflang="zh-CN" lang="zh-CN" title="中文" aria-current="page" style="border-left:1px solid #2440C8;padding:6px 10px;text-decoration:none;color:#FAF8F2;background:#2440C8">中文</a><a href="../de/article.html" hreflang="de" lang="de" title="Deutsch" style="border-left:1px solid #2440C8;padding:6px 10px;text-decoration:none;color:#2440C8;transition:background .25s" style-hover="background:#E4E9FA">DE</a></span>
         <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">联系合作</a>
       </nav>
     </div>
@@ -132,7 +133,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440
     <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
       <span>惟安数据科技（北京）有限公司 · WEIAN DATA · 本站文章均为原创，未经授权禁止转载</span>
       <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">首页</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">工具案例</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">方法百科</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">学习中心</a> · <a href="https://skills.weiandata.com" target="_blank" rel="noopener" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">AI Skills 平台 ↗</a></span>
-      <span>© 2026 · All rights reserved</span>
+      <span><a href="../de/impressum.html" lang="de" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Impressum</a> · © 2026 · All rights reserved</span>
     </div>
   </footer>
 
@@ -207,13 +208,15 @@ class Component extends DCLogic {
     if (badge) badge.textContent = meta.badge;
     if (titleEl) titleEl.textContent = meta.title;
     document.title = meta.title + ' — 惟安学习中心';
-    var en = document.querySelector('[data-en-link]');
-    if (en) en.href = '../article.html?id=' + id;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-lang-switch] a'), function (a) {
+      a.setAttribute('href', a.getAttribute('href').split('?')[0] + '?id=' + id);
+    });
     var _base = 'https://global.weiandata.com/';
     var _setHref = function (sel, url) { var el = document.querySelector(sel); if (el) el.setAttribute('href', url); };
     _setHref('link[rel="canonical"]', _base + 'zh/article?id=' + id);
     _setHref('link[hreflang="zh-CN"]', _base + 'zh/article?id=' + id);
     _setHref('link[hreflang="en"]', _base + 'article?id=' + id);
+    _setHref('link[hreflang="de"]', _base + 'de/article?id=' + id);
     _setHref('link[hreflang="x-default"]', _base + 'article?id=' + id);
     /* 上一篇 / 下一篇 */
     var pid = this.neighbor(id, -1), nid = this.neighbor(id, 1);

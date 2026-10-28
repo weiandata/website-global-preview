@@ -18,17 +18,17 @@
 
 Sponsors of large social surveys (research institutes / science-association systems), educational assessment institutions and quality-monitoring centers, university research groups (psychology / education / social science), and corporate talent-assessment and internal-survey teams.
 
-## Pages (five bilingual pages; English is the default at the root, Chinese under /zh/)
+## Pages (five pages in three languages; English is the default at the root, Chinese under /zh/, German under /de/)
 
-- [Home](https://global.weiandata.com/): positioning, services, confidential delivery model, engagement process, FAQ ([中文](https://global.weiandata.com/zh/))
-- [Tools and cases](https://global.weiandata.com/tools): full technical cases for DCC, IRTC, WFC, and LISTC (all four published on CRAN), covering the cleaning-modeling-weighting-reporting workflow for survey and assessment data, plus a preview of Ogive, an IRT application for macOS in development ([中文](https://global.weiandata.com/zh/tools))
-- [Methods](https://global.weiandata.com/methods): plain-language explanations of CTT vs IRT, IRT model selection, equating and linking, calibration weighting, small-cell merging, and DIF testing ([中文](https://global.weiandata.com/zh/methods))
-- [Learning hub](https://global.weiandata.com/learn): index of systematic articles and methods notes on IRT and survey data processing ([中文](https://global.weiandata.com/zh/learn))
-- [Articles](https://global.weiandata.com/article): long-form articles and methods reading page ([中文](https://global.weiandata.com/zh/article))
+- [Home](https://global.weiandata.com/): positioning, services, confidential delivery model, engagement process, FAQ ([中文](https://global.weiandata.com/zh/), [Deutsch](https://global.weiandata.com/de/))
+- [Tools and cases](https://global.weiandata.com/tools): full technical cases for DCC, IRTC, WFC, and LISTC (all four published on CRAN), covering the cleaning-modeling-weighting-reporting workflow for survey and assessment data, plus a preview of Ogive, an IRT application for macOS in development ([中文](https://global.weiandata.com/zh/tools), [Deutsch](https://global.weiandata.com/de/tools))
+- [Methods](https://global.weiandata.com/methods): plain-language explanations of CTT vs IRT, IRT model selection, equating and linking, calibration weighting, small-cell merging, and DIF testing ([中文](https://global.weiandata.com/zh/methods), [Deutsch](https://global.weiandata.com/de/methods))
+- [Learning hub](https://global.weiandata.com/learn): index of systematic articles and methods notes on IRT and survey data processing ([中文](https://global.weiandata.com/zh/learn), [Deutsch](https://global.weiandata.com/de/learn))
+- [Articles](https://global.weiandata.com/article): long-form articles and methods reading page ([中文](https://global.weiandata.com/zh/article), [Deutsch](https://global.weiandata.com/de/article))
 
 ## Articles
 
-- 80 articles per language (A01-A30 long-form, M01-M50 methods notes) on IRT, survey data processing, equating, weighting, and DIF.
+- 80 articles in each of English, Chinese, and German (A01-A30 long-form, M01-M50 methods notes) on IRT, survey data processing, equating, weighting, and DIF.
 - Full per-article index with reader and raw-Markdown links: https://global.weiandata.com/llms-full.txt
 
 ## Contact

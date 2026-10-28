@@ -14,6 +14,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Add a German version: five pages under `/de/` and all 80 articles in
+  `articles-de/`, with German titles in the Learning hub and article reader.
+- Replace the single language toggle with an EN / 中文 / DE switch on every
+  page, and add `de` hreflang alternates, `de_DE` Open Graph locales, German
+  sitemap URLs, and German sections in `llms.txt` and `llms-full.txt`.
+- Self-host Noto Sans SC (OFL) under `assets/fonts/`, so no visitor request
+  reaches Google Fonts; the validator now rejects Google Fonts references.
+- Add a German Impressum (`de/impressum.html`, § 5 DDG) with the provider
+  details from the business licence, linked from every page footer; the
+  validator checks the link and the required details.
 - State each package's minimum R version (from its CRAN `Depends`) under its
   install snippet on the Tools pages, and validate it.
 - Add copyable `install.packages()` / `library()` R snippets for DCC, IRTC,
