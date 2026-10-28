@@ -16,6 +16,8 @@ ZH_PAGES = [f"zh/{name}" for name in ROOT_PAGES]
 HTML_PAGES = ROOT_PAGES + ZH_PAGES
 FEATURED_CASE_IDS = ("dcc", "irtc", "wfc", "listc")
 CRAN_PACKAGES = ("DCC", "IRTC", "WFC", "LISTC")
+# Minimum R version each package declares on CRAN (Depends: R (>= x)).
+CRAN_R_REQUIREMENTS = {"DCC": "4.1", "IRTC": "3.5.0", "WFC": "3.6.0", "LISTC": "4.1"}
 LEGACY_CASE_IDS = ("ratecalib", "mergecalib")
 EXPECTED_ARTICLES = {
     *(f"A{number:02}.md" for number in range(1, 31)),
@@ -211,6 +213,10 @@ def validate_retired_project_references(errors: list[str]) -> None:
                 errors.append(f"{relative} is missing the CRAN link for {package}")
             if f'"{package}"</span>)' not in text or f"library({package})" not in text:
                 errors.append(f"{relative} is missing the R install snippet for {package}")
+            start = text.find(f'id="{package.lower()}"')
+            case = text[start:text.find("</article>", start)] if start >= 0 else ""
+            if f'data-r-requires="{CRAN_R_REQUIREMENTS[package]}"' not in case:
+                errors.append(f"{relative} does not state R >= {CRAN_R_REQUIREMENTS[package]} for {package}")
 
 
 def validate_seo(errors: list[str]) -> None:

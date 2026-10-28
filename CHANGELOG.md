@@ -14,6 +14,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- State each package's minimum R version (from its CRAN `Depends`) under its
+  install snippet on the Tools pages, and validate it.
 - Add copyable `install.packages()` / `library()` R snippets for DCC, IRTC,
   WFC, and LISTC to the bilingual Tools pages.
 - Link the WeianData AI Skills site from the footer of every bilingual page.
