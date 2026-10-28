@@ -9,6 +9,18 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Correct article errors in the Chinese and English sources. A04 now installs
+  IRTC from CRAN and uses its real API (`irtc()`, `plain_summary()`,
+  `irtc_param_table()`, `irtc.mml.2pl()`), replacing the outdated GitHub
+  install, version, license, and functions that do not exist; its subsample
+  size reads 10,000–50,000. Other IRTC mentions point to CRAN and drop the stale
+  "26 test groups". References to the unpublished Q&A series are removed.
+- Fix English mistranslations: GRM is the Graded Response Model; DIF is
+  Differential Item Functioning; SESOI is the smallest effect size of interest;
+  θ comparability is across calibrations, not items; Chinese-only artifacts
+  (character counts, duplicated names, pinyin mnemonics) are rewritten.
+- The German A04 expert example uses `irtc.mml.2pl()`; `irtc.mml()` with
+  `irtmodel = "GPCM"` silently fits a PCM.
 - Draw the home hero pipeline as a still frame for reduced-motion visitors;
   it previously rendered blank because resizing cleared the canvas.
 
