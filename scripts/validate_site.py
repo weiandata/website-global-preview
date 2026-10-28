@@ -62,6 +62,10 @@ FORBIDDEN_FONT_HOSTS = ("fonts.googleapis.com", "fonts.gstatic.com")
 # German law (§ 5 DDG) requires a provider notice reachable from every page.
 IMPRESSUM_PAGE = "de/impressum.html"
 IMPRESSUM_REQUIRED_TEXT = ("§ 5 DDG", "91110112MAKGCAAW6F", "contact@weiandata.com", "tel:+8613161314675", "101199", "Ma Kunxiang")
+# GDPR Art. 13 privacy notice, also linked from every page.
+PRIVACY_PAGE = "de/datenschutz.html"
+PRIVACY_REQUIRED_TEXT = ("Art. 13", "Cloudflare", "Art. 77", "Art. 21", "contact@weiandata.com", "keine Cookies")
+LEGAL_PAGES = {IMPRESSUM_PAGE: IMPRESSUM_REQUIRED_TEXT, PRIVACY_PAGE: PRIVACY_REQUIRED_TEXT}
 
 
 class PageParser(HTMLParser):
@@ -87,7 +91,7 @@ class PageParser(HTMLParser):
 
 
 def production_text_files() -> list[Path]:
-    files = [ROOT / name for name in (*HTML_PAGES, IMPRESSUM_PAGE)]
+    files = [ROOT / name for name in (*HTML_PAGES, *LEGAL_PAGES)]
     files.extend(ROOT / name for name in ("support.js", "robots.txt", "sitemap.xml", "llms.txt"))
     for directory in ARTICLE_DIRECTORIES:
         files.extend(sorted((ROOT / directory).glob("*.md")))
@@ -97,7 +101,7 @@ def production_text_files() -> list[Path]:
 def validate_required_files(errors: list[str]) -> None:
     required = [
         *HTML_PAGES,
-        IMPRESSUM_PAGE,
+        *LEGAL_PAGES,
         "support.js",
         "robots.txt",
         "sitemap.xml",
@@ -151,7 +155,7 @@ def validate_production_text(errors: list[str]) -> None:
     if "fetch('../articles-de/' + id + '.md')" not in (ROOT / "de/article.html").read_text(encoding="utf-8"):
         errors.append("German article reader does not fetch from ../articles-de/")
 
-    for relative in [*HTML_PAGES, IMPRESSUM_PAGE, "404.html"]:
+    for relative in [*HTML_PAGES, *LEGAL_PAGES, "404.html"]:
         text = (ROOT / relative).read_text(encoding="utf-8")
         for host in FORBIDDEN_FONT_HOSTS:
             if host in text:
@@ -206,15 +210,17 @@ def validate_html(errors: list[str]) -> None:
                 errors.append(f"{relative} lacks a hreflang=\"{hreflang}\" alternate")
         if text.count("data-lang-switch") < 1 or 'aria-current="page"' not in text:
             errors.append(f"{relative} lacks the EN / 中文 / DE language switch")
-        if not any(
-            local_target(page, reference) == (ROOT / IMPRESSUM_PAGE).resolve() for reference in parser.references
-        ):
-            errors.append(f"{relative} does not link the Impressum")
+        for legal_page in LEGAL_PAGES:
+            if not any(
+                local_target(page, reference) == (ROOT / legal_page).resolve() for reference in parser.references
+            ):
+                errors.append(f"{relative} does not link {legal_page}")
 
-    impressum = (ROOT / IMPRESSUM_PAGE).read_text(encoding="utf-8")
-    for required in IMPRESSUM_REQUIRED_TEXT:
-        if required not in impressum:
-            errors.append(f"{IMPRESSUM_PAGE} lacks required provider detail {required!r}")
+    for legal_page, required_text in LEGAL_PAGES.items():
+        legal_text = (ROOT / legal_page).read_text(encoding="utf-8")
+        for required in required_text:
+            if required not in legal_text:
+                errors.append(f"{legal_page} lacks required detail {required!r}")
 
 
 def validate_featured_cases(errors: list[str]) -> None:
