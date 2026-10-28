@@ -7,6 +7,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ## [Unreleased]
 
+### Fixed
+
+- Draw the home hero pipeline as a still frame for reduced-motion visitors;
+  it previously rendered blank because resizing cleared the canvas.
+
 ### Added
 
 - Add copyable `install.packages()` / `library()` R snippets for DCC, IRTC,
@@ -27,6 +32,14 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Align the global English (`/`) and Chinese (`/zh/`) homepage copy with the
+  www homepages.
+- Polish layout on both languages: align the header with the content column,
+  line up service rows, pin tool-card links to the card bottom, turn the Ogive
+  teaser into a slim preview bar, move each CRAN link into its install snippet,
+  and balance heading line breaks.
+- On phones, fit the header nav on one row with the language switch beside the
+  logo, and show the home stats as a 2 × 2 grid.
 - State on the Home pages and in `llms.txt` that all four in-house R packages
   are published on CRAN, and replace the validator rule that banned CRAN copy
   there with checks for CRAN links and install snippets on the Tools pages.
