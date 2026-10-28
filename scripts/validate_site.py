@@ -13,7 +13,11 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGES = ["index.html", "tools.html", "methods.html", "learn.html", "article.html"]
 ZH_PAGES = [f"zh/{name}" for name in ROOT_PAGES]
-HTML_PAGES = ROOT_PAGES + ZH_PAGES
+DE_PAGES = [f"de/{name}" for name in ROOT_PAGES]
+HTML_PAGES = ROOT_PAGES + ZH_PAGES + DE_PAGES
+ARTICLE_DIRECTORIES = ("articles", "articles-en", "articles-de")
+# Every page links its counterparts in all site languages.
+HREFLANGS = ("en", "zh-CN", "de", "x-default")
 FEATURED_CASE_IDS = ("dcc", "irtc", "wfc", "listc")
 CRAN_PACKAGES = ("DCC", "IRTC", "WFC", "LISTC")
 # Minimum R version each package declares on CRAN (Depends: R (>= x)).
@@ -34,6 +38,11 @@ EXPECTED_CANONICALS = {
     "zh/methods.html": "https://global.weiandata.com/zh/methods",
     "zh/learn.html": "https://global.weiandata.com/zh/learn",
     "zh/article.html": "https://global.weiandata.com/zh/article",
+    "de/index.html": "https://global.weiandata.com/de/",
+    "de/tools.html": "https://global.weiandata.com/de/tools",
+    "de/methods.html": "https://global.weiandata.com/de/methods",
+    "de/learn.html": "https://global.weiandata.com/de/learn",
+    "de/article.html": "https://global.weiandata.com/de/article",
 }
 OBSOLETE_NAMES = (
     "首页3a-样本流蓝-v2.dc" + ".html",
@@ -48,6 +57,11 @@ OBSOLETE_NAMES = (
     "Article-EN.dc" + ".html",
 )
 FORBIDDEN_PRODUCTION_REFERENCES = ("localhost", "127.0.0.1", "/Users/", "file://")
+# Fonts are self-hosted so no visitor request reaches Google (GDPR exposure for EU visitors).
+FORBIDDEN_FONT_HOSTS = ("fonts.googleapis.com", "fonts.gstatic.com")
+# German law (§ 5 DDG) requires a provider notice reachable from every page.
+IMPRESSUM_PAGE = "de/impressum.html"
+IMPRESSUM_REQUIRED_TEXT = ("§ 5 DDG", "91110112MAKGCAAW6F", "contact@weiandata.com", "tel:+8613161314675", "101199", "Ma Kunxiang")
 
 
 class PageParser(HTMLParser):
@@ -73,16 +87,17 @@ class PageParser(HTMLParser):
 
 
 def production_text_files() -> list[Path]:
-    files = [ROOT / name for name in HTML_PAGES]
+    files = [ROOT / name for name in (*HTML_PAGES, IMPRESSUM_PAGE)]
     files.extend(ROOT / name for name in ("support.js", "robots.txt", "sitemap.xml", "llms.txt"))
-    files.extend(sorted((ROOT / "articles").glob("*.md")))
-    files.extend(sorted((ROOT / "articles-en").glob("*.md")))
+    for directory in ARTICLE_DIRECTORIES:
+        files.extend(sorted((ROOT / directory).glob("*.md")))
     return files
 
 
 def validate_required_files(errors: list[str]) -> None:
     required = [
         *HTML_PAGES,
+        IMPRESSUM_PAGE,
         "support.js",
         "robots.txt",
         "sitemap.xml",
@@ -108,7 +123,7 @@ def validate_required_files(errors: list[str]) -> None:
 
 
 def validate_article_inventory(errors: list[str]) -> None:
-    for directory in ("articles", "articles-en"):
+    for directory in ARTICLE_DIRECTORIES:
         actual = {path.name for path in (ROOT / directory).glob("*.md")}
         missing = sorted(EXPECTED_ARTICLES - actual)
         extra = sorted(actual - EXPECTED_ARTICLES)
@@ -133,6 +148,14 @@ def validate_production_text(errors: list[str]) -> None:
         errors.append("English article reader does not fetch from articles-en/")
     if "fetch('../articles/' + id + '.md')" not in (ROOT / "zh/article.html").read_text(encoding="utf-8"):
         errors.append("Chinese article reader does not fetch from ../articles/")
+    if "fetch('../articles-de/' + id + '.md')" not in (ROOT / "de/article.html").read_text(encoding="utf-8"):
+        errors.append("German article reader does not fetch from ../articles-de/")
+
+    for relative in [*HTML_PAGES, IMPRESSUM_PAGE, "404.html"]:
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        for host in FORBIDDEN_FONT_HOSTS:
+            if host in text:
+                errors.append(f"{relative} requests fonts from {host}; use assets/fonts/noto-sans-sc.css")
 
 
 def local_target(page: Path, reference: str) -> Path | None:
@@ -177,9 +200,25 @@ def validate_html(errors: list[str]) -> None:
             if not target.exists():
                 errors.append(f"{relative} has missing local reference: {reference}")
 
+        text = page.read_text(encoding="utf-8")
+        for hreflang in HREFLANGS:
+            if f'hreflang="{hreflang}"' not in text:
+                errors.append(f"{relative} lacks a hreflang=\"{hreflang}\" alternate")
+        if text.count("data-lang-switch") < 1 or 'aria-current="page"' not in text:
+            errors.append(f"{relative} lacks the EN / 中文 / DE language switch")
+        if not any(
+            local_target(page, reference) == (ROOT / IMPRESSUM_PAGE).resolve() for reference in parser.references
+        ):
+            errors.append(f"{relative} does not link the Impressum")
+
+    impressum = (ROOT / IMPRESSUM_PAGE).read_text(encoding="utf-8")
+    for required in IMPRESSUM_REQUIRED_TEXT:
+        if required not in impressum:
+            errors.append(f"{IMPRESSUM_PAGE} lacks required provider detail {required!r}")
+
 
 def validate_featured_cases(errors: list[str]) -> None:
-    for relative in ("index.html", "zh/index.html"):
+    for relative in ("index.html", "zh/index.html", "de/index.html"):
         text = (ROOT / relative).read_text(encoding="utf-8")
         positions = [text.find(f'tools.html#{case_id}') for case_id in FEATURED_CASE_IDS]
         if any(position < 0 for position in positions) or positions != sorted(positions):
@@ -188,7 +227,7 @@ def validate_featured_cases(errors: list[str]) -> None:
             if f"tools.html#{case_id}" in text:
                 errors.append(f"{relative} still links featured case {case_id}")
 
-    for relative in ("tools.html", "zh/tools.html"):
+    for relative in ("tools.html", "zh/tools.html", "de/tools.html"):
         text = (ROOT / relative).read_text(encoding="utf-8")
         positions = [text.find(f'id="{case_id}"') for case_id in FEATURED_CASE_IDS]
         if any(position < 0 for position in positions) or positions != sorted(positions):
@@ -206,7 +245,7 @@ def validate_retired_project_references(errors: list[str]) -> None:
             if name in text:
                 errors.append(f"{relative} still references retired featured project {name}")
 
-    for relative in ("tools.html", "zh/tools.html"):
+    for relative in ("tools.html", "zh/tools.html", "de/tools.html"):
         text = (ROOT / relative).read_text(encoding="utf-8")
         for package in CRAN_PACKAGES:
             if f'href="https://CRAN.R-project.org/package={package}"' not in text:
@@ -233,6 +272,7 @@ def validate_seo(errors: list[str]) -> None:
     expected_urls = set(EXPECTED_CANONICALS.values())
     expected_urls.update(f"https://global.weiandata.com/article?id={i}" for i in article_ids)
     expected_urls.update(f"https://global.weiandata.com/zh/article?id={i}" for i in article_ids)
+    expected_urls.update(f"https://global.weiandata.com/de/article?id={i}" for i in article_ids)
     if actual_urls != expected_urls:
         errors.append(
             "sitemap.xml URLs differ from canonical URLs: "
@@ -261,7 +301,7 @@ def main() -> int:
 
     print(
         "Static website validation passed: "
-        f"{len(HTML_PAGES)} HTML pages and {len(EXPECTED_ARTICLES) * 2} Markdown articles."
+        f"{len(HTML_PAGES)} HTML pages and {len(EXPECTED_ARTICLES) * len(ARTICLE_DIRECTORIES)} Markdown articles."
     )
     return 0
 

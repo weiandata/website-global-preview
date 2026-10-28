@@ -22,11 +22,14 @@ h1, h2, h3 { text-wrap: balance; }
   /* one nav row under the logo; the logo already links home, and the row scrolls if it ever overflows */
   header nav { flex-wrap: nowrap !important; justify-content: flex-start !important; width: 100%; overflow-x: auto; scrollbar-width: none; gap: 6px !important; font-size: 12px !important; }
   header nav::-webkit-scrollbar { display: none; }
-  header nav a[href="index.html"]:not([style*="border"]) { display: none !important; }
+  header nav > a[href="index.html"]:not([style*="border"]) { display: none !important; }
   header nav a[style*="border"], header nav a[href="#contact"] { padding: 5px 9px !important; flex: none; }
   header > div { position: relative; padding-left: 20px !important; padding-right: 20px !important; }
   /* the language switch moves to the free space right of the logo */
-  header nav a[title] { position: absolute; top: 12px; right: 20px; }
+  header nav [data-lang-switch] { position: absolute; top: 12px; right: 20px; }
+  header nav [data-lang-switch] a { padding: 5px 8px !important; }
+  /* the logo's secondary wordmark would sit under the language switch */
+  header > div > :first-child > span + span { display: none !important; }
 
   /* soften very tall section paddings */
   [style*="padding:96px 40px 100px"], [style*="padding: 96px 40px 100px"] { padding: 56px 20px 60px !important; }

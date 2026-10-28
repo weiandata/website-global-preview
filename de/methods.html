@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/css/mobile.css">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<title>Methoden | WEIAN DATA</title>
+<meta name="description" content="Die Methoden hinter großen Erhebungen in verständlicher Sprache: CTT vs. IRT, Modellwahl, Equating und Linking, Kalibrierungsgewichtung, Zusammenlegung kleiner Zellen und DIF-Analyse.">
+<link rel="canonical" href="https://global.weiandata.com/de/methods">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/methods">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/methods">
+<link rel="alternate" hreflang="de" href="https://global.weiandata.com/de/methods">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/methods">
+<meta property="og:site_name" content="WEIAN DATA">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://global.weiandata.com/de/methods">
+<meta property="og:title" content="Methoden | WEIAN DATA">
+<meta property="og:description" content="Die Methoden hinter großen Erhebungen in verständlicher Sprache: CTT vs. IRT, Modellwahl, Equating und Linking, Kalibrierungsgewichtung, Zusammenlegung kleiner Zellen und DIF-Analyse.">
+<meta property="og:image" content="https://global.weiandata.com/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methoden | WEIAN DATA">
+<meta name="twitter:description" content="Die Methoden hinter großen Erhebungen in verständlicher Sprache: CTT vs. IRT, Modellwahl, Equating und Linking, Kalibrierungsgewichtung, Zusammenlegung kleiner Zellen und DIF-Analyse.">
+<meta name="twitter:image" content="https://global.weiandata.com/assets/images/og-cover.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://global.weiandata.com/de/methods#webpage","url":"https://global.weiandata.com/de/methods","name":"Methoden | WEIAN DATA","description":"Die Methoden hinter großen Erhebungen in verständlicher Sprache: CTT vs. IRT, Modellwahl, Equating und Linking, Kalibrierungsgewichtung, Zusammenlegung kleiner Zellen und DIF-Analyse.","inLanguage":"de","isPartOf":{"@id":"https://global.weiandata.com/#website"},"about":{"@id":"https://global.weiandata.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://global.weiandata.com/de/"},{"@type":"ListItem","position":2,"name":"Methoden","item":"https://global.weiandata.com/de/methods"}]}]}</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="../assets/fonts/noto-sans-sc.css" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(250,248,242,.75);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(250,248,242,0);transform:scale(1)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="Methods EN">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1360px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="WEIAN logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoME" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoME)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">WEIAN DATA</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">惟安数据科技</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:18px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">Startseite</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <a href="tools.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Werkzeuge</a>
+        <span style="color:#FAF8F2;background:#1A1914;padding:6px 13px;border:1px solid #1A1914">Methoden</span>
+        <a href="learn.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Lernen</a>
+        <span data-lang-switch style="display:inline-flex;border:1px solid #2440C8;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px"><a href="../methods.html" hreflang="en" lang="en" title="English" style="padding:6px 10px;text-decoration:none;color:#2440C8;transition:background .25s" style-hover="background:#E4E9FA">EN</a><a href="../zh/methods.html" hreflang="zh-CN" lang="zh-CN" title="中文" style="border-left:1px solid #2440C8;padding:6px 10px;text-decoration:none;color:#2440C8;transition:background .25s" style-hover="background:#E4E9FA">中文</a><a href="../de/methods.html" hreflang="de" lang="de" title="Deutsch" aria-current="page" style="border-left:1px solid #2440C8;padding:6px 10px;text-decoration:none;color:#FAF8F2;background:#2440C8">DE</a></span>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">STARTSEITE</a> / METHODEN</div>
+      <h1 data-rv style="margin:0 0 24px;font-size:clamp(34px,4.4vw,58px);line-height:1.12;font-weight:900;letter-spacing:-.02em;max-width:1020px">Die Methoden hinter großen Erhebungen,<br>in <span style="color:#2440C8">verständlicher Sprache</span></h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:620px">Damit Sie genau wissen, was Sie einkaufen: welches Problem jede Methode löst, warum sie wichtig ist und was schiefgeht, wenn man sie nachlässig anwendet.</p>
+      <div data-rv style="display:flex;flex-wrap:wrap;gap:10px;margin-top:36px">
+        <a href="#ctt-irt" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§1 CTT vs. IRT</a>
+        <a href="#models" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§2 Modellwahl</a>
+        <a href="#equating" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§3 Equating</a>
+        <a href="#weighting" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§4 Gewichtung</a>
+        <a href="#merging" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§5 Zellenzusammenlegung</a>
+        <a href="#dif" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:1px;border:1px solid #1A1914;padding:8px 16px;color:#1A1914;text-decoration:none;transition:background .25s,color .25s" style-hover="background:#E4E9FA;border-color:#2440C8">§6 DIF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- §1 -->
+  <article id="ctt-irt" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 1 — GRUNDLAGEN</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">Was unterscheidet CTT und IRT?</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">Die klassische Testtheorie (CTT) setzt den Summenwert mit der Fähigkeit gleich. Einfach und direkt – aber das Ergebnis ist an die konkrete Testform gebunden: Ändern sich die Items, sind die Werte nicht mehr vergleichbar.</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">Die IRT (Item-Response-Theorie) modelliert Schwierigkeit und Trennschärfe jedes Items getrennt und überführt Antworten in Fähigkeitsschätzungen, die nicht von der jeweiligen Itemzusammenstellung abhängen. Vergleiche über Testformen, Itembanken und adaptives Testen werden möglich – deshalb beruhen PISA und nationale Kompetenzerhebungen auf der IRT.</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">So setzt WEIAN es um:</b> unsere selbst entwickelte <a href="tools.html#irtc" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">IRTC-Engine</a> deckt Rasch/1PL-, 2PL-, PCM-, RSM-, GPCM- und mehrdimensionale Modelle ab und ist an Stichproben in Millionengröße validiert.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §2 -->
+  <article id="models" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 2 — MODELLIERUNG</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">Die IRT-Modellfamilie: Welches Modell passt?</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">Für richtig/falsch bewertete Items eignen sich meist Rasch (1PL) oder 2PL; mehrstufige Items (Likert-Skalen, Teilpunkte) erfordern PCM, RSM oder GPCM. Komplexe Erhebungen brauchen unter Umständen between-item-mehrdimensionale Modelle, latente Regression und Mehrgruppenanalysen.</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">Die Wahl hängt von Itemtypen, Stichprobengröße und Forschungsziel ab. Ein falsches Modell erzeugt keine Fehlermeldung – es verzerrt nur still und systematisch jede nachfolgende Fähigkeitsschätzung.</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">So setzt WEIAN es um:</b> Modellentscheidungen werden schriftlich begründet und mit Fit-Diagnostik belegt – nie blind übernommene Voreinstellungen.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §3 -->
+  <article id="equating" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 3 — VERGLEICHBARKEIT</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">Was sind Equating &amp; Linking?</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">Werte aus verschiedenen Jahren oder Testformen lassen sich nicht direkt vergleichen – die Formen unterscheiden sich in der Schwierigkeit. Equating bringt verschiedene Tests über Ankeritem-Designs und Parameter-Linking auf denselben Maßstab. Jede Aussage über „Trends“ beruht darauf.</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">Falsch gemacht, bedeutet eine scheinbare „Verbesserung“ vielleicht nur, dass der Test leichter wurde. Für Erhebungen, die Entscheidungen stützen, ist das kein technisches Detail – es ändert das Ergebnis.</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">So setzt WEIAN es um:</b> Prüfung des Ankerdesigns, Diagnostik der Linking-Konstanten und eine vollständig reproduzierbare, dokumentierte Equating-Pipeline.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §4 -->
+  <article id="weighting" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 4 — REPRÄSENTATIVITÄT</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">Was ist Kalibrierungsgewichtung?</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">Wenn die Struktur der Stichprobe nicht zur Grundgesamtheit passt, müssen die Gewichte so angepasst werden, dass gewichtete Schätzungen die Randverteilungen oder Zielquoten der Grundgesamtheit treffen – bei möglichst geringer Verzerrung der ursprünglichen Stichprobengewichte.</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">Manuelles Umgewichten ist weder streng noch reproduzierbar. Der strenge Ansatz formuliert es als Optimierungsproblem – nach der Kalibrierungstheorie von Deville &amp; Särndal (1992) – mit Diagnostik für effektive Stichprobengröße und Designeffekt.</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">So setzt WEIAN es um:</b> unser <a href="tools.html#wfc" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">WFC-Workflow</a> verbindet den Aufbau der Zielgrößen, Vorprüfungen, Raking oder Nachschichtung und Diagnostik in einem prüfbaren Prozess.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §5 -->
+  <article id="merging" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 5 — NACHBEARBEITUNG</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">Wie geht man mit dünn besetzten Zellen um?</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">Eine Kreuztabelle nach Provinz × Geschlecht × Stadt/Land × Alter × Bildung lässt viele Zellen mit winzigen oder leeren Stichproben zurück, und Anteilsschätzungen werden instabil. Zellen müssen zusammengelegt werden – aber jede endgültige Einheit braucht Fälle, und die Stufenanteile der Teilgruppen müssen in den Zielintervallen bleiben.</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">Das ist ein kombinatorisches Optimierungsproblem mit vielen Nebenbedingungen. Zusammenlegen nach Gefühl verfälscht die Schätzungen unbemerkt. Es verdient eine deterministische optimale Lösung statt Einzelentscheidungen Zelle für Zelle.</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">So setzt WEIAN es um:</b> <a href="tools.html#wfc" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8" style-hover="color:#1A1914;border-color:#1A1914">WFC</a> nutzt festgelegte Zusammenlegungsleitern, um dünn besetzte oder unverträgliche Kategorien zu erkennen, wendet geprüfte Zusammenlegungen einheitlich auf Stichprobe und Ziel an und wiederholt die Vorprüfungen vor der Gewichtung.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- §6 -->
+  <article id="dif" style="border-bottom:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 70px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">§ 6 — FAIRNESS</div>
+      <div>
+        <h2 data-rv style="margin:0 0 18px;font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.01em">Was ist DIF (Differential Item Functioning)?</h2>
+        <p data-rv style="margin:0 0 12px;font-size:15px;line-height:2;color:#4B4840">Wenn Befragte mit gleicher Fähigkeit, aber aus verschiedenen Gruppen (Stadt/Land, Geschlecht) bei einem Item systematisch unterschiedlich abschneiden, ist das Item möglicherweise verzerrt – es misst Gruppenzugehörigkeit statt Fähigkeit.</p>
+        <p data-rv style="margin:0;font-size:15px;line-height:2;color:#4B4840">Die DIF-Analyse findet solche Items. Sie ist ein zentraler Schritt für Fairness – besonders bei nationalen Erhebungen mit vielfältigen Bevölkerungsgruppen.</p>
+        <div data-rv style="margin-top:20px;border-left:3px solid #2440C8;background:#F3F0E6;padding:16px 20px;font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">So setzt WEIAN es um:</b> Das DIF-Screening ist fester Bestandteil unseres Standard-Modellierungsablaufs; markierte Items prüfen wir gemeinsam mit Ihren Fachexpertinnen und -experten.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section id="contact" style="background:#2440C8;color:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:end">
+      <div>
+        <h2 data-rv style="margin:0 0 28px;font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:-.01em;line-height:1.25">Eine Methodenfrage<br>zu Ihrem Projekt?</h2>
+        <a data-rv href="mailto:contact@weiandata.com" target="_top" style="display:inline-block;background:#FAF8F2;color:#2440C8;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,0,0,.4)">E-Mail schreiben →</a>
+      </div>
+      <div data-rv style="font-size:13.5px;line-height:2.2;color:#C6D0F5;border-left:1px solid rgba(250,248,242,.3);padding-left:28px">
+        Die erste Machbarkeitseinschätzung ist <b style="color:#FAF8F2">kostenlos</b> – beschreiben Sie Ihr Projekt, und wir antworten mit einem technischen Konzept.<br>
+        Diese Methoden als ausgelieferte Software finden Sie unter <a href="tools.html" style="color:#FAF8F2;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(250,248,242,.5)" style-hover="border-color:#FAF8F2">Werkzeuge &amp; Fallstudien</a>.<br><br>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>WEIAN DATA TECH (Beijing) Co., Ltd.</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Startseite</a> · <a href="tools.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Werkzeuge &amp; Fallstudien</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Lernzentrum</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Kontakt</a> · <a href="https://skills.weiandata.com" target="_blank" rel="noopener" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">AI Skills ↗</a></span>
+      <span><a href="impressum.html" lang="de" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Impressum</a> · © 2026 · Alle Rechte vorbehalten</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;High&quot;, &quot;Subtle&quot;], &quot;default&quot;: &quot;High&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Motion&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.setupCtaFeedback();
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === 'Subtle');
+    if (this.low || !('IntersectionObserver' in window)) return;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.12 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

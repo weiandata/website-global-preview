@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/css/mobile.css">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<title>Werkzeuge &amp; Fallstudien | WEIAN DATA</title>
+<meta name="description" content="Vier eigenentwickelte R-Projekte – DCC, IRTC, WFC und LISTC – für den Ablauf Bereinigung → Modellierung → Gewichtung → Tabellierung bei Umfrage- und Testdaten. Alle vier sind auf CRAN veröffentlicht.">
+<link rel="canonical" href="https://global.weiandata.com/de/tools">
+<link rel="alternate" hreflang="zh-CN" href="https://global.weiandata.com/zh/tools">
+<link rel="alternate" hreflang="en" href="https://global.weiandata.com/tools">
+<link rel="alternate" hreflang="de" href="https://global.weiandata.com/de/tools">
+<link rel="alternate" hreflang="x-default" href="https://global.weiandata.com/tools">
+<meta property="og:site_name" content="WEIAN DATA">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://global.weiandata.com/de/tools">
+<meta property="og:title" content="Werkzeuge &amp; Fallstudien | WEIAN DATA">
+<meta property="og:description" content="Vier eigenentwickelte R-Projekte – DCC, IRTC, WFC und LISTC – für den Ablauf Bereinigung → Modellierung → Gewichtung → Tabellierung bei Umfrage- und Testdaten. Alle vier sind auf CRAN veröffentlicht.">
+<meta property="og:image" content="https://global.weiandata.com/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Werkzeuge &amp; Fallstudien | WEIAN DATA">
+<meta name="twitter:description" content="Vier eigenentwickelte R-Projekte – DCC, IRTC, WFC und LISTC – für den Ablauf Bereinigung → Modellierung → Gewichtung → Tabellierung bei Umfrage- und Testdaten. Alle vier sind auf CRAN veröffentlicht.">
+<meta name="twitter:image" content="https://global.weiandata.com/assets/images/og-cover.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://global.weiandata.com/de/tools#webpage","url":"https://global.weiandata.com/de/tools","name":"Werkzeuge & Fallstudien | WEIAN DATA","description":"Vier eigenentwickelte R-Projekte – DCC, IRTC, WFC und LISTC – für den Ablauf Bereinigung → Modellierung → Gewichtung → Tabellierung bei Umfrage- und Testdaten. Alle vier sind auf CRAN veröffentlicht.","inLanguage":"de","isPartOf":{"@id":"https://global.weiandata.com/#website"},"about":{"@id":"https://global.weiandata.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://global.weiandata.com/de/"},{"@type":"ListItem","position":2,"name":"Werkzeuge & Fallstudien","item":"https://global.weiandata.com/de/tools"}]}]}</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="../assets/fonts/noto-sans-sc.css" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF8F2;color:#1A1914;font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#2440C8;color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #2440C8;outline-offset:2px}
+@keyframes ctaAttn{0%{box-shadow:0 0 0 0 rgba(250,248,242,.75);transform:scale(1)}45%{transform:scale(1.05)}100%{box-shadow:0 0 0 24px rgba(250,248,242,0);transform:scale(1)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh" data-screen-label="Tools EN">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(250,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1A1914">
+    <div style="max-width:1360px;margin:0 auto;padding:8px 40px;min-height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 18px">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#1A1914">
+        <svg viewBox="0 0 742 868" role="img" aria-label="WEIAN logo" style="height:32px;width:auto;display:block"><defs><linearGradient id="wlogoTE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2440C8"></stop><stop offset="1" stop-color="#5A73E8"></stop></linearGradient></defs><g transform="translate(85.5,782.5) scale(1,-1)"><g fill="#1A1914"><rect x="85.5" y="0" width="114" height="697"></rect><rect x="542.5" y="0" width="114" height="697"></rect></g><path d="M 599.5 697.0 C 599.5 292.7 142.5 404.3 142.5 0" fill="none" stroke="url(#wlogoTE)" stroke-width="114" stroke-linecap="butt"></path></g></svg>
+        <span style="font-weight:900;font-size:17px;letter-spacing:1px">WEIAN DATA</span>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A;letter-spacing:2px">惟安数据科技</span>
+      </a>
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:18px;row-gap:8px;white-space:nowrap;font-size:13.5px;font-weight:500">
+        <a href="index.html" style="color:#1A1914;text-decoration:none" style-hover="color:#2440C8">Startseite</a>
+        <span style="width:1px;height:16px;background:#DDD8CA"></span>
+        <span style="color:#FAF8F2;background:#1A1914;padding:6px 13px;border:1px solid #1A1914">Werkzeuge</span>
+        <a href="methods.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Methoden</a>
+        <a href="learn.html" style="color:#1A1914;text-decoration:none;border:1px solid #1A1914;padding:6px 13px;transition:background .25s" style-hover="background:#F3F0E6">Lernen</a>
+        <span data-lang-switch style="display:inline-flex;border:1px solid #2440C8;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1px"><a href="../tools.html" hreflang="en" lang="en" title="English" style="padding:6px 10px;text-decoration:none;color:#2440C8;transition:background .25s" style-hover="background:#E4E9FA">EN</a><a href="../zh/tools.html" hreflang="zh-CN" lang="zh-CN" title="中文" style="border-left:1px solid #2440C8;padding:6px 10px;text-decoration:none;color:#2440C8;transition:background .25s" style-hover="background:#E4E9FA">中文</a><a href="../de/tools.html" hreflang="de" lang="de" title="Deutsch" aria-current="page" style="border-left:1px solid #2440C8;padding:6px 10px;text-decoration:none;color:#FAF8F2;background:#2440C8">DE</a></span>
+        <a href="#contact" style="color:#fff;background:#2440C8;text-decoration:none;padding:8px 18px;font-weight:700" style-hover="background:#1A1914">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="border-bottom:1px solid #1A1914;background-image:linear-gradient(#E8E4D4 1px,transparent 1px),linear-gradient(90deg,#E8E4D4 1px,transparent 1px);background-size:80px 80px;background-position:center top">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 40px 56px">
+      <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#8A857A;margin-bottom:24px"><a href="index.html" style="color:#2440C8;text-decoration:none" style-hover="color:#1A1914">STARTSEITE</a> / EIGENE WERKZEUGE &amp; FALLSTUDIEN</div>
+      <h1 data-rv style="margin:0 0 24px;font-size:clamp(36px,4.8vw,64px);line-height:1.1;font-weight:900;letter-spacing:-.02em;max-width:980px">Ein durchgängiger eigener Ablauf:<br>„<span style="color:#2440C8">Bereinigung → Modellierung → Gewichtung → Tabellierung</span>“</h1>
+      <p data-rv style="margin:0;font-size:16px;line-height:1.9;color:#4B4840;max-width:600px">Vier professionelle R-Projekte für Umfrage- und Testdaten, selbst entwickelt, mit vollen IP-Rechten und ohne Kundendaten. Alle vier sind auf CRAN veröffentlicht.</p>
+      <div data-rv style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px">
+        <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">Rohe Antwortdaten</div>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#dcc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>DCC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Datenbereinigung</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#irtc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>IRTC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Messmodellierung</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#wfc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>WFC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Gewichtung von Erhebungen</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <a href="#listc" style="border:1px solid #1A1914;padding:10px 18px;text-decoration:none;color:#1A1914"><b>LISTC</b><span style="display:block;font-size:11px;opacity:.65;margin-top:2px">Ergebnistabellen</span></a>
+        <span style="font-size:17px;color:#2440C8">→</span>
+        <div style="border:1px dashed #A9A48F;background:#F3F0E6;padding:12px 18px;font-size:13px;color:#4B4840">Belastbare Ergebnisse</div>
+      </div>
+    </div>
+  </section>
+
+  <article id="dcc" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">FALLSTUDIE 01</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">DCC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Regelbasierte, vollständig prüfbare Datenbereinigung</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Datenbereinigung</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Regelbasiert</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Prüfpfad auf Zellebene</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Reproduzierbar</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
+        </div>
+        <div data-rv data-code-block style="margin-top:22px;background:#1A1914;border:1px solid #1A1914">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;border-bottom:1px solid #3A382F">
+            <a href="https://CRAN.R-project.org/package=DCC" target="_blank" rel="noopener" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#A9A48F;text-decoration:none" style-hover="color:#FAF8F2">R · CRAN ↗</a>
+            <button type="button" data-copy-code data-copied-label="Kopiert" aria-label="R-Installationscode für DCC kopieren" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;color:#FAF8F2;background:transparent;border:1px solid #6B675C;padding:3px 10px;cursor:pointer" style-hover="border-color:#FAF8F2">Kopieren</button>
+          </div>
+          <pre style="margin:0;padding:14px 16px;overflow-x:auto;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.8;color:#FAF8F2"><code><span data-code-line style="display:block;color:#A9A48F"># Von CRAN installieren (einmalig)</span><span data-code-line style="display:block">install.packages(<span style="color:#9DB0F5">"DCC"</span>)</span><span data-code-line style="display:block;color:#A9A48F"># Paket laden</span><span data-code-line style="display:block">library(DCC)</span></code></pre>
+          <div data-r-requires="4.1" style="padding:9px 16px;border-top:1px solid #3A382F;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.5px;color:#A9A48F">Benötigt R ≥ 4.1 · die neueste R-Version ist nicht erforderlich</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ AUSGANGSLAGE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Umfrage- und Testdaten kommen oft in mehreren Formaten und Kodierungen, mit Werten außerhalb des zulässigen Bereichs, fehlenden Antworten, Durchklick-Mustern, Zeitanomalien und formspezifischen Item-Kennungen. Ad-hoc-Skripte vergraben die Korrekturlogik im Code – nachzuprüfen, warum sich ein Wert geändert hat, oder den ganzen Lauf zu wiederholen, wird schwierig.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ LÖSUNG</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Versionierte Regeln führen Bereichs-, Mengen- und Ausdrucksprüfungen aus, dazu Detektoren für fehlende Werte, Durchklick-Muster, Antwortzeiten, Kontrollitems und auffällige Testwerte.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Erkennung und Ausführung sind getrennt: Ausschließen, Auf-NA-Setzen, Umkodieren und Markieren müssen ausdrücklich Regeln zugeordnet sein, unbehandelte Befunde bleiben sichtbar.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Rohdaten bleiben unverändert; jede Änderung protokolliert alten und neuen Wert, Regel, Methode und finding_id, Manifeste und Hashwerte ermöglichen verifizierte Wiederholungsläufe.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Unterstützt werden gängige Tabellen- und Statistikformate, blockweise Verarbeitung, Auswertung, der Abgleich von Itembanken über mehrere Testformen und eigenständige HTML-Berichte.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ ERGEBNIS & NUTZEN</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">DCC macht aus „bereinigten Daten“ ein erklärbares, nachvollziehbares und wiederholbares Datenprodukt – Projektleitung, Analyse und Prüfung arbeiten mit derselben Beweiskette.</p>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">Was das für Ihr Projekt bedeutet:</b> Eine belastbare Bereinigungspipeline lässt sich an Ihre Datenregeln anpassen, ohne projektspezifische Entscheidungen in undurchsichtigem Code zu verstecken.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article id="irtc" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">FALLSTUDIE 02</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">IRTC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Leistungsstarke Schätzung für die Item-Response-Theorie</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Item-Response-Theorie</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">C++ / Rcpp</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Speichersparendes Streaming</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
+        </div>
+        <div data-rv data-code-block style="margin-top:22px;background:#1A1914;border:1px solid #1A1914">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;border-bottom:1px solid #3A382F">
+            <a href="https://CRAN.R-project.org/package=IRTC" target="_blank" rel="noopener" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#A9A48F;text-decoration:none" style-hover="color:#FAF8F2">R · CRAN ↗</a>
+            <button type="button" data-copy-code data-copied-label="Kopiert" aria-label="R-Installationscode für IRTC kopieren" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;color:#FAF8F2;background:transparent;border:1px solid #6B675C;padding:3px 10px;cursor:pointer" style-hover="border-color:#FAF8F2">Kopieren</button>
+          </div>
+          <pre style="margin:0;padding:14px 16px;overflow-x:auto;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.8;color:#FAF8F2"><code><span data-code-line style="display:block;color:#A9A48F"># Von CRAN installieren (einmalig)</span><span data-code-line style="display:block">install.packages(<span style="color:#9DB0F5">"IRTC"</span>)</span><span data-code-line style="display:block;color:#A9A48F"># Paket laden</span><span data-code-line style="display:block">library(IRTC)</span></code></pre>
+          <div data-r-requires="3.5.0" style="padding:9px 16px;border-top:1px solid #3A382F;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.5px;color:#A9A48F">Benötigt R ≥ 3.5.0 · die neueste R-Version ist nicht erforderlich</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ AUSGANGSLAGE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Groß angelegte Erhebungen umfassen oft Hunderttausende oder Millionen Teilnehmende, viele Items und mehrere Dimensionen. Herkömmliche IRT-Software stößt dabei wegen Speicherbedarf, Laufzeit oder begrenzter Erweiterbarkeit an ihre Grenzen.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ LÖSUNG</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Unterstützt Rasch/1PL-, PCM-, RSM-, 2PL- und GPCM-Modelle; eindimensionale und between-item-mehrdimensionale Strukturen; latente Regression, mehrere Gruppen, Fallgewichte und EAP-Schätzung.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Parallele E-Schritte, blockweises Streaming nach Personen, Dimensionszerlegung, analytische Gradienten, hybride Newton-Updates und automatische Engine-Auswahl sind auf große Datenmengen ausgelegt.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Optionales Quadratur-Pruning weist den gemessenen Approximationsfehler aus; exakte Berechnung bleibt die Voreinstellung und ändert sich nie stillschweigend.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ ERGEBNIS & NUTZEN</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Grid-, Streaming- und automatische Engines machen Routineanalysen einfach und halten die Verarbeitung großer Datenmengen kontrollierbar. Chinesische und englische Handbücher erleichtern die Übergabe an Anwenderteams.</p>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">Was das für Ihr Projekt bedeutet:</b> IRTC ist der zentrale Nachweis für WEIANs Messkompetenz und Engineering im großen Maßstab und kann als erweiterbare Engine für maßgeschneiderte Testprojekte dienen.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article id="wfc" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">FALLSTUDIE 03</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">WFC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Gewichtung und Kalibrierung mit Vorprüfung zuerst</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Gewichtung von Erhebungen</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Raking</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Nachschichtung</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Diagnostik</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
+        </div>
+        <div data-rv data-code-block style="margin-top:22px;background:#1A1914;border:1px solid #1A1914">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;border-bottom:1px solid #3A382F">
+            <a href="https://CRAN.R-project.org/package=WFC" target="_blank" rel="noopener" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#A9A48F;text-decoration:none" style-hover="color:#FAF8F2">R · CRAN ↗</a>
+            <button type="button" data-copy-code data-copied-label="Kopiert" aria-label="R-Installationscode für WFC kopieren" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;color:#FAF8F2;background:transparent;border:1px solid #6B675C;padding:3px 10px;cursor:pointer" style-hover="border-color:#FAF8F2">Kopieren</button>
+          </div>
+          <pre style="margin:0;padding:14px 16px;overflow-x:auto;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.8;color:#FAF8F2"><code><span data-code-line style="display:block;color:#A9A48F"># Von CRAN installieren (einmalig)</span><span data-code-line style="display:block">install.packages(<span style="color:#9DB0F5">"WFC"</span>)</span><span data-code-line style="display:block;color:#A9A48F"># Paket laden</span><span data-code-line style="display:block">library(WFC)</span></code></pre>
+          <div data-r-requires="3.6.0" style="padding:9px 16px;border-top:1px solid #3A382F;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.5px;color:#A9A48F">Benötigt R ≥ 3.6.0 · die neueste R-Version ist nicht erforderlich</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ AUSGANGSLAGE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Gewichtungsskripte scheitern oft unbemerkt, wenn Kategorien von Stichprobe und Zielgröße abweichen, Zellen zu dünn besetzt sind, Gruppensummen nach dem Trimmen abdriften oder mehrere Zielquellen uneinheitliche Schemata verwenden. Eine fertige Gewichtsspalte allein zeigt nicht, was geprüft und welche Entscheidungen getroffen wurden.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ LÖSUNG</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Ein einheitliches Zielformat nimmt Bevölkerungsdaten, gewichtete Referenzstichproben oder manuelle Randverteilungen auf und vergleicht Stichprobe und Ziel, bevor Gewichte berechnet werden.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Eine festgelegte Zusammenlegungsleiter deckt zuerst Unverträglichkeiten und dünn besetzte Zellen auf und wendet dann geprüfte Kategoriezusammenlegungen einheitlich auf Stichprobe und Ziel an.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Raking und Nachschichtung teilen sich einen Dispatcher und dasselbe Ergebnisformat; der geführte Weg umgeht nie eine blockierende Vorprüfung.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Diagnostik, ein Entscheidungsprotokoll, zweisprachige Berichte und Prüfexporte machen jeden Kalibrierungslauf nachprüfbar.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ ERGEBNIS & NUTZEN</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">WFC macht aus einmaligen Gewichtungsskripten einen Standardablauf Vorprüfung → Ausführung → Diagnose und senkt das Risiko von Gewichten, die numerisch konvergieren, sich aber von der beabsichtigten Grundgesamtheit entfernen.</p>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">Was das für Ihr Projekt bedeutet:</b> Ihr Gewichtungsablauf wird vom Aufbau der Zielgrößen bis zur Diagnostik nachprüfbar, statt mit einer unerklärten Zahlenspalte zu enden.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article id="listc" style="border-bottom:1px solid #DDD8CA">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">FALLSTUDIE 04</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">LISTC</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">Pivot-artige Ergebnistabellen mit designgerechten Standardfehlern</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Statistische Tabellen</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Replikationsgewichte</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Plausible Values</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Designbasierte SE</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">GPL ≥ 2</span>
+        </div>
+        <div data-rv data-code-block style="margin-top:22px;background:#1A1914;border:1px solid #1A1914">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;border-bottom:1px solid #3A382F">
+            <a href="https://CRAN.R-project.org/package=LISTC" target="_blank" rel="noopener" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:2px;color:#A9A48F;text-decoration:none" style-hover="color:#FAF8F2">R · CRAN ↗</a>
+            <button type="button" data-copy-code data-copied-label="Kopiert" aria-label="R-Installationscode für LISTC kopieren" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;color:#FAF8F2;background:transparent;border:1px solid #6B675C;padding:3px 10px;cursor:pointer" style-hover="border-color:#FAF8F2">Kopieren</button>
+          </div>
+          <pre style="margin:0;padding:14px 16px;overflow-x:auto;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.8;color:#FAF8F2"><code><span data-code-line style="display:block;color:#A9A48F"># Von CRAN installieren (einmalig)</span><span data-code-line style="display:block">install.packages(<span style="color:#9DB0F5">"LISTC"</span>)</span><span data-code-line style="display:block;color:#A9A48F"># Paket laden</span><span data-code-line style="display:block">library(LISTC)</span></code></pre>
+          <div data-r-requires="4.1" style="padding:9px 16px;border-top:1px solid #3A382F;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.5px;color:#A9A48F">Benötigt R ≥ 4.1 · die neueste R-Version ist nicht erforderlich</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ AUSGANGSLAGE</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Beim Berichten geht eine korrekte Analyse am häufigsten verloren. Survey-Pakete berechnen designgerechte Statistiken, bieten aber kein freies Tabellenlayout; Pivot-Pakete gestalten jede beliebige Tabelle, wissen aber nichts vom Stichprobendesign. Teams setzen Berichtstabellen deshalb von Hand zusammen, und der Standardfehler – die eine Zahl, die angibt, wie sehr man der Schätzung trauen kann – verschwindet als Erstes.</p>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ LÖSUNG</div>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Zeilenvariablen, Spaltenvariablen und Zellstatistiken werden frei gewählt wie in einer Pivot-Tabelle, und jede Zelle trägt einen zum Stichprobendesign passenden Standardfehler.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Verarbeitet die Eingaben, die große Erhebungen tatsächlich liefern: demografische Merkmale, Testwerte, Stichprobengewichte, IRT-Fähigkeitsschätzungen mit individuellen Standardfehlern, Replikationsgewichte und Plausible Values.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Schließt die eigene Werkzeugkette – DCC bereinigt, IRTC modelliert, WFC gewichtet, und LISTC macht aus dem Ergebnis die Tabellen, aus denen ein Bericht tatsächlich besteht.</li>
+          </ul>
+        </div>
+        <div data-rv>
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:3px;color:#2440C8;margin-bottom:12px">■ ERGEBNIS &amp; NUTZEN</div>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Berichtstabellen sind kein manueller, fehleranfälliger letzter Schritt mehr, sondern ein reproduzierbares Ergebnis der Analyse selbst – mit Unsicherheitsangaben bis in die letzte Zelle.</p>
+        </div>
+        <div data-rv style="border-left:3px solid #2440C8;background:#F3F0E6;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840"><b style="color:#2440C8">Was das für Ihr Projekt bedeutet:</b> Die Tabellen in Ihrem Bericht lassen sich jederzeit aus den Daten neu erzeugen, und jede Zahl darin kann ihre eigene Genauigkeit angeben.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article id="ogive" style="border-bottom:1px solid #1A1914;background:#F3F0E6">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 40px 80px;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:96px">
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:3px;color:#2440C8">DEMNÄCHST</div>
+        <div data-rv style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:36px;font-weight:700;margin-top:12px">Ogive</div>
+        <div data-rv style="font-size:16px;font-weight:700;margin-top:8px;line-height:1.6">IRT-Berechnung für macOS</div>
+        <div data-rv style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px dashed #2440C8;padding:4px 10px;color:#2440C8">IN ENTWICKLUNG</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">macOS</span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:1px;border:1px solid #DDD8CA;padding:4px 10px;color:#4B4840">Rust</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:34px">
+        <div data-rv>
+          <p style="margin:0;font-size:15px;line-height:2;color:#4B4840">Eine native macOS-Anwendung für die Item-Response-Theorie, geschrieben in Rust. Ogive befindet sich noch in aktiver Entwicklung; eine öffentliche Version gibt es noch nicht, die folgenden Funktionen beschreiben den aktuellen Entwicklungsumfang.</p>
+        </div>
+        <div data-rv>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:8px">
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Eine Engine für Rasch-, PCM-, RSM-, 2PL- und GPCM-Modelle, ein- und mehrdimensional, mit derselben Designmatrix-Parametrisierung wie IRTC.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Marginal-Maximum-Likelihood-Kalibrierung mit beschleunigtem EM, Schätzung der latenten Verteilung sowie EAP-, MAP- und MLE-Fähigkeitsschätzungen.</li>
+            <li style="font-size:14px;line-height:1.9;color:#4B4840">Item- und Personenfit, DIF-Analyse und Linking über Ankeritems, mit Ergebnissen, die in Regressionstests gegen etablierte Referenzsoftware geprüft werden.</li>
+          </ul>
+        </div>
+        <div data-rv style="border-left:3px dashed #2440C8;background:#FAF8F2;padding:18px 22px">
+          <div style="font-size:13.5px;line-height:1.95;color:#4B4840">Interesse an frühem Zugang oder einer Pilotevaluation? <a href="#contact" style="color:#2440C8;font-weight:700;text-decoration:none;border-bottom:1px solid #2440C8">Kontakt aufnehmen</a>.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div style="max-width:1280px;margin:0 auto;padding:26px 40px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#8A857A">* Alle Projekte auf dieser Seite sind Eigenentwicklungen von WEIAN mit vollen IP-Rechten. Die Fallstudien enthalten keine Kundenprojektnamen und keine sensiblen Daten.</div>
+
+  <!-- CTA -->
+  <section id="contact" style="background:#2440C8;color:#FAF8F2;border-top:1px solid #1A1914">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px 86px;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:end">
+      <div>
+        <h2 data-rv style="margin:0 0 28px;font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:-.01em;line-height:1.25">Werkzeuge wie diese,<br>für Ihr Projekt gebaut?</h2>
+        <a data-rv href="mailto:contact@weiandata.com" target="_top" style="display:inline-block;background:#FAF8F2;color:#2440C8;text-decoration:none;font-size:16px;font-weight:700;padding:15px 32px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,0,0,.4)">E-Mail schreiben →</a>
+      </div>
+      <div data-rv style="font-size:13.5px;line-height:2.2;color:#C6D0F5;border-left:1px solid rgba(250,248,242,.3);padding-left:28px">
+        Individuelle Entwicklung, Anpassung und Erweiterung der Werkzeugkette sind möglich – <b style="color:#FAF8F2">die Ersteinschätzung ist kostenlos</b>.<br>
+        Siehe <a href="index.html#process" style="color:#FAF8F2;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(250,248,242,.5)" style-hover="border-color:#FAF8F2">unsere Arbeitsweise</a>.<br><br>
+        <span style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12.5px">contact@weiandata.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#FAF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#8A857A">
+      <span>WEIAN DATA TECH (Beijing) Co., Ltd.</span>
+      <span><a href="index.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Startseite</a> · <a href="methods.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Methoden</a> · <a href="learn.html" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Lernzentrum</a> · <a href="#contact" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Kontakt</a> · <a href="https://skills.weiandata.com" target="_blank" rel="noopener" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">AI Skills ↗</a></span>
+      <span><a href="impressum.html" lang="de" style="color:#8A857A;text-decoration:none" style-hover="color:#2440C8">Impressum</a> · © 2026 · Alle Rechte vorbehalten</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionLevel&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;High&quot;, &quot;Subtle&quot;], &quot;default&quot;: &quot;High&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Motion&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.setupCtaFeedback();
+    this.setupCopyButtons();
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.low = this.reduce || (this.props.motionLevel === 'Subtle');
+    if (this.low || !('IntersectionObserver' in window)) return;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute && c.hasAttribute('data-rv'); });
+      el.__d = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    this.io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms, transform .7s cubic-bezier(.2,.7,.2,1) ' + el.__d + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this.io.unobserve(el);
+      }, this);
+    }.bind(this), { threshold: 0.12 });
+    els.forEach(function (el) { this.io.observe(el); }, this);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onCtaClick) document.removeEventListener('click', this.onCtaClick);
+    if (this.onCopyClick) document.removeEventListener('click', this.onCopyClick);
+  }
+  setupCtaFeedback() {
+    this.onCtaClick = function (e) {
+      var t = e.target;
+      while (t && t.getAttribute && !(t.tagName === 'A' && t.getAttribute('href') === '#contact')) t = t.parentNode;
+      if (!t || !t.getAttribute) return;
+      var mail = document.querySelector('#contact a[href^="mailto"]');
+      if (!mail) return;
+      setTimeout(function () {
+        mail.style.animation = 'none';
+        void mail.offsetWidth;
+        mail.style.animation = 'ctaAttn .85s cubic-bezier(.2,.7,.2,1) 2';
+      }, 380);
+    };
+    document.addEventListener('click', this.onCtaClick);
+  }
+  setupCopyButtons() {
+    this.onCopyClick = function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('[data-copy-code]') : null;
+      if (!btn) return;
+      var block = btn.closest('[data-code-block]');
+      var text = Array.prototype.map.call(block.querySelectorAll('[data-code-line]'), function (l) { return l.textContent; }).join('\n') + '\n';
+      var label = btn.firstChild;
+      var done = function () {
+        if (!label || label.nodeType !== 3) return;
+        if (!btn.__label) btn.__label = label.nodeValue;
+        label.nodeValue = btn.getAttribute('data-copied-label');
+        clearTimeout(btn.__timer);
+        btn.__timer = setTimeout(function () { label.nodeValue = btn.__label; }, 1600);
+      };
+      var fallback = function () {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { if (document.execCommand('copy')) done(); } catch (err) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
+    };
+    document.addEventListener('click', this.onCopyClick);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

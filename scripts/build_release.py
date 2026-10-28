@@ -57,7 +57,11 @@ def public_files() -> list[Path]:
     files = [ROOT / relative for relative in ROOT_FILES]
     files.extend((ROOT / "articles").glob("*.md"))
     files.extend((ROOT / "articles-en").glob("*.md"))
+    files.extend((ROOT / "articles-de").glob("*.md"))
     files.extend((ROOT / "zh").glob("*.html"))
+    files.extend((ROOT / "de").glob("*.html"))
+    # the SIL OFL requires the licence to travel with the self-hosted font files
+    files.append(ROOT / "assets/fonts/noto-sans-sc/OFL.txt")
     files.extend(
         path
         for path in (ROOT / "assets").rglob("*")
