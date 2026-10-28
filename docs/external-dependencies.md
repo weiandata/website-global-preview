@@ -13,8 +13,9 @@ migration.
 | React | 18.3.1 | `/assets/vendor/react.production.min.js` (vendored; was unpkg) | Component runtime | MIT | **Localized** — served same-origin with the original SRI hash |
 | React DOM | 18.3.1 | `/assets/vendor/react-dom.production.min.js` (vendored; was unpkg) | Browser rendering for React components | MIT | **Localized** — served same-origin with the original SRI hash |
 
-The links to CRAN on the tools pages are ordinary outbound links, not runtime
-dependencies.
+The links to CRAN on the tools pages and the footer link to the WeianData AI
+Skills site (`https://skills.weiandata.com`) are ordinary outbound links, not
+runtime dependencies.
 
 ## Operational Notes
 

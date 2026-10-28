@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGES = ["index.html", "tools.html", "methods.html", "learn.html", "article.html"]
 ZH_PAGES = [f"zh/{name}" for name in ROOT_PAGES]
 HTML_PAGES = ROOT_PAGES + ZH_PAGES
-FEATURED_CASE_IDS = ("dcc", "irtc", "wfc")
+FEATURED_CASE_IDS = ("dcc", "irtc", "wfc", "listc")
+CRAN_PACKAGES = ("DCC", "IRTC", "WFC", "LISTC")
 LEGACY_CASE_IDS = ("ratecalib", "mergecalib")
 EXPECTED_ARTICLES = {
     *(f"A{number:02}.md" for number in range(1, 31)),
@@ -180,7 +181,7 @@ def validate_featured_cases(errors: list[str]) -> None:
         text = (ROOT / relative).read_text(encoding="utf-8")
         positions = [text.find(f'tools.html#{case_id}') for case_id in FEATURED_CASE_IDS]
         if any(position < 0 for position in positions) or positions != sorted(positions):
-            errors.append(f"{relative} does not present DCC, IRTC, WFC in order")
+            errors.append(f"{relative} does not present {', '.join(CRAN_PACKAGES)} in order")
         for case_id in LEGACY_CASE_IDS:
             if f"tools.html#{case_id}" in text:
                 errors.append(f"{relative} still links featured case {case_id}")
@@ -189,7 +190,7 @@ def validate_featured_cases(errors: list[str]) -> None:
         text = (ROOT / relative).read_text(encoding="utf-8")
         positions = [text.find(f'id="{case_id}"') for case_id in FEATURED_CASE_IDS]
         if any(position < 0 for position in positions) or positions != sorted(positions):
-            errors.append(f"{relative} does not define DCC, IRTC, WFC in order")
+            errors.append(f"{relative} does not define {', '.join(CRAN_PACKAGES)} in order")
         for case_id in LEGACY_CASE_IDS:
             if f'id="{case_id}"' in text or f'href="#{case_id}"' in text:
                 errors.append(f"{relative} still presents featured case {case_id}")
@@ -203,9 +204,13 @@ def validate_retired_project_references(errors: list[str]) -> None:
             if name in text:
                 errors.append(f"{relative} still references retired featured project {name}")
 
-    for relative in ("index.html", "zh/index.html", "llms.txt"):
-        if "cran" in (ROOT / relative).read_text(encoding="utf-8").lower():
-            errors.append(f"{relative} still contains legacy CRAN portfolio copy")
+    for relative in ("tools.html", "zh/tools.html"):
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        for package in CRAN_PACKAGES:
+            if f'href="https://CRAN.R-project.org/package={package}"' not in text:
+                errors.append(f"{relative} is missing the CRAN link for {package}")
+            if f'"{package}"</span>)' not in text or f"library({package})" not in text:
+                errors.append(f"{relative} is missing the R install snippet for {package}")
 
 
 def validate_seo(errors: list[str]) -> None:
